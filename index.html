@@ -1,0 +1,1725 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>グランキコーナ大阪｜9/22 休日出玉率補正 最終予想</title>
+<style>
+:root {
+  --bg:#080b14; --panel:#111725; --panel2:#151d2e; --line:#253149;
+  --text:#f4f7fb; --muted:#93a0b5; --accent:#5eead4; --accent2:#60a5fa;
+  --good:#34d399; --warn:#fbbf24; --hot:#fb7185; --violet:#a78bfa;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:
+ radial-gradient(circle at 80% -10%,rgba(96,165,250,.16),transparent 34rem),
+ radial-gradient(circle at -10% 10%,rgba(94,234,212,.10),transparent 30rem),
+ var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.55}
+a{color:inherit}
+.shell{max-width:760px;margin:0 auto;padding:16px 14px 92px}
+.hero{padding:20px 4px 12px}
+.eyebrow{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:24px;line-height:1.25;margin:7px 0 8px}
+.hero p{margin:0;color:var(--muted);font-size:13px}
+.confirmed{margin-top:14px;background:linear-gradient(135deg,rgba(52,211,153,.14),rgba(96,165,250,.10));border:1px solid rgba(52,211,153,.35);border-radius:16px;padding:14px}
+.confirmed b{display:block;font-size:13px;color:#bbf7d0;margin-bottom:5px}
+.confirmed strong{font-size:15px}
+.section{margin-top:18px;scroll-margin-top:12px}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin:0 2px 9px}
+.section-title h2{font-size:18px;margin:0}
+.section-title span{color:var(--muted);font-size:11px}
+.next-card{background:linear-gradient(160deg,#141d30,#0f1726);border:1px solid #2a3855;border-radius:var(--radius);padding:16px;box-shadow:0 12px 38px rgba(0,0,0,.22)}
+.next-date{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.next-date strong{font-size:22px}
+.chip{display:inline-flex;padding:5px 9px;border-radius:999px;background:rgba(96,165,250,.14);border:1px solid rgba(96,165,250,.28);font-size:11px;color:#bfdbfe;font-weight:700}
+.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.mini{background:#0c1220;border:1px solid var(--line);border-radius:13px;padding:11px}
+.mini span{font-size:10px;color:var(--muted);display:block}
+.mini b{font-size:13px}
+.pick-list{display:grid;gap:9px}
+.pick-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:13px}
+.pick-head{display:grid;grid-template-columns:45px 1fr 54px;gap:10px;align-items:center}
+.rank{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:15px;background:#1f2937;border:1px solid #334155}
+.rank-A{background:rgba(52,211,153,.13);border-color:rgba(52,211,153,.42);color:#86efac}
+.rank-Am,.rank-A-{background:rgba(94,234,212,.12);border-color:rgba(94,234,212,.38);color:#99f6e4}
+.rank-Bp,.rank-B\+{background:rgba(251,191,36,.10);border-color:rgba(251,191,36,.32);color:#fde68a}
+.rank-B{background:rgba(96,165,250,.10);border-color:rgba(96,165,250,.30);color:#bfdbfe}
+.pick-title strong{display:block;font-size:14px}
+.pick-title span{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.days{text-align:right;border-left:1px solid var(--line);padding-left:8px}
+.days b{font-size:20px;display:block;line-height:1}
+.days small{font-size:9px;color:var(--muted)}
+.pick-card p{font-size:12px;color:#c9d3e2;margin:10px 0 0}
+.idle-list,.performer-list,.floor-list{display:grid;gap:9px}
+.idle-row{display:grid;grid-template-columns:1fr 58px;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
+.idle-row strong{display:block;font-size:13px}
+.idle-row span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.idle-days{font-size:21px;font-weight:900;text-align:right;color:#fde68a}
+.idle-days small{font-size:10px;margin-left:2px;color:var(--muted)}
+.performer-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:13px}
+.performer-top{display:flex;justify-content:space-between;align-items:center}
+.performer-top strong{font-size:14px;display:block}
+.performer-top span:not(.confidence){font-size:11px;color:var(--accent);display:block}
+.confidence{font-size:10px;padding:4px 8px;border:1px solid #334155;border-radius:999px;color:#dbeafe}
+.ratio-line{height:7px;background:#0b1120;border-radius:99px;overflow:hidden;margin-top:11px;border:1px solid #1f2a40}
+.ratio-line span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.ratio-meta{display:flex;align-items:baseline;gap:7px;margin-top:5px}
+.ratio-meta b{font-size:16px}
+.ratio-meta span{font-size:10px;color:var(--muted)}
+.performer-card p{margin:8px 0 0;font-size:11px;color:#c8d2e1}
+.hypothesis{background:linear-gradient(160deg,rgba(167,139,250,.13),rgba(96,165,250,.08));border:1px solid rgba(167,139,250,.35);border-radius:16px;padding:14px;margin-top:10px}
+.hypothesis b{font-size:13px;color:#ddd6fe}
+.hypothesis p{font-size:11px;color:#d5d8e0;margin:7px 0 0}
+.floor-card{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:var(--panel)}
+.floor-band{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;background:#151e30}
+.floor-band b{font-size:14px}
+.floor-band span{font-size:10px;color:var(--muted);text-align:right}
+.floor-card.best .floor-band{background:rgba(52,211,153,.10)}
+.floor-card.hot .floor-band{background:rgba(96,165,250,.10)}
+.floor-card.used .floor-band{background:rgba(251,191,36,.08)}
+.floor-body{padding:11px 12px}
+.floor-body strong{font-size:12px}
+.floor-body p{font-size:10px;color:var(--muted);margin:4px 0 0}
+.notice{background:#0e1422;border:1px dashed #334155;border-radius:14px;padding:12px;font-size:11px;color:#b8c3d3}
+details{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden}
+summary{cursor:pointer;padding:13px 14px;font-weight:800;font-size:13px}
+.details-body{padding:0 14px 14px;color:#c6d0df;font-size:11px}
+.details-body p{margin:0 0 8px}
+.source-links{display:grid;gap:7px}
+.source-links a{display:flex;justify-content:space-between;text-decoration:none;background:#0d1422;border:1px solid #22304a;border-radius:12px;padding:10px 11px;font-size:11px;color:#c9d4e4}
+.nav{position:fixed;z-index:10;left:50%;bottom:max(8px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(730px,calc(100% - 20px));background:rgba(12,17,29,.88);backdrop-filter:blur(14px);border:1px solid #26344e;border-radius:18px;padding:7px;display:grid;grid-template-columns:repeat(7,1fr);box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.nav a{text-decoration:none;text-align:center;font-size:9px;color:#aeb9ca;padding:6px 2px;border-radius:11px}
+.nav a b{display:block;font-size:16px;line-height:1.1;color:#e7edf7}
+footer{color:#68758b;font-size:9px;text-align:center;margin-top:18px}
+@media (min-width:620px){
+  .shell{padding-left:20px;padding-right:20px}
+  .pick-list,.performer-list{grid-template-columns:1fr 1fr}
+  .floor-list{grid-template-columns:1fr 1fr}
+}
+
+.history-tools{display:grid;grid-template-columns:1fr 70px;gap:8px;margin-bottom:9px}
+.history-tools input{width:100%;background:#0d1422;border:1px solid #293853;color:var(--text);border-radius:12px;padding:11px 12px;font-size:12px;outline:none}
+.history-tools input:focus{border-color:rgba(94,234,212,.55);box-shadow:0 0 0 3px rgba(94,234,212,.08)}
+.history-tools button{background:#151e30;border:1px solid #293853;color:#cbd5e1;border-radius:12px;font-size:11px;font-weight:800}
+.history-summary{display:flex;align-items:baseline;gap:8px;margin:0 2px 9px}
+.history-summary b{font-size:14px;color:#c4f1e9}
+.history-summary span{font-size:10px;color:var(--muted)}
+.history-list{display:grid;gap:9px}
+.month-group{background:var(--panel);border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.month-group>summary{display:flex;justify-content:space-between;align-items:center;padding:12px 13px;font-weight:900;font-size:13px;list-style:none}
+.month-group>summary::-webkit-details-marker{display:none}
+.month-group>summary small{font-size:10px;color:var(--muted);font-weight:600}
+.month-body{display:grid;gap:7px;padding:0 9px 9px}
+.history-item{background:#0d1422;border:1px solid #22304a;border-radius:12px;padding:10px}
+.confirmed-history{border-color:rgba(52,211,153,.48);background:linear-gradient(135deg,rgba(52,211,153,.09),#0d1422)}
+.history-head{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.history-date{display:flex;align-items:center;gap:7px;min-width:0}
+.history-date strong{font-size:12px;white-space:nowrap}
+.special-tag{font-size:9px;color:#bfdbfe;background:rgba(96,165,250,.10);border:1px solid rgba(96,165,250,.23);border-radius:999px;padding:3px 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}
+.history-badge{font-size:9px;color:#dbeafe;background:#172033;border:1px solid #334155;border-radius:999px;padding:3px 7px;white-space:nowrap}
+.confirmed-badge{color:#bbf7d0;border-color:rgba(52,211,153,.38);background:rgba(52,211,153,.10)}
+.history-event{font-size:10px;color:var(--accent);margin-top:6px}
+.history-machines{font-size:11px;color:#d4dbe7;margin-top:4px;line-height:1.55}
+
+
+.heat-panel{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:13px}
+.heat-legend{display:flex;gap:12px;align-items:center;margin:0 2px 10px;font-size:10px;color:var(--muted)}
+.heat-legend span{display:inline-flex;align-items:center;gap:6px}
+.heat-legend .lg{display:inline-block;width:22px;height:10px;border-radius:99px;background:rgba(94,234,212,.18);border:1px solid rgba(96,165,250,.25)}
+.heat-legend .lg.mid{background:rgba(94,234,212,.42)}
+.heat-legend .lg.high{background:rgba(94,234,212,.78)}
+.heat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.heat-cell{min-height:104px;border:1px solid;padding:10px 10px 9px;border-radius:14px;position:relative;overflow:hidden}
+.heat-cell.hottest:after{content:"HOT";position:absolute;top:8px;right:-26px;background:rgba(251,113,133,.88);color:white;font-size:9px;font-weight:800;padding:2px 24px;transform:rotate(35deg)}
+.heat-range{font-size:11px;color:#dbeafe;font-weight:900}
+.heat-name{font-size:13px;font-weight:800;line-height:1.35;margin-top:4px}
+.heat-score{font-size:22px;line-height:1;margin-top:8px;font-weight:900;color:#f8fafc}
+.heat-meta{font-size:10px;color:#d0dae8;margin-top:6px;line-height:1.45}
+@media (max-width:430px){
+  .heat-grid{grid-template-columns:1fr}
+}
+
+</style>
+
+<style>
+.version-chip{display:inline-flex;margin-top:8px;padding:5px 9px;border-radius:999px;border:1px solid #334155;color:#cbd5e1;font-size:10px}
+.map-live{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0b1120}
+.map-live iframe{width:100%;height:620px;border:0;background:white}
+.map-fallback{padding:10px;font-size:11px;color:var(--muted)}
+.map-fallback a{color:#93c5fd}
+.tap-grid,.performer-floor{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tap-block,.pf-block{border:1px solid var(--line);border-radius:14px;padding:11px;background:var(--panel);cursor:pointer;transition:.15s}
+.tap-block:active{transform:scale(.985)}
+.tap-block .r,.pf-block .r{font-size:11px;color:#bfdbfe;font-weight:900}
+.tap-block .n,.pf-block .n{font-size:13px;font-weight:800;margin-top:4px}
+.tap-block .m,.pf-block .m{font-size:10px;color:var(--muted);margin-top:4px}
+.scorebar{height:7px;background:#0a1020;border-radius:99px;overflow:hidden;margin-top:8px}
+.scorebar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(2,6,23,.76);z-index:40;padding:16px;align-items:flex-end}
+.modal-backdrop.show{display:flex}
+.modal-card{width:min(720px,100%);margin:0 auto;background:#111827;border:1px solid #334155;border-radius:20px;padding:16px;box-shadow:0 20px 70px rgba(0,0,0,.55)}
+.modal-card h3{margin:0 0 8px;font-size:18px}
+.modal-stat{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.modal-stat div{background:#0b1220;border:1px solid #26354e;border-radius:12px;padding:10px}
+.modal-stat span{display:block;font-size:9px;color:var(--muted)}
+.modal-stat b{font-size:17px}
+.close-btn{width:100%;border:0;background:#24324a;color:#fff;padding:11px;border-radius:12px;font-weight:800;margin-top:10px}
+.performer-tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:4px;margin-bottom:10px}
+.performer-tabs button{flex:0 0 auto;border:1px solid #334155;background:#111827;color:#cbd5e1;border-radius:999px;padding:8px 11px;font-size:11px}
+.performer-tabs button.active{background:rgba(94,234,212,.13);border-color:rgba(94,234,212,.5);color:#99f6e4}
+.pf-block.dim{opacity:.25;filter:saturate(.4)}
+.pf-block.hit{border-color:rgba(94,234,212,.6);box-shadow:0 0 0 2px rgba(94,234,212,.06) inset;background:rgba(94,234,212,.08)}
+.performer-summary{background:linear-gradient(135deg,rgba(96,165,250,.10),rgba(94,234,212,.06));border:1px solid #2d3d59;border-radius:15px;padding:13px;margin-bottom:10px}
+.performer-summary strong{font-size:15px}
+.performer-summary p{font-size:11px;color:#cbd5e1;margin:7px 0 0}
+@media(max-width:430px){.tap-grid,.performer-floor{grid-template-columns:1fr}.map-live iframe{height:540px}}
+</style>
+
+
+<style id="tap-fix-css">
+.tap-link{display:block;text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.tap-hint{font-size:10px;color:#99f6e4;margin-top:8px;font-weight:800}
+.css-modal{display:none;position:fixed;inset:0;z-index:9999;align-items:flex-end;padding:14px}
+.css-modal:target{display:flex}
+.css-modal-bg{position:absolute;inset:0;background:rgba(2,6,23,.82);backdrop-filter:blur(4px)}
+.css-modal-card{position:relative;z-index:2;width:min(720px,100%);max-height:82vh;overflow:auto;margin:0 auto;background:#111827;border:1px solid #334155;border-radius:22px 22px 16px 16px;padding:14px 16px 18px;box-shadow:0 24px 80px rgba(0,0,0,.6);animation:sheetUp .16s ease-out}
+.modal-grabber{width:38px;height:4px;border-radius:99px;background:#475569;margin:0 auto 12px}
+.css-modal-card h3{margin:0 0 9px;font-size:18px}
+.close-link{display:block;text-align:center;text-decoration:none}
+@keyframes sheetUp{from{transform:translateY(18px);opacity:.6}to{transform:translateY(0);opacity:1}}
+body:has(.css-modal:target){overflow:hidden}
+</style>
+
+</head>
+<body>
+<main class="shell">
+  <header class="hero">
+    <div class="eyebrow">Gran Kicona Osaka</div>
+    <h1>グランキコーナ大阪</h1><p style="margin:6px 0 0;color:#cbd5e1;font-size:13px;font-weight:700">9/22 休日出玉率補正 最終予想</p><span class="version-chip">LATEST 2026-09-21 v3</span>
+    <p>更新 2026/9/21 夜｜9/21当日追加確認・9/19結果・機械割補正を反映</p>
+    <div class="confirmed">
+      <b>9/19 結果記事公開済み</b>
+      <strong>平均G数 5,728G｜確定対象：北斗・マギレコ・VVV2</strong>
+    
+    <div class="confirmed" style="margin-top:10px;border-color:rgba(96,165,250,.45);background:linear-gradient(135deg,rgba(96,165,250,.12),rgba(94,234,212,.08))">
+      <b>9/21 確定実績（ユーザー確認）</b>
+      <strong>2台並びメイン｜マイジャグラー・アイムジャグラー中心</strong>
+      <p style="margin:7px 0 0;color:#cbd5e1;font-size:11px">21日のジャグラー系出現は5/21～9/21で5回連続。今後は「機種単位」より、マイ/アイムを軸に隣接2台の同時良挙動を優先して評価します。</p>
+    </div>
+</div>
+  </header>
+
+  <section id="next" class="section">
+    <div class="section-title"><h2>9/21 当日</h2><span>結果公開待ち</span></div>
+    <div class="next-card">
+      <div class="next-date"><strong>2026/9/21（月）｜実績確定</strong><span class="chip">TODAY</span></div>
+      <div class="event-grid">
+        <div class="mini"><span>来店</span><b>ウシオ＆森咲智美</b></div>
+        <div class="mini"><span>収録</span><b>おーるすたー感謝の旅</b></div>
+        <div class="mini"><span>ホールナビ</span><b>機種仕掛け ★4</b></div>
+        <div class="mini"><span>現状</span><b>実結果は公開待ち</b></div>
+      </div>
+      <div class="notice" style="margin-top:10px"><strong>9/19結果記事が9/21に公開</strong>され、平均G数5,728Gを確認。9/21はホルカレ・公式X等でウシオ＆森咲智美の来店/収録を確認済み。<strong>夜時点で9/21の独立した結果記事は未確認</strong>のため、下のランキングは事前仮説として固定し、実結果公開後に答え合わせします。</div>
+      <div class="event-grid" style="margin-top:10px">
+        <div class="mini"><span>スロマップAI</span><b>番組収録 A</b></div>
+        <div class="mini"><span>スロマップAI</span><b>ウシオ来店 B</b></div>
+        <div class="mini"><span>スロマップAI</span><b>森咲智美 D</b></div>
+        <div class="mini"><span>P-WORLD</span><b>9/21更新済み</b></div>
+      </div>
+      <div class="notice" style="margin-top:10px">外部ランクは参考情報としてのみ使用し、<strong>5～8月の21日パターン・機械割補正・台番ローテ</strong>を主軸に評価しています。</div>
+    </div>
+  </section>
+
+  <section id="picks" class="section">
+    <div class="section-title"><h2>9/21事前候補 TOP6</h2><span>実実績反映済み</span></div>
+    <div class="notice" style="margin-bottom:9px">総合スコアは<strong>投入パターン80%＋設定6機械割価値20%</strong>。9/21の実結果が未公開のため、現時点では<strong>事前仮説</strong>として表示。結果公開後に21日パターンとウシオ補正を再採点します。技術介入系は候補外。</div>
+    <div class="pick-list">
+    <article class="pick-card">
+      <div class="pick-head">
+        <span class="rank rank-A">A+</span>
+        <div class="pick-title">
+          <strong>ゴーゴージャグラー3</strong>
+          <span>880～891 / 911～922｜887 → 919 → 915 → 920</span>
+        </div>
+        <div class="days"><b>89</b><small>補正点</small></div>
+      </div>
+      <p>21日パターン4/4。設定6は106.5%と低めなので、島平均プラスや大差枚はAT機より高設定証拠として重く評価。40日空き。</p>
+    </article>
+
+    <article class="pick-card">
+      <div class="pick-head">
+        <span class="rank rank-A">A</span>
+        <div class="pick-title">
+          <strong>ミスタージャグラー</strong>
+          <span>932～936｜932 → 934 → 935</span>
+        </div>
+        <div class="days"><b>82</b><small>補正点</small></div>
+      </div>
+      <p>7/21対象＋6/21シリーズ高配分。設定6 107.3%。小台数ブロックのREG・合算と島平均を重視。40日空き。</p>
+    </article>
+
+    <article class="pick-card">
+      <div class="pick-head">
+        <span class="rank rank-Am">A-</span>
+        <div class="pick-title">
+          <strong>ファンキー / ガールズ / ウルミラ</strong>
+          <span>865～879周辺｜当日配置確認</span>
+        </div>
+        <div class="days"><b>77</b><small>補正点</small></div>
+      </div>
+      <p>21日に複数回再登場。設定6平均は約108.2%で、AT機より差枚証拠を重く扱う。</p>
+    </article>
+
+    <article class="pick-card">
+      <div class="pick-head">
+        <span class="rank rank-Am">A-</span>
+        <div class="pick-title">
+          <strong>カバネリ 海門決戦</strong>
+          <span>523～526 / 505～522側を優先確認</span>
+        </div>
+        <div class="days"><b>76</b><small>補正点</small></div>
+      </div>
+      <p>設定6 114.9%で掴んだ時の期待値は大きい。7/21中通路側全など列/ハーフ反復は評価する一方、単発大差枚は証拠として割引。</p>
+    </article>
+
+    <article class="pick-card">
+      <div class="pick-head">
+        <span class="rank rank-Am">A-</span>
+        <div class="pick-title">
+          <strong>マイジャグラーV / BOXローテ</strong>
+          <span>941～1006大型BOX内のマイ配置</span>
+        </div>
+        <div class="days"><b>75</b><small>補正点</small></div>
+      </div>
+      <p>設定6 109.4%。ジャグラー内では高期待値。単品の差枚より、壁側・BOX・列の平均挙動を優先。</p>
+    </article>
+
+    <article class="pick-card">
+      <div class="pick-head">
+        <span class="rank rank-Bp">B+</span>
+        <div class="pick-title">
+          <strong>ソードアート・オンラインII</strong>
+          <span>631～642</span>
+        </div>
+        <div class="days"><b>74</b><small>補正点</small></div>
+      </div>
+      <p>設定6 114.9%の期待値を加点。9/1全台系と戻しローテは評価するが、631～648帯の直近使用を減点。</p>
+    </article></div>
+  </section>
+
+  <section id="payout" class="section">
+    <div class="section-title"><h2>機種別 機械割補正</h2><span>設定6 / 8000G理論差枚</span></div>
+    <div class="floor-list">
+      <div class="floor-card best"><div class="floor-band"><b>ゴージャグ3</b><span>106.5% / 約+1,560枚</span></div><div class="floor-body"><strong>差枚証拠：重い</strong><p>低機械割なので、島平均プラスや+3000枚級はAT機より高設定根拠として強く扱う。</p></div></div>
+      <div class="floor-card best"><div class="floor-band"><b>ミスタージャグラー</b><span>107.3% / 約+1,752枚</span></div><div class="floor-body"><strong>差枚証拠：重い</strong><p>REG・合算とセットで評価。小台数の高配分を見抜きやすい。</p></div></div>
+      <div class="floor-card"><div class="floor-band"><b>マイジャグラーV</b><span>109.4% / 約+2,256枚</span></div><div class="floor-body"><strong>期待値：ジャグラー内で高め</strong><p>単品よりBOX・列の平均挙動を重視。</p></div></div>
+      <div class="floor-card hot"><div class="floor-band"><b>カバネリ / SAO2</b><span>114.9% / 約+3,576枚</span></div><div class="floor-body"><strong>高設定期待値：大</strong><p>掴んだ時の期待値は高い。ただし単発の+3000～5000枚だけでは高設定証拠として弱めに扱う。</p></div></div>
+    </div>
+    <div class="notice" style="margin-top:9px">補正式：総合スコア＝投入パターン点×80%＋設定6機械割価値点×20%。「差枚証拠補正」は過去結果の読み方にだけ使い、狙い目期待値とは分離しています。</div>
+  </section>
+
+  <section id="idle" class="section">
+    <div class="section-title"><h2>最近入っていない機種</h2><span>機種単位の強配分から</span></div>
+    <div class="idle-list"><div class="idle-row">
+      <div><strong>スーパーブラックジャック</strong><span>長期未使用側。現行配置を当日確認。</span></div>
+      <div class="idle-days">53<small>日</small></div>
+    </div>
+<div class="idle-row">
+      <div><strong>ゴーゴージャグラー3</strong><span>1日実績6回。単品と機種単位を分けて見る。</span></div>
+      <div class="idle-days">40<small>日</small></div>
+    </div>
+<div class="idle-row">
+      <div><strong>ミスタージャグラー</strong><span>小台数ローテ候補。</span></div>
+      <div class="idle-days">40<small>日</small></div>
+    </div>
+<div class="idle-row">
+      <div><strong>シャーマンキング</strong><span>休ませ期間は十分だが現行台番精度が弱い。</span></div>
+      <div class="idle-days">24<small>日</small></div>
+    </div></div>
+    <div class="notice" style="margin-top:9px">「空き日数」は単品良台ではなく、機種単位で強い配分が確認できた日から計算。直近の単品投入とは分けて見ます。</div>
+  </section>
+
+  <section id="performers" class="section">
+    <div class="section-title"><h2>来店演者 × メーカー</h2><span>店全体基準比</span></div>
+    <div class="performer-list"><article class="performer-card">
+      <div class="performer-top">
+        <div><strong>りちゃのすけ</strong><span>SANKYO系</span></div>
+        <span class="confidence">中</span>
+      </div>
+      <div class="ratio-line"><span style="width:61.1%"></span></div>
+      <div class="ratio-meta"><b>2.14×</b><span>店全体基準比</span></div>
+      <p>2回の結果照合でSANKYO系3/10（30%）。4/3はからくり＋VVV2、9/19もVVV2。北斗・マギレコも同時対象なので「SANKYO固定」ではなく「SANKYO寄り」。</p>
+    </article>
+<article class="performer-card">
+      <div class="performer-top">
+        <div><strong>司芭扶</strong><span>Sammy系</span></div>
+        <span class="confidence">高</span>
+      </div>
+      <div class="ratio-line"><span style="width:64.3%"></span></div>
+      <div class="ratio-meta"><b>2.25×</b><span>店全体基準比</span></div>
+      <p>4/9・5/9で北斗/カバネリなどSammy系が目立つ。複数回で再現。</p>
+    </article>
+<article class="performer-card">
+      <div class="performer-top">
+        <div><strong>髭原人</strong><span>SANKYO系</span></div>
+        <span class="confidence">高</span>
+      </div>
+      <div class="ratio-line"><span style="width:49.7%"></span></div>
+      <div class="ratio-meta"><b>1.74×</b><span>店全体基準比</span></div>
+      <p>SANKYO系が最多だが対象は広範囲。メーカー一点読みより店全体の強さを重視。</p>
+    </article>
+<article class="performer-card">
+      <div class="performer-top">
+        <div><strong>萬田千鶴</strong><span>ユニバーサル系</span></div>
+        <span class="confidence">中</span>
+      </div>
+      <div class="ratio-line"><span style="width:93.7%"></span></div>
+      <div class="ratio-meta"><b>3.28×</b><span>店全体基準比</span></div>
+      <p>ユニバーサル系50%だが2回のみ。合同来店要因あり。</p>
+    </article>
+<article class="performer-card">
+      <div class="performer-top">
+        <div><strong>龍馬ジュン</strong><span>ユニバーサル系</span></div>
+        <span class="confidence">中</span>
+      </div>
+      <div class="ratio-line"><span style="width:80.3%"></span></div>
+      <div class="ratio-meta"><b>2.81×</b><span>店全体基準比</span></div>
+      <p>ユニバーサル系が多いが、日によって山佐・SANKYO等へ分散。</p>
+    </article></div>
+    <div class="hypothesis">
+      <b>りちゃのすけ ＝ SANKYO仮説</b>
+      <p>4/3はからくり＋VVV2、9/19もVVV2が対象。2回の照合でSANKYO系を2/2回含み、延べ3/10機種＝30%。一方、9/19は北斗・マギレコも対象なので「SANKYO固定」ではなく「SANKYO寄り」として扱います。</p>
+    </div>
+  </section>
+
+  <section id="floor" class="section">
+    <div class="section-title"><h2>島図・場所ローテ</h2><span>最新配置優先</span></div>
+    <div class="floor-list"><article class="floor-card hot">
+      <div class="floor-band"><b>631～648</b><span>SAO2 → VVV2</span></div>
+      <div class="floor-body">
+        <strong>9/19 VVV2対象確定</strong>
+        <p>VVV2側を直近使用。SAO2側への戻しローテは見るが、帯全体の優先度は一段下げる。</p>
+      </div>
+    </article>
+<article class="floor-card used">
+      <div class="floor-band"><b>746～766</b><span>マギレコ / 新鬼 / モンハン</span></div>
+      <div class="floor-body">
+        <strong>9/19 マギレコ対象確定</strong>
+        <p>マギレコ自体は直近使用済み。同島の未使用側・隣接機種へローテするか確認。</p>
+      </div>
+    </article>
+<article class="floor-card hot">
+      <div class="floor-band"><b>778～792</b><span>SANKYO系連続島</span></div>
+      <div class="floor-body">
+        <strong>9/3→9/11→9/13で隣接移動</strong>
+        <p>かぐや→炎炎2→かのかり。演者補正がない日は場所ローテとして参考。</p>
+      </div>
+    </article>
+<article class="floor-card best">
+      <div class="floor-band"><b>830～843</b><span>技術介入・BT小島｜候補外</span></div>
+      <div class="floor-body">
+        <strong>830～835→841～843</strong>
+        <p>両側が直近で使われており、間の836～840を監視。</p>
+      </div>
+    </article>
+<article class="floor-card best">
+      <div class="floor-band"><b>865～936</b><span>ジャグラー中段帯</span></div>
+      <div class="floor-body">
+        <strong>列・塊・散らし中心</strong>
+        <p>ゴージャグ/ミスターの機種単位の空きと組み合わせる。</p>
+      </div>
+    </article>
+<article class="floor-card hot">
+      <div class="floor-band"><b>941～1006</b><span>ジャグラー大型BOX</span></div>
+      <div class="floor-body">
+        <strong>9/9 973～978列</strong>
+        <p>BOX・6台列の形成を早めに確認。</p>
+      </div>
+    </article></div>
+    <div class="notice" style="margin-top:9px">9/18新台入替後のため、固定台番を永久法則として扱わず、最新島図・現地配置を優先。9/19の北斗・マギレコ・VVV2は「直近使用済み」として次回候補を調整しています。</div>
+  </section>
+
+
+  <section id="history" class="section">
+    <div class="section-title"><h2>過去の対象一覧</h2><span>2026年4月～9月</span></div>
+    <div class="history-tools">
+      <input id="historySearch" type="search" placeholder="機種・演者・イベント名で検索" autocomplete="off">
+      <button id="historyClear" type="button">クリア</button>
+    </div>
+    <div class="history-summary">
+      <b>58日分</b>
+      <span>確認済みの対象機種・来店/イベントを新しい順に掲載</span>
+    </div>
+    <div id="historyList" class="history-list">
+      
+    <details class="month-group" open>
+      <summary><span>2026年9月</span><small>7日分</small></summary>
+      <div class="month-body">
+        
+        <article class="history-item confirmed-history" data-history-search="9/19（土） りちゃのすけ来店 / 関西ko取材 スマスロ北斗の拳、マギアレコード、ヴァルヴレイヴ2 9のつく日">
+          <div class="history-head">
+            <div class="history-date"><strong>9/19（土）</strong><span class="special-tag">9のつく日</span></div>
+            <span class="history-badge confirmed-badge">確定</span>
+          </div>
+          <div class="history-event">りちゃのすけ来店 / 関西KO取材</div>
+          <div class="history-machines">スマスロ北斗の拳、マギアレコード、ヴァルヴレイヴ2</div>
+        </article>
+        <article class="history-item" data-history-search="9/13（日） 二階堂亜樹来店 a-slot+ ディスクアップ ultraremix、スマスロ 甲鉄城のカバネリ 海門決戦 ">
+          <div class="history-head">
+            <div class="history-date"><strong>9/13（日）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">二階堂亜樹来店</div>
+          <div class="history-machines">A-SLOT+ ディスクアップ ULTRAREMIX、スマスロ 甲鉄城のカバネリ 海門決戦</div>
+        </article>
+        <article class="history-item" data-history-search="9/11（金） エイムズガール / 来栖有紀来店 とある魔術の禁書目録2、やじきた道中記、スマスロ 甲鉄城のカバネリ 海門決戦、ハナビ、戦国コレクション6、戦国乙女5、攻殻機動隊、新ハナビ、東京喰種、炎炎ノ消防隊2 11日（ゾロ目・★5）">
+          <div class="history-head">
+            <div class="history-date"><strong>9/11（金）</strong><span class="special-tag">11日（ゾロ目・★5）</span></div>
+            <span class="history-badge">10機種</span>
+          </div>
+          <div class="history-event">エイムズガール / 来栖有紀来店</div>
+          <div class="history-machines">とある魔術の禁書目録2、やじきた道中記、スマスロ 甲鉄城のカバネリ 海門決戦、ハナビ、戦国コレクション6、戦国乙女5、攻殻機動隊、新ハナビ、東京喰種、炎炎ノ消防隊2</div>
+        </article>
+        <article class="history-item" data-history-search="9/9（水） オオヌキ来店 / 橋本梨菜来店 a-slot+ ディスクアップ ultraremix、とある魔術の禁書目録2、ネオアイムジャグラーex、マイジャグラーv、マギアレコード、モンキーターンv、化物語、南国育ち、彼女、お借りします、炎炎ノ消防隊2、真打 吉宗 9/9（月日ゾロ目）">
+          <div class="history-head">
+            <div class="history-date"><strong>9/9（水）</strong><span class="special-tag">9/9（月日ゾロ目）</span></div>
+            <span class="history-badge">11機種</span>
+          </div>
+          <div class="history-event">オオヌキ来店 / 橋本梨菜来店</div>
+          <div class="history-machines">A-SLOT+ ディスクアップ ULTRAREMIX、とある魔術の禁書目録2、ネオアイムジャグラーEX、マイジャグラーV、マギアレコード、モンキーターンV、化物語、南国育ち、彼女、お借りします、炎炎ノ消防隊2、真打 吉宗</div>
+        </article>
+        <article class="history-item" data-history-search="9/6（日） freedia アイムジャグラーex、ゴッドイーター リザレクション、ジャグラーガールズss、ファンキージャグラー2、マイジャグラーv、ワールドダイスター ">
+          <div class="history-head">
+            <div class="history-date"><strong>9/6（日）</strong></div>
+            <span class="history-badge">6機種</span>
+          </div>
+          <div class="history-event">FREEDIA</div>
+          <div class="history-machines">アイムジャグラーEX、ゴッドイーター リザレクション、ジャグラーガールズSS、ファンキージャグラー2、マイジャグラーV、ワールドダイスター</div>
+        </article>
+        <article class="history-item" data-history-search="9/3（木） ワロス来店 やじきた道中記、ストリートファイター6、モンキーターンv、戦国乙女5、新鬼武者3、東京喰種 ">
+          <div class="history-head">
+            <div class="history-date"><strong>9/3（木）</strong></div>
+            <span class="history-badge">6機種</span>
+          </div>
+          <div class="history-event">ワロス来店</div>
+          <div class="history-machines">やじきた道中記、ストリートファイター6、モンキーターンV、戦国乙女5、新鬼武者3、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="9/1（火） one spark（ワン・スパーク取材） からくりサーカス2、とある魔術の禁書目録2、ソードアート・オンラインii、邪神ちゃんドロップキック ">
+          <div class="history-head">
+            <div class="history-date"><strong>9/1（火）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">ONE SPARK（ワン・スパーク取材）</div>
+          <div class="history-machines">からくりサーカス2、とある魔術の禁書目録2、ソードアート・オンラインII、邪神ちゃんドロップキック</div>
+        </article>
+      </div>
+    </details>
+    <details class="month-group">
+      <summary><span>2026年8月</span><small>10日分</small></summary>
+      <div class="month-body">
+        
+        <article class="history-item" data-history-search="8/29（土） 大感謝pop / 髭原人来店 からくりサーカス、アニマルスロットドッチ、ネオアイムジャグラーex、モンキーターンv、ワールドダイスター、北斗の拳 転生2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/29（土）</strong></div>
+            <span class="history-badge">6機種</span>
+          </div>
+          <div class="history-event">大感謝POP / 髭原人来店</div>
+          <div class="history-machines">からくりサーカス、アニマルスロットドッチ、ネオアイムジャグラーEX、モンキーターンV、ワールドダイスター、北斗の拳 転生2</div>
+        </article>
+        <article class="history-item" data-history-search="8/27（木） キコーナサマー / 未歩なな来店 からくりサーカス2、シャーマンキング、ストリートファイター6、スマスロ 甲鉄城のカバネリ 海門決戦、マギアレコード、モンキーターンv、ワールドダイスター、戦国乙女5、攻殻機動隊、東京喰種、炎炎ノ消防隊2 27日">
+          <div class="history-head">
+            <div class="history-date"><strong>8/27（木）</strong><span class="special-tag">27日</span></div>
+            <span class="history-badge">11機種</span>
+          </div>
+          <div class="history-event">キコーナサマー / 未歩なな来店</div>
+          <div class="history-machines">からくりサーカス2、シャーマンキング、ストリートファイター6、スマスロ 甲鉄城のカバネリ 海門決戦、マギアレコード、モンキーターンV、ワールドダイスター、戦国乙女5、攻殻機動隊、東京喰種、炎炎ノ消防隊2</div>
+        </article>
+        <article class="history-item" data-history-search="8/23（日） 大感謝pop / 関西ko取材 / 本田朋広来店 スーパーリオエース2、ネオアイムジャグラーex、ヤバチバ、東京喰種、炎炎ノ消防隊2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/23（日）</strong></div>
+            <span class="history-badge">5機種</span>
+          </div>
+          <div class="history-event">大感謝POP / 関西KO取材 / 本田朋広来店</div>
+          <div class="history-machines">スーパーリオエース2、ネオアイムジャグラーEX、ヤバチバ、東京喰種、炎炎ノ消防隊2</div>
+        </article>
+        <article class="history-item" data-history-search="8/21（金） キコーナサマー / スロソニ（gss） / 内藤沙季来店 ウルトラミラクルジャグラー、ゴッドイーター リザレクション、ジャグラーガールズss、ストリートファイター6、スマスロ 甲鉄城のカバネリ 海門決戦、ファンキージャグラー2、ワールドダイスター、戦国コレクション6、東京喰種、沖ドキ！black、真打 吉宗 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/21（金）</strong></div>
+            <span class="history-badge">11機種</span>
+          </div>
+          <div class="history-event">キコーナサマー / スロソニ（GSS） / 内藤沙季来店</div>
+          <div class="history-machines">ウルトラミラクルジャグラー、ゴッドイーター リザレクション、ジャグラーガールズSS、ストリートファイター6、スマスロ 甲鉄城のカバネリ 海門決戦、ファンキージャグラー2、ワールドダイスター、戦国コレクション6、東京喰種、沖ドキ！BLACK、真打 吉宗</div>
+        </article>
+        <article class="history-item" data-history-search="8/19（水） 『buzz time slot【bts】』収録（dmm） / 七瀬静香＆龍馬ジュン＆いち花 収録来店 / キコーナサマー アレックス ブライト、ケロット5 bt、スーパーリオエース2、新鬼武者3 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/19（水）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">『Buzz Time Slot【BTS】』収録（DMM） / 七瀬静香＆龍馬ジュン＆いち花 収録来店 / キコーナサマー</div>
+          <div class="history-machines">アレックス ブライト、ケロット5 BT、スーパーリオエース2、新鬼武者3</div>
+        </article>
+        <article class="history-item" data-history-search="8/13（木） キコーナサマー / 司芭扶来店 / 鄭大世来店 ゴッドイーター リザレクション、スマスロ 甲鉄城のカバネリ 海門決戦、ヴァルヴレイヴ2、戦国コレクション6、東京喰種 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/13（木）</strong></div>
+            <span class="history-badge">5機種</span>
+          </div>
+          <div class="history-event">キコーナサマー / 司芭扶来店 / 鄭大世来店</div>
+          <div class="history-machines">ゴッドイーター リザレクション、スマスロ 甲鉄城のカバネリ 海門決戦、ヴァルヴレイヴ2、戦国コレクション6、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="8/11（火） エイムズガール takt op. 運命は真紅き旋律の街を、かぐや様は告らせたい、からくりサーカス、からくりサーカス2、アレックス ブライト、ウルトラミラクルジャグラー、ゴーゴージャグラー3、シャーマンキング、ネオアイムジャグラーex、ハナビ、マイジャグラーv、ミスタージャグラー、モンキーターンv、戦国乙女5、沖ドキ！ゴージャス 30φ、無職転生 ～異世界行ったら本気だす～ 11日（ゾロ目・★5）">
+          <div class="history-head">
+            <div class="history-date"><strong>8/11（火）</strong><span class="special-tag">11日（ゾロ目・★5）</span></div>
+            <span class="history-badge">16機種</span>
+          </div>
+          <div class="history-event">エイムズガール</div>
+          <div class="history-machines">takt op. 運命は真紅き旋律の街を、かぐや様は告らせたい、からくりサーカス、からくりサーカス2、アレックス ブライト、ウルトラミラクルジャグラー、ゴーゴージャグラー3、シャーマンキング、ネオアイムジャグラーEX、ハナビ、マイジャグラーV、ミスタージャグラー、モンキーターンV、戦国乙女5、沖ドキ！ゴージャス 30Φ、無職転生 ～異世界行ったら本気だす～</div>
+        </article>
+        <article class="history-item" data-history-search="8/6（木） freedia ジャグラーガールズss、ネオアイムジャグラーex、マイジャグラーv ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/6（木）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">FREEDIA</div>
+          <div class="history-machines">ジャグラーガールズSS、ネオアイムジャグラーEX、マイジャグラーV</div>
+        </article>
+        <article class="history-item" data-history-search="8/3（月） 新台入替 / 阿波みなみ来店 からくりサーカス2、やじきた道中記、スマスロ北斗の拳、ヴァルヴレイヴ2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/3（月）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">新台入替 / 阿波みなみ来店</div>
+          <div class="history-machines">からくりサーカス2、やじきた道中記、スマスロ北斗の拳、ヴァルヴレイヴ2</div>
+        </article>
+        <article class="history-item" data-history-search="8/1（土） one spark（ワン・スパーク取材） / つばさ舞来店 shake bonus trigger、バイオハザード re:3、ミリオンゴッド-神々の軌跡-、新鬼武者3 ">
+          <div class="history-head">
+            <div class="history-date"><strong>8/1（土）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">ONE SPARK（ワン・スパーク取材） / つばさ舞来店</div>
+          <div class="history-machines">SHAKE BONUS TRIGGER、バイオハザード RE:3、ミリオンゴッド-神々の軌跡-、新鬼武者3</div>
+        </article>
+      </div>
+    </details>
+    <details class="month-group">
+      <summary><span>2026年7月</span><small>11日分</small></summary>
+      <div class="month-body">
+        
+        <article class="history-item" data-history-search="7/29（水） 髭原人来店 toloveる trance、ultraman、かぐや様は告らせたい、からくりサーカス、からくりサーカス2、ウルトラミラクルジャグラー、ガンダムユニコーン2、シャーマンキング、ジャグラーガールズss、スマスロ 東京リベンジャーズ、スマスロ 甲鉄城のカバネリ 海門決戦、スマスロ北斗の拳、スーパーブラックジャック、スーパーリオエース2、ソードアート・オンラインii、バイオハザード re:3、ファンキージャグラー2、ミリオンゴッド-神々の軌跡-、モンスターハンターライズ、ヴァルヴレイヴ2、化物語、戦国コレクション6、攻殻機動隊、東京喰種、炎炎ノ消防隊2、無職転生 ～異世界行ったら本気だす～ ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/29（水）</strong></div>
+            <span class="history-badge">26機種</span>
+          </div>
+          <div class="history-event">髭原人来店</div>
+          <div class="history-machines">ToLOVEる TRANCE、ULTRAMAN、かぐや様は告らせたい、からくりサーカス、からくりサーカス2、ウルトラミラクルジャグラー、ガンダムユニコーン2、シャーマンキング、ジャグラーガールズSS、スマスロ 東京リベンジャーズ、スマスロ 甲鉄城のカバネリ 海門決戦、スマスロ北斗の拳、スーパーブラックジャック、スーパーリオエース2、ソードアート・オンラインII、バイオハザード RE:3、ファンキージャグラー2、ミリオンゴッド-神々の軌跡-、モンスターハンターライズ、ヴァルヴレイヴ2、化物語、戦国コレクション6、攻殻機動隊、東京喰種、炎炎ノ消防隊2、無職転生 ～異世界行ったら本気だす～</div>
+        </article>
+        <article class="history-item" data-history-search="7/27（月） 鷲尾めい来店 toloveる trance、takt op. 運命は真紅き旋律の街を、からくりサーカス2、スマスロ 甲鉄城のカバネリ 海門決戦、ソードアート・オンラインii、ヤバチバ、新鬼武者3、東京喰種 27日">
+          <div class="history-head">
+            <div class="history-date"><strong>7/27（月）</strong><span class="special-tag">27日</span></div>
+            <span class="history-badge">8機種</span>
+          </div>
+          <div class="history-event">鷲尾めい来店</div>
+          <div class="history-machines">ToLOVEる TRANCE、takt op. 運命は真紅き旋律の街を、からくりサーカス2、スマスロ 甲鉄城のカバネリ 海門決戦、ソードアート・オンラインII、ヤバチバ、新鬼武者3、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="7/23（木） ゆうちゃろ来店 スマスロ北斗の拳、マギアレコード、攻殻機動隊、炎炎ノ消防隊2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/23（木）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">ゆうちゃろ来店</div>
+          <div class="history-machines">スマスロ北斗の拳、マギアレコード、攻殻機動隊、炎炎ノ消防隊2</div>
+        </article>
+        <article class="history-item" data-history-search="7/21（火） 『ジャグ道』収録（必勝本） / ガリぞう＆若葉まいたけ収録来店 ゴーゴージャグラー3、ミスタージャグラー ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/21（火）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">『ジャグ道』収録（必勝本） / ガリぞう＆若葉まいたけ収録来店</div>
+          <div class="history-machines">ゴーゴージャグラー3、ミスタージャグラー</div>
+        </article>
+        <article class="history-item" data-history-search="7/19（日） 関西ko取材 化物語、攻殻機動隊、真打 吉宗 ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/19（日）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">関西KO取材</div>
+          <div class="history-machines">化物語、攻殻機動隊、真打 吉宗</div>
+        </article>
+        <article class="history-item" data-history-search="7/13（月） ytr収録来店 スマスロ 甲鉄城のカバネリ 海門決戦、モンキーターンv、東京喰種 ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/13（月）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">ytr収録来店</div>
+          <div class="history-machines">スマスロ 甲鉄城のカバネリ 海門決戦、モンキーターンV、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="7/11（土） エイムズガール アレックス ブライト、ガンダムユニコーン 覚醒drive、ゴーゴージャグラー3、スマスロ 甲鉄城のカバネリ 海門決戦、スーパーブラックジャック、ネオアイムジャグラーex、ハナビ、マイジャグラーv、ミリオンゴッド-神々の軌跡-、化物語 11日（ゾロ目・★5）">
+          <div class="history-head">
+            <div class="history-date"><strong>7/11（土）</strong><span class="special-tag">11日（ゾロ目・★5）</span></div>
+            <span class="history-badge">10機種</span>
+          </div>
+          <div class="history-event">エイムズガール</div>
+          <div class="history-machines">アレックス ブライト、ガンダムユニコーン 覚醒DRIVE、ゴーゴージャグラー3、スマスロ 甲鉄城のカバネリ 海門決戦、スーパーブラックジャック、ネオアイムジャグラーEX、ハナビ、マイジャグラーV、ミリオンゴッド-神々の軌跡-、化物語</div>
+        </article>
+        <article class="history-item" data-history-search="7/9（木） 橘リノ収録来店 スマスロ 甲鉄城のカバネリ 海門決戦 ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/9（木）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">橘リノ収録来店</div>
+          <div class="history-machines">スマスロ 甲鉄城のカバネリ 海門決戦</div>
+        </article>
+        <article class="history-item" data-history-search="7/6（月） freedia / 最新台解禁 / 河原みのり来店 アニマルスロットドッチ、スマスロ 東京リベンジャーズ、ファンキージャグラー2、マイジャグラーv、マギアレコード、ヤバチバ、ヴァルヴレイヴ2、沖ドキ！black、無職転生 ～異世界行ったら本気だす～ 毎月6日">
+          <div class="history-head">
+            <div class="history-date"><strong>7/6（月）</strong><span class="special-tag">毎月6日</span></div>
+            <span class="history-badge">9機種</span>
+          </div>
+          <div class="history-event">FREEDIA / 最新台解禁 / 河原みのり来店</div>
+          <div class="history-machines">アニマルスロットドッチ、スマスロ 東京リベンジャーズ、ファンキージャグラー2、マイジャグラーV、マギアレコード、ヤバチバ、ヴァルヴレイヴ2、沖ドキ！BLACK、無職転生 ～異世界行ったら本気だす～</div>
+        </article>
+        <article class="history-item" data-history-search="7/3（金） 七瀬静香来店 からくりサーカス、バイオハザード re:3、ヴァルヴレイヴ2、化物語 ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/3（金）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">七瀬静香来店</div>
+          <div class="history-machines">からくりサーカス、バイオハザード RE:3、ヴァルヴレイヴ2、化物語</div>
+        </article>
+        <article class="history-item" data-history-search="7/1（水） one spark（ワン・スパーク取材） スマスロ北斗の拳 ">
+          <div class="history-head">
+            <div class="history-date"><strong>7/1（水）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">ONE SPARK（ワン・スパーク取材）</div>
+          <div class="history-machines">スマスロ北斗の拳</div>
+        </article>
+      </div>
+    </details>
+    <details class="month-group">
+      <summary><span>2026年6月</span><small>12日分</small></summary>
+      <div class="month-body">
+        
+        <article class="history-item" data-history-search="6/29（月） 髭原人来店 ミリオンゴッド-神々の軌跡-、ヴァルヴレイヴ2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/29（月）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">髭原人来店</div>
+          <div class="history-machines">ミリオンゴッド-神々の軌跡-、ヴァルヴレイヴ2</div>
+        </article>
+        <article class="history-item" data-history-search="6/27（土） 神木麗来店 かぐや様は告らせたい、からくりサーカス、ウルトラミラクルジャグラー、ゴーゴージャグラー3、サンダーv、スーパーリオエース2、ミスタージャグラー、東京喰種、無職転生 ～異世界行ったら本気だす～、鉄拳6 27日">
+          <div class="history-head">
+            <div class="history-date"><strong>6/27（土）</strong><span class="special-tag">27日</span></div>
+            <span class="history-badge">10機種</span>
+          </div>
+          <div class="history-event">神木麗来店</div>
+          <div class="history-machines">かぐや様は告らせたい、からくりサーカス、ウルトラミラクルジャグラー、ゴーゴージャグラー3、サンダーV、スーパーリオエース2、ミスタージャグラー、東京喰種、無職転生 ～異世界行ったら本気だす～、鉄拳6</div>
+        </article>
+        <article class="history-item" data-history-search="6/23（火） すぎためんま来店 / めろん来店 / 枢木あおい来店 ガンダムユニコーン 覚醒drive、ビッグドリーム the golden pusher、マギアレコード ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/23（火）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">すぎためんま来店 / めろん来店 / 枢木あおい来店</div>
+          <div class="history-machines">ガンダムユニコーン 覚醒DRIVE、ビッグドリーム THE GOLDEN PUSHER、マギアレコード</div>
+        </article>
+        <article class="history-item" data-history-search="6/21（日） ジャンバリ潜入取材 雷 ゴーゴージャグラー3 ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/21（日）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">ジャンバリ潜入取材 雷</div>
+          <div class="history-machines">ゴーゴージャグラー3</div>
+        </article>
+        <article class="history-item" data-history-search="6/19（金） 『いいカード』収録（マルっとwave） スマスロ 甲鉄城のカバネリ 海門決戦 ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/19（金）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">『いいカード』収録（マルっとWAVE）</div>
+          <div class="history-machines">スマスロ 甲鉄城のカバネリ 海門決戦</div>
+        </article>
+        <article class="history-item" data-history-search="6/13（土） 関西ko取材 / 萬田千鶴来店 / 龍馬ジュン来店 birdie wing、ネオアイムジャグラーex、マギアレコード ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/13（土）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">関西KO取材 / 萬田千鶴来店 / 龍馬ジュン来店</div>
+          <div class="history-machines">BIRDIE WING、ネオアイムジャグラーEX、マギアレコード</div>
+        </article>
+        <article class="history-item" data-history-search="6/11（木） エイムズガール ウルトラミラクルジャグラー、スマスロ 甲鉄城のカバネリ 海門決戦、スマスロ北斗の拳、ネオアイムジャグラーex、ミスタージャグラー、モンキーターンv、モンスターハンターライズ、化物語、東京喰種 11日（ゾロ目・★5）">
+          <div class="history-head">
+            <div class="history-date"><strong>6/11（木）</strong><span class="special-tag">11日（ゾロ目・★5）</span></div>
+            <span class="history-badge">9機種</span>
+          </div>
+          <div class="history-event">エイムズガール</div>
+          <div class="history-machines">ウルトラミラクルジャグラー、スマスロ 甲鉄城のカバネリ 海門決戦、スマスロ北斗の拳、ネオアイムジャグラーEX、ミスタージャグラー、モンキーターンV、モンスターハンターライズ、化物語、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="6/9（火） 橘リノ来店 かぐや様は告らせたい、アレックス ブライト、バイオハザード re:3、ファンキージャグラー2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/9（火）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">橘リノ来店</div>
+          <div class="history-machines">かぐや様は告らせたい、アレックス ブライト、バイオハザード RE:3、ファンキージャグラー2</div>
+        </article>
+        <article class="history-item" data-history-search="6/6（土） freediaポスター／企画 / アワード加盟店調査 / みさき来店 toloveる trance、アイムジャグラーex、スマスロ 甲鉄城のカバネリ 海門決戦、デビルメイクライ5、ネオアイムジャグラーex、マイジャグラーv、ミスタージャグラー、ミリオンゴッド-神々の軌跡-、モンスターハンターライズ、北斗の拳 転生2、東京喰種 6/6（月日ゾロ目）">
+          <div class="history-head">
+            <div class="history-date"><strong>6/6（土）</strong><span class="special-tag">6/6（月日ゾロ目）</span></div>
+            <span class="history-badge">11機種</span>
+          </div>
+          <div class="history-event">FREEDIAポスター／企画 / アワード加盟店調査 / みさき来店</div>
+          <div class="history-machines">ToLOVEる TRANCE、アイムジャグラーEX、スマスロ 甲鉄城のカバネリ 海門決戦、デビルメイクライ5、ネオアイムジャグラーEX、マイジャグラーV、ミスタージャグラー、ミリオンゴッド-神々の軌跡-、モンスターハンターライズ、北斗の拳 転生2、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="6/5（金） — 化物語 ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/5（金）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">—</div>
+          <div class="history-machines">化物語</div>
+        </article>
+        <article class="history-item" data-history-search="6/3（水） 『スロ遊戯』収録（諸積家） スーパーリオエース2、バイオハザード re:3、攻殻機動隊 ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/3（水）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">『スロ遊戯』収録（諸積家）</div>
+          <div class="history-machines">スーパーリオエース2、バイオハザード RE:3、攻殻機動隊</div>
+        </article>
+        <article class="history-item" data-history-search="6/1（月） one spark（ワン・スパーク取材） ミリオンゴッド-神々の軌跡- ">
+          <div class="history-head">
+            <div class="history-date"><strong>6/1（月）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">ONE SPARK（ワン・スパーク取材）</div>
+          <div class="history-machines">ミリオンゴッド-神々の軌跡-</div>
+        </article>
+      </div>
+    </details>
+    <details class="month-group">
+      <summary><span>2026年5月</span><small>9日分</small></summary>
+      <div class="month-body">
+        
+        <article class="history-item" data-history-search="5/29（金） チャン☆ゆな来店 / 髭原人来店 ミリオンゴッド-神々の軌跡- ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/29（金）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">チャン☆ゆな来店 / 髭原人来店</div>
+          <div class="history-machines">ミリオンゴッド-神々の軌跡-</div>
+        </article>
+        <article class="history-item" data-history-search="5/27（水） 伊藤舞雪来店 ゴッドイーター リザレクション、ゴーゴージャグラー3、スーパーブラックジャック、デビルメイクライ5、炎炎ノ消防隊2 27日">
+          <div class="history-head">
+            <div class="history-date"><strong>5/27（水）</strong><span class="special-tag">27日</span></div>
+            <span class="history-badge">5機種</span>
+          </div>
+          <div class="history-event">伊藤舞雪来店</div>
+          <div class="history-machines">ゴッドイーター リザレクション、ゴーゴージャグラー3、スーパーブラックジャック、デビルメイクライ5、炎炎ノ消防隊2</div>
+        </article>
+        <article class="history-item" data-history-search="5/21（木） ジャンバリ潜入取材 雷 ジャグラーガールズss、ファンキージャグラー2 ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/21（木）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">ジャンバリ潜入取材 雷</div>
+          <div class="history-machines">ジャグラーガールズSS、ファンキージャグラー2</div>
+        </article>
+        <article class="history-item" data-history-search="5/19（火） てつ収録来店 ミリオンゴッド-神々の軌跡-、モンスターハンターライズ ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/19（火）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">てつ収録来店</div>
+          <div class="history-machines">ミリオンゴッド-神々の軌跡-、モンスターハンターライズ</div>
+        </article>
+        <article class="history-item" data-history-search="5/13（水） 『オーバーフロー』収録（ゆるバナ） / 『オーバーフロー』収録（スクープtv） shake、からくりサーカス、スマスロ 甲鉄城のカバネリ 海門決戦、スーパーリオエース2、マギアレコード、モンキーターンv ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/13（水）</strong></div>
+            <span class="history-badge">6機種</span>
+          </div>
+          <div class="history-event">『オーバーフロー』収録（ゆるバナ） / 『オーバーフロー』収録（スクープTV）</div>
+          <div class="history-machines">SHAKE、からくりサーカス、スマスロ 甲鉄城のカバネリ 海門決戦、スーパーリオエース2、マギアレコード、モンキーターンV</div>
+        </article>
+        <article class="history-item" data-history-search="5/11（月） エイムズガール かぐや様は告らせたい、からくりサーカス、アレックス ブライト、カバネリ、ゴーゴージャグラー3、スマスロ北斗の拳、スーパーブラックジャック、ネオアイムジャグラーex、ハナビ、マイジャグラーv、マギアレコード、ミスタージャグラー、モンキーターンv、ヴァルヴレイヴ2、主役は銭形5、攻殻機動隊、新鬼武者3、鉄拳6 11日（ゾロ目・★5）">
+          <div class="history-head">
+            <div class="history-date"><strong>5/11（月）</strong><span class="special-tag">11日（ゾロ目・★5）</span></div>
+            <span class="history-badge">18機種</span>
+          </div>
+          <div class="history-event">エイムズガール</div>
+          <div class="history-machines">かぐや様は告らせたい、からくりサーカス、アレックス ブライト、カバネリ、ゴーゴージャグラー3、スマスロ北斗の拳、スーパーブラックジャック、ネオアイムジャグラーEX、ハナビ、マイジャグラーV、マギアレコード、ミスタージャグラー、モンキーターンV、ヴァルヴレイヴ2、主役は銭形5、攻殻機動隊、新鬼武者3、鉄拳6</div>
+        </article>
+        <article class="history-item" data-history-search="5/9（土） 司芭扶来店 スマスロ 甲鉄城のカバネリ 海門決戦、スマスロ北斗の拳 ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/9（土）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">司芭扶来店</div>
+          <div class="history-machines">スマスロ 甲鉄城のカバネリ 海門決戦、スマスロ北斗の拳</div>
+        </article>
+        <article class="history-item" data-history-search="5/3（日） 枢木あおい来店 スマスロ北斗の拳、東京喰種 ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/3（日）</strong></div>
+            <span class="history-badge">2機種</span>
+          </div>
+          <div class="history-event">枢木あおい来店</div>
+          <div class="history-machines">スマスロ北斗の拳、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="5/1（金） one spark（ワン・スパーク取材） アズールレーン、ガンダムユニコーン、ゴーゴージャグラー3、シャーマンキング、ディスクアップ ultraremix、北斗の拳 転生2、沖ドキ！duo アンコール、異世界かるてっとbt ">
+          <div class="history-head">
+            <div class="history-date"><strong>5/1（金）</strong></div>
+            <span class="history-badge">8機種</span>
+          </div>
+          <div class="history-event">ONE SPARK（ワン・スパーク取材）</div>
+          <div class="history-machines">アズールレーン、ガンダムユニコーン、ゴーゴージャグラー3、シャーマンキング、ディスクアップ ULTRAREMIX、北斗の拳 転生2、沖ドキ！DUO アンコール、異世界かるてっとBT</div>
+        </article>
+      </div>
+    </details>
+    <details class="month-group">
+      <summary><span>2026年4月</span><small>9日分</small></summary>
+      <div class="month-body">
+        
+        <article class="history-item" data-history-search="4/29（水） 髭原人来店 / 麦芽ちゃん来店 toloveる trance、かぐや様は告らせたい、からくりサーカス、クレアbt、シャーマンキング、ヨルムンガンド ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/29（水）</strong></div>
+            <span class="history-badge">6機種</span>
+          </div>
+          <div class="history-event">髭原人来店 / 麦芽ちゃん来店</div>
+          <div class="history-machines">ToLOVEる TRANCE、かぐや様は告らせたい、からくりサーカス、クレアBT、シャーマンキング、ヨルムンガンド</div>
+        </article>
+        <article class="history-item" data-history-search="4/27（月） うんぱい来店 かぐや様は告らせたい、ゴッドイーター、ゴブリンスレイヤーii、モンスターハンターライズ、ヴァルヴレイヴ2、東京喰種、鉄拳6 27日">
+          <div class="history-head">
+            <div class="history-date"><strong>4/27（月）</strong><span class="special-tag">27日</span></div>
+            <span class="history-badge">7機種</span>
+          </div>
+          <div class="history-event">うんぱい来店</div>
+          <div class="history-machines">かぐや様は告らせたい、ゴッドイーター、ゴブリンスレイヤーII、モンスターハンターライズ、ヴァルヴレイヴ2、東京喰種、鉄拳6</div>
+        </article>
+        <article class="history-item" data-history-search="4/23（木） 『ファンのいうこと聞きなさい！～パチ好き女子のシンデレラストーリー～』収録 / 加藤やさしさ来店 チバリヨ2、マギアレコード、ミリオンゴッド-神々の軌跡- ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/23（木）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">『ファンのいうこと聞きなさい！～パチ好き女子のシンデレラストーリー～』収録 / 加藤やさしさ来店</div>
+          <div class="history-machines">チバリヨ2、マギアレコード、ミリオンゴッド-神々の軌跡-</div>
+        </article>
+        <article class="history-item" data-history-search="4/21（火） 『x style（クロススタイル）』収録（janbari.tv） / 萬田千鶴来店 カバネリ、ディスクアップ、ハナビ、モンスターハンターライズ、沖ドキ！black ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/21（火）</strong></div>
+            <span class="history-badge">5機種</span>
+          </div>
+          <div class="history-event">『X style（クロススタイル）』収録（JANBARI.TV） / 萬田千鶴来店</div>
+          <div class="history-machines">カバネリ、ディスクアップ、ハナビ、モンスターハンターライズ、沖ドキ！BLACK</div>
+        </article>
+        <article class="history-item" data-history-search="4/19（日） 純白彩永来店 スマスロ北斗の拳、ヨルムンガンド、沖ドキ！duo アンコール、鉄拳6 ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/19（日）</strong></div>
+            <span class="history-badge">4機種</span>
+          </div>
+          <div class="history-event">純白彩永来店</div>
+          <div class="history-machines">スマスロ北斗の拳、ヨルムンガンド、沖ドキ！DUO アンコール、鉄拳6</div>
+        </article>
+        <article class="history-item" data-history-search="4/13（月） 『もっくんのスロっちょ！』収録（スクープtv） スマスロ 東京リベンジャーズ ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/13（月）</strong></div>
+            <span class="history-badge">1機種</span>
+          </div>
+          <div class="history-event">『もっくんのスロっちょ！』収録（スクープTV）</div>
+          <div class="history-machines">スマスロ 東京リベンジャーズ</div>
+        </article>
+        <article class="history-item" data-history-search="4/11（土） エイムズガール かぐや様は告らせたい、アクダマドライブ、スマスロ 甲鉄城のカバネリ 海門決戦、マイジャグラーv、主役は銭形5、化物語、北斗の拳 転生2、東京喰種 11日（ゾロ目・★5）">
+          <div class="history-head">
+            <div class="history-date"><strong>4/11（土）</strong><span class="special-tag">11日（ゾロ目・★5）</span></div>
+            <span class="history-badge">8機種</span>
+          </div>
+          <div class="history-event">エイムズガール</div>
+          <div class="history-machines">かぐや様は告らせたい、アクダマドライブ、スマスロ 甲鉄城のカバネリ 海門決戦、マイジャグラーV、主役は銭形5、化物語、北斗の拳 転生2、東京喰種</div>
+        </article>
+        <article class="history-item" data-history-search="4/9（木） 司芭扶来店 スマスロ北斗の拳、新ハナビ、沖ドキ！black ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/9（木）</strong></div>
+            <span class="history-badge">3機種</span>
+          </div>
+          <div class="history-event">司芭扶来店</div>
+          <div class="history-machines">スマスロ北斗の拳、新ハナビ、沖ドキ！BLACK</div>
+        </article>
+        <article class="history-item" data-history-search="4/3（金） 回胴遊戯ジャッジメント（マルっとwave） / kikki＆限界♰後藤ちゃん＆宝条凛＆すぎためんま＆ねきぽよ＆めろん＆ユウリ＆りちゃのすけ 収録来店 / 新台入替 toloveるダークネス、からくりサーカス、シャーマンキング、モンキーターンv、ヴァルヴレイヴ2、攻殻機動隊、東京喰種 ">
+          <div class="history-head">
+            <div class="history-date"><strong>4/3（金）</strong></div>
+            <span class="history-badge">7機種</span>
+          </div>
+          <div class="history-event">回胴遊戯ジャッジメント（マルっとWAVE） / KIKKI＆限界♰後藤ちゃん＆宝条凛＆すぎためんま＆ねきぽよ＆めろん＆ユウリ＆りちゃのすけ 収録来店 / 新台入替</div>
+          <div class="history-machines">ToLOVEるダークネス、からくりサーカス、シャーマンキング、モンキーターンV、ヴァルヴレイヴ2、攻殻機動隊、東京喰種</div>
+        </article>
+      </div>
+    </details>
+    </div>
+    <div id="historyEmpty" class="notice" style="display:none;margin-top:9px">該当する履歴がありません。</div>
+  </section>
+
+
+
+
+
+<section id="tapfloor" class="section">
+  <div class="section-title"><h2>台番帯をタップ</h2><span>詳細ポップアップ</span></div>
+  <div class="tap-grid">
+    <a class="tap-block tap-link" href="#modal-b451" aria-label="451～486 東京喰種BOX の詳細を開く">
+      <div class="r">451～486</div>
+      <div class="n">東京喰種BOX</div>
+      <div class="m">スパイキー系</div>
+      <div class="scorebar"><i style="width:57%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b505" aria-label="505～567 カバネリ/主力新台 の詳細を開く">
+      <div class="r">505～567</div>
+      <div class="n">カバネリ/主力新台</div>
+      <div class="m">Sammy系</div>
+      <div class="scorebar"><i style="width:64%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b577" aria-label="577～594 禁書目録2帯 の詳細を開く">
+      <div class="r">577～594</div>
+      <div class="n">禁書目録2帯</div>
+      <div class="m">藤商事系</div>
+      <div class="scorebar"><i style="width:11%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b595" aria-label="595～605 モンキーV帯 の詳細を開く">
+      <div class="r">595～605</div>
+      <div class="n">モンキーV帯</div>
+      <div class="m">山佐系</div>
+      <div class="scorebar"><i style="width:36%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b631" aria-label="631～648 SAO2 / VVV2 の詳細を開く">
+      <div class="r">631～648</div>
+      <div class="n">SAO2 / VVV2</div>
+      <div class="m">SANKYO系</div>
+      <div class="scorebar"><i style="width:43%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b655" aria-label="655～702 大型AT連続島 の詳細を開く">
+      <div class="r">655～702</div>
+      <div class="n">大型AT連続島</div>
+      <div class="m">混合</div>
+      <div class="scorebar"><i style="width:71%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b703" aria-label="703～745 北斗/周辺AT の詳細を開く">
+      <div class="r">703～745</div>
+      <div class="n">北斗/周辺AT</div>
+      <div class="m">Sammy系</div>
+      <div class="scorebar"><i style="width:50%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b746" aria-label="746～766 マギレコ/新鬼/モンハン の詳細を開く">
+      <div class="r">746～766</div>
+      <div class="n">マギレコ/新鬼/モンハン</div>
+      <div class="m">ユニバーサル系</div>
+      <div class="scorebar"><i style="width:71%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b778" aria-label="778～792 SANKYO連続帯 の詳細を開く">
+      <div class="r">778～792</div>
+      <div class="n">SANKYO連続帯</div>
+      <div class="m">SANKYO系</div>
+      <div class="scorebar"><i style="width:82%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b830" aria-label="830～843 技術介入島 の詳細を開く">
+      <div class="r">830～843</div>
+      <div class="n">技術介入島（候補外）</div>
+      <div class="m">ユニバーサル系</div>
+      <div class="scorebar"><i style="width:100%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b865" aria-label="865～936 ジャグラー中段帯 の詳細を開く">
+      <div class="r">865～936</div>
+      <div class="n">ジャグラー中段帯</div>
+      <div class="m">北電子系</div>
+      <div class="scorebar"><i style="width:93%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a>
+    <a class="tap-block tap-link" href="#modal-b941" aria-label="941～1006 ジャグラー大型BOX の詳細を開く">
+      <div class="r">941～1006</div>
+      <div class="n">ジャグラー大型BOX</div>
+      <div class="m">北電子系</div>
+      <div class="scorebar"><i style="width:71%"></i></div>
+      <div class="tap-hint">タップで詳細 ›</div>
+    </a></div>
+  <div class="notice" style="margin-top:9px">
+    各ブロックをタップすると、累計投入・直近30日・最終確認日・次回候補スコアを表示します。
+    JavaScriptを使わない方式に変更済みです。
+  </div>
+</section>
+
+    <div id="modal-b451" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>451～486｜東京喰種BOX</h3>
+        <div class="chip">スパイキー系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>16回</b></div>
+          <div><span>直近30日</span><b>5回</b></div>
+          <div><span>最終確認</span><b>2026/09/11</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b505" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>505～567｜カバネリ/主力新台</h3>
+        <div class="chip">Sammy系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>18回</b></div>
+          <div><span>直近30日</span><b>4回</b></div>
+          <div><span>最終確認</span><b>2026/09/13</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b577" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>577～594｜禁書目録2帯</h3>
+        <div class="chip">藤商事系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>3回</b></div>
+          <div><span>直近30日</span><b>3回</b></div>
+          <div><span>最終確認</span><b>2026/09/11</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b595" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>595～605｜モンキーV帯</h3>
+        <div class="chip">山佐系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>10回</b></div>
+          <div><span>直近30日</span><b>4回</b></div>
+          <div><span>最終確認</span><b>2026/09/09</b></div>
+          <div><span>次回スコア</span><b>60</b></div>
+        </div>
+        <div class="notice">B｜モンキーターンV</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b631" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>631～648｜SAO2 / VVV2</h3>
+        <div class="chip">SANKYO系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>12回</b></div>
+          <div><span>直近30日</span><b>1回</b></div>
+          <div><span>最終確認</span><b>2026/09/01</b></div>
+          <div><span>次回スコア</span><b>74</b></div>
+        </div>
+        <div class="notice">B+｜ソードアート・オンラインII</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b655" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>655～702｜大型AT連続島</h3>
+        <div class="chip">混合</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>20回</b></div>
+          <div><span>直近30日</span><b>6回</b></div>
+          <div><span>最終確認</span><b>2026/09/11</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b703" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>703～745｜北斗/周辺AT</h3>
+        <div class="chip">Sammy系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>14回</b></div>
+          <div><span>直近30日</span><b>1回</b></div>
+          <div><span>最終確認</span><b>2026/08/29</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b746" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>746～766｜マギレコ/新鬼/モンハン</h3>
+        <div class="chip">ユニバーサル系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>20回</b></div>
+          <div><span>直近30日</span><b>4回</b></div>
+          <div><span>最終確認</span><b>2026/09/09</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b778" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>778～792｜SANKYO連続帯</h3>
+        <div class="chip">SANKYO系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>23回</b></div>
+          <div><span>直近30日</span><b>7回</b></div>
+          <div><span>最終確認</span><b>2026/09/11</b></div>
+          <div><span>次回スコア</span><b>60</b></div>
+        </div>
+        <div class="notice">B｜SANKYO系連続帯</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b830" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>830～843｜技術介入島</h3>
+        <div class="chip">ユニバーサル系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>28回</b></div>
+          <div><span>直近30日</span><b>9回</b></div>
+          <div><span>最終確認</span><b>2026/09/13</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">候補外｜技術介入系は打たない方針</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b865" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>865～936｜ジャグラー中段帯</h3>
+        <div class="chip">北電子系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>26回</b></div>
+          <div><span>直近30日</span><b>4回</b></div>
+          <div><span>最終確認</span><b>2026/09/09</b></div>
+          <div><span>次回スコア</span><b>188</b></div>
+        </div>
+        <div class="notice">A｜ゴーゴージャグラー3 / A-｜ミスタージャグラー</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+    <div id="modal-b941" class="css-modal" role="dialog" aria-modal="true">
+      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
+      <div class="css-modal-card">
+        <div class="modal-grabber"></div>
+        <h3>941～1006｜ジャグラー大型BOX</h3>
+        <div class="chip">北電子系</div>
+        <div class="modal-stat">
+          <div><span>累計投入</span><b>20回</b></div>
+          <div><span>直近30日</span><b>6回</b></div>
+          <div><span>最終確認</span><b>2026/09/09</b></div>
+          <div><span>次回スコア</span><b>0</b></div>
+        </div>
+        <div class="notice">次回候補なし</div>
+        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
+      </div>
+    </div>
+
+
+
+
+
+
+<section id="payout-holiday" class="section">
+  <div class="section-title"><h2>土日祝 × 出玉率 実測</h2><span>8/10〜9/20</span></div>
+  <div class="next-card">
+    <div class="event-grid">
+      <div class="mini"><span>平日 加重出玉率</span><b>101.56%</b></div>
+      <div class="mini"><span>土日 加重出玉率</span><b>100.60%</b></div>
+      <div class="mini"><span>差</span><b>-0.96pt</b></div>
+      <div class="mini"><span>土日平均稼働</span><b>約5,910G / 台</b></div>
+    </div>
+    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
+      対象は保存済み台別データの<strong>マイジャグラーV＋L東京喰種</strong>のみ。
+      土日は平日より稼働が高い一方、回転数加重の出玉率は約0.96pt低下。
+      ただし機種差が大きいため「休日＝一律弱い」ではなく機種別に補正します。
+    </p>
+  </div>
+  <div class="performer-list" style="margin-top:10px">
+    <article class="performer-card">
+      <div class="performer-top"><div><strong>マイジャグラーV</strong><span>平日101.33% → 土日101.13%</span></div><span class="confidence">維持</span></div>
+      <p>土日は1台平均約6,704Gまで稼働が上がっても出玉率低下は約0.20pt。9/22の本命評価は下げません。</p>
+    </article>
+    <article class="performer-card">
+      <div class="performer-top"><div><strong>L 東京喰種</strong><span>平日102.52% → 土日98.70%</span></div><span class="confidence">減点</span></div>
+      <p>土日9日分では累計差枚がマイナス。荒い機種なので断定はしませんが、休日の優先順位は大きく下げます。</p>
+    </article>
+  </div>
+  <div class="notice" style="margin-top:10px">
+    祝日単独データは期間内で8/11の1日だけ（103.74%）のため、祝日そのものをプラス/マイナスには決めません。
+    9/22は「連休で高稼働になりやすい環境」を警戒し、広範囲ATよりジャグラーの狭い並びを優先します。
+  </div>
+</section>
+
+<section id="calendar922" class="section">
+  <div class="section-title"><h2>9/22 暦・曜日補正</h2><span>再精査</span></div>
+  <div class="next-card">
+    <div class="next-date"><strong>火曜日・国民の休日</strong><span class="chip">SILVER WEEK</span></div>
+    <div class="event-grid">
+      <div class="mini"><span>暦</span><b>5連休の4日目</b></div>
+      <div class="mini"><span>22日過去</span><b>平日3回＋土曜1回</b></div>
+      <div class="mini"><span>直近22日</span><b>7月・8月ともマイ</b></div>
+      <div class="mini"><span>曜日の重み</span><b>補助 5～10%</b></div>
+    </div>
+    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
+      9/22は通常の平日火曜ではありません。ただし過去の22日は金・月・水・土と曜日がバラけても対象が出ているため、
+      <strong>曜日より「22日ローテ」「同企画X style」「萬田千鶴の同店実績」「前日からの配置移動」</strong>を優先します。
+      祝日は稼働条件の補正として扱い、高設定の直接根拠にはしません。
+    </p>
+  </div>
+</section>
+
+<section id="visit922" class="section">
+  <div class="section-title"><h2>9/22 来店・収録 詳細</h2><span>調査更新</span></div>
+  <div class="next-card">
+    <div class="next-date"><strong>X style（クロススタイル）</strong><span class="chip">JANBARI.TV</span></div>
+    <div class="event-grid">
+      <div class="mini"><span>来店</span><b>愛波優子</b></div>
+      <div class="mini"><span>来店</span><b>萬田千鶴</b></div>
+      <div class="mini"><span>形式</span><b>W来店・番組収録</b></div>
+      <div class="mini"><span>入場</span><b>シャッフル整理券 9:20</b></div>
+    </div>
+    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
+      X styleはJANBARIの対決型実戦番組。番組名そのものが特定機種・高設定投入を保証するものではないため、
+      明日の予想は<strong>22日の店内ローテ＋9/21実績＋萬田千鶴の同店過去実績</strong>を主軸にしています。
+    </p>
+  </div>
+
+  <div class="performer-list" style="margin-top:10px">
+    <article class="performer-card">
+      <div class="performer-top"><div><strong>萬田千鶴 × 同店実績</strong><span>再現性を最重要視</span></div><span class="confidence">強</span></div>
+      <p>6/3は攻殻が超高配分、ジャグラーもマイ20台・ゴー15台・ネオアイム20台など多数ピック。6/13はネオアイム・攻殻・マギレコ等が全台系、リオエース2も超高配分。</p>
+    </article>
+    <article class="performer-card">
+      <div class="performer-top"><div><strong>愛波優子 × 全国来店データ</strong><span>同店実績が少ないため補助</span></div><span class="confidence">参考</span></div>
+      <p>直近6か月の全国集計では、来店日にSAO2が1台平均+837枚で上位。ただし店舗横断データなので、明日の同店予測には補助材料としてのみ使用。</p>
+    </article>
+  </div>
+</section>
+
+
+<section id="xstyle-history" class="section">
+  <div class="section-title"><h2>同店 X style 過去実績</h2><span>4/21(火)</span></div>
+  <div class="performer-card">
+    <div class="performer-top"><div><strong>七瀬静香 × 萬田千鶴</strong><span>同じX style・同じ火曜日</span></div><span class="confidence">重要</span></div>
+    <p>4/21はホールナビ集計で101台ピック平均+2,109枚。モンスターハンターライズは9台中7台プラス、平均+3,692枚。今回は4/21の「1のつく日」が無い一方、9/22は国民の休日＋22日ローテなので、X style単独の再現と決めつけず補助根拠として使用。</p>
+  </div>
+</section>
+
+<section id="next922" class="section">
+  <div class="section-title"><h2>明日 9/22 予想</h2><span>X style｜愛波優子・萬田千鶴</span></div>
+  <div class="next-card">
+    <div class="next-date"><strong>2026/9/22（火）</strong><span class="chip">NEXT</span></div>
+    <p style="font-size:12px;color:#cbd5e1;margin:10px 0 12px">出玉率まで入れた最終順は、マイジャグBOX → アイム/ネオアイム → 攻殻 → モンハン → リオエース2 → SAO2。土日は店全体の出玉率が平日より約0.96pt低い一方、マイジャグはほぼ維持しているため本命据え置きです。</p>
+    <div class="pick-list">
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-A">A+</span><div class="pick-title"><strong>マイジャグラーV</strong><span>941～1006大型BOX内のマイ配置</span></div><div class="days"><b>1</b><small>最優先</small></div></div><p>7/22・8/22と直近2回の22日でマイ。前日の強い2台そのものより、隣接2台・BOX反対側・未使用列を優先。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-A">A</span><div class="pick-title"><strong>アイムジャグラー系</strong><span>現行配置を当日確認</span></div><div class="days"><b>2</b><small>優先</small></div></div><p>9/21の中心機種。萬田千鶴来店の6/13ではネオアイムが全台系。2台並び継続ならREG・合算の同時良化を重視。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-Am">A-</span><div class="pick-title"><strong>攻殻機動隊</strong><span>過去703～714周辺 / 現行位置確認</span></div><div class="days"><b>3</b><small>AT本命</small></div></div><p>6/22実績に加え、萬田千鶴来店6/13でも全台系。ジャグラーの朝挙動が弱い場合のAT本命候補。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-Bp">B+</span><div class="pick-title"><strong>リオエース2</strong><span>現行配置確認</span></div><div class="days"><b>4</b><small>次点</small></div></div><p>5/22高配分候補、6/13萬田千鶴来店でも超高配分。小台数なら機種単位の平均挙動を確認。</p></article>
+    </div>
+    <div class="notice" style="margin-top:10px">9/22はJANBARI.TV『X style』収録、愛波優子・萬田千鶴。外部イベント評価は補助扱い。予想の主根拠は22日ローテ＋9/21実績＋過去の萬田千鶴来店実績です。愛波優子の全国来店統計ではSAO2が上位ですが、同店実績不足のためB+の補助候補扱いです。</div>
+  </div>
+</section>
+
+<section id="result921" class="section">
+  <div class="section-title"><h2>9/21 答え合わせ</h2><span>確定実績を反映</span></div>
+  <div class="next-card">
+    <div class="next-date"><strong>ジャグラー中心・2台並び</strong><span class="chip">RESULT</span></div>
+    <div class="event-grid">
+      <div class="mini"><span>中心機種</span><b>マイジャグラー</b></div>
+      <div class="mini"><span>中心機種</span><b>アイムジャグラー</b></div>
+      <div class="mini"><span>投入単位</span><b>2台並び</b></div>
+      <div class="mini"><span>21日再現</span><b>5回連続ジャグラー系</b></div>
+    </div>
+    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">事前予測は「ジャグラーが強い」という大枠は一致。一方、ゴージャグ/ミスターを上位に置きすぎました。今後の21日は <strong>マイジャグ・アイム → 隣接2台 → その他ジャグラー → 高機械割AT</strong> の順で補正します。</p>
+  </div>
+</section>
+
+<section id="heatmaps" class="section">
+  <div class="section-title"><h2>島図ヒートマップ</h2><span>簡易島図 / ダッシュボード埋め込み</span></div>
+  <div class="notice" style="margin-bottom:10px">
+    現行の分析済み台番帯をベースにした<strong>簡易島図ヒートマップ</strong>です。実際の島図の形を完全再現したものではなく、分析用に台番帯ごとへ集約しています。
+  </div>
+  
+    <section class="heat-panel" id="panel-cum">
+      <div class="section-title"><h3>① 累計投入頻度</h3><span>分析期間全体の投入傾向</span></div>
+      <div class="heat-legend">
+        <span><i class="lg low"></i>低</span>
+        <span><i class="lg mid"></i>中</span>
+        <span><i class="lg high"></i>高</span>
+      </div>
+      <div class="heat-grid">
+        
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.579);border-color:rgba(96, 165, 250, 0.534)">
+          <div class="heat-range">451～486</div>
+          <div class="heat-name">東京喰種BOX</div>
+          <div class="heat-score">16</div>
+          <div class="heat-meta">最終確認 9/11</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.632);border-color:rgba(96, 165, 250, 0.574)">
+          <div class="heat-range">505～567</div>
+          <div class="heat-name">カバネリ/主力新台</div>
+          <div class="heat-score">18</div>
+          <div class="heat-meta">最終確認 9/13</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.230);border-color:rgba(96, 165, 250, 0.279)">
+          <div class="heat-range">577～594</div>
+          <div class="heat-name">禁書目録2帯</div>
+          <div class="heat-score">3</div>
+          <div class="heat-meta">最終確認 9/11</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.418);border-color:rgba(96, 165, 250, 0.416)">
+          <div class="heat-range">595～605</div>
+          <div class="heat-name">モンキーV帯</div>
+          <div class="heat-score">10</div>
+          <div class="heat-meta">最終確認 9/9</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.471);border-color:rgba(96, 165, 250, 0.456)">
+          <div class="heat-range">631～648</div>
+          <div class="heat-name">SAO2 / VVV2</div>
+          <div class="heat-score">12</div>
+          <div class="heat-meta">最終確認 9/1</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.686);border-color:rgba(96, 165, 250, 0.613)">
+          <div class="heat-range">655～702</div>
+          <div class="heat-name">大型AT連続島</div>
+          <div class="heat-score">20</div>
+          <div class="heat-meta">最終確認 9/11</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.525);border-color:rgba(96, 165, 250, 0.495)">
+          <div class="heat-range">703～745</div>
+          <div class="heat-name">北斗/周辺AT</div>
+          <div class="heat-score">14</div>
+          <div class="heat-meta">最終確認 8/29</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.686);border-color:rgba(96, 165, 250, 0.613)">
+          <div class="heat-range">746～766</div>
+          <div class="heat-name">マギレコ/周辺</div>
+          <div class="heat-score">20</div>
+          <div class="heat-meta">最終確認 9/9</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.873);border-color:rgba(96, 165, 250, 0.750)">
+          <div class="heat-range">778～792</div>
+          <div class="heat-name">SANKYO連続帯</div>
+          <div class="heat-score">27</div>
+          <div class="heat-meta">最終確認 9/11</div>
+        </article>
+        <article class="heat-cell hottest" style="background:rgba(94, 234, 212, 0.900);border-color:rgba(96, 165, 250, 0.770)">
+          <div class="heat-range">830～843</div>
+          <div class="heat-name">技術介入島</div>
+          <div class="heat-score">28</div>
+          <div class="heat-meta">最終確認 9/13</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.846);border-color:rgba(96, 165, 250, 0.731)">
+          <div class="heat-range">865～936</div>
+          <div class="heat-name">ジャグラー中段帯</div>
+          <div class="heat-score">26</div>
+          <div class="heat-meta">最終確認 9/9</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.686);border-color:rgba(96, 165, 250, 0.613)">
+          <div class="heat-range">941～1006</div>
+          <div class="heat-name">ジャグラー大型BOX</div>
+          <div class="heat-score">20</div>
+          <div class="heat-meta">最終確認 9/9</div>
+        </article>
+      </div>
+    </section>
+    
+  
+    <section class="heat-panel" id="panel-recent">
+      <div class="section-title"><h3>② 直近30日ヒートマップ</h3><span>8/14～9/13 の使用頻度</span></div>
+      <div class="heat-legend">
+        <span><i class="lg low"></i>低</span>
+        <span><i class="lg mid"></i>中</span>
+        <span><i class="lg high"></i>高</span>
+      </div>
+      <div class="heat-grid">
+        
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.525);border-color:rgba(96, 165, 250, 0.495)">
+          <div class="heat-range">451～486</div>
+          <div class="heat-name">東京喰種BOX</div>
+          <div class="heat-score">5</div>
+          <div class="heat-meta">直近30日 5回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.450);border-color:rgba(96, 165, 250, 0.440)">
+          <div class="heat-range">505～567</div>
+          <div class="heat-name">カバネリ/主力新台</div>
+          <div class="heat-score">4</div>
+          <div class="heat-meta">直近30日 4回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.375);border-color:rgba(96, 165, 250, 0.385)">
+          <div class="heat-range">577～594</div>
+          <div class="heat-name">禁書目録2帯</div>
+          <div class="heat-score">3</div>
+          <div class="heat-meta">直近30日 3回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.450);border-color:rgba(96, 165, 250, 0.440)">
+          <div class="heat-range">595～605</div>
+          <div class="heat-name">モンキーV帯</div>
+          <div class="heat-score">4</div>
+          <div class="heat-meta">直近30日 4回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.225);border-color:rgba(96, 165, 250, 0.275)">
+          <div class="heat-range">631～648</div>
+          <div class="heat-name">SAO2 / VVV2</div>
+          <div class="heat-score">1</div>
+          <div class="heat-meta">直近30日 1回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.600);border-color:rgba(96, 165, 250, 0.550)">
+          <div class="heat-range">655～702</div>
+          <div class="heat-name">大型AT連続島</div>
+          <div class="heat-score">6</div>
+          <div class="heat-meta">直近30日 6回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.225);border-color:rgba(96, 165, 250, 0.275)">
+          <div class="heat-range">703～745</div>
+          <div class="heat-name">北斗/周辺AT</div>
+          <div class="heat-score">1</div>
+          <div class="heat-meta">直近30日 1回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.450);border-color:rgba(96, 165, 250, 0.440)">
+          <div class="heat-range">746～766</div>
+          <div class="heat-name">マギレコ/周辺</div>
+          <div class="heat-score">4</div>
+          <div class="heat-meta">直近30日 4回</div>
+        </article>
+        <article class="heat-cell hottest" style="background:rgba(94, 234, 212, 0.900);border-color:rgba(96, 165, 250, 0.770)">
+          <div class="heat-range">778～792</div>
+          <div class="heat-name">SANKYO連続帯</div>
+          <div class="heat-score">10</div>
+          <div class="heat-meta">直近30日 10回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.825);border-color:rgba(96, 165, 250, 0.715)">
+          <div class="heat-range">830～843</div>
+          <div class="heat-name">技術介入島</div>
+          <div class="heat-score">9</div>
+          <div class="heat-meta">直近30日 9回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.450);border-color:rgba(96, 165, 250, 0.440)">
+          <div class="heat-range">865～936</div>
+          <div class="heat-name">ジャグラー中段帯</div>
+          <div class="heat-score">4</div>
+          <div class="heat-meta">直近30日 4回</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.600);border-color:rgba(96, 165, 250, 0.550)">
+          <div class="heat-range">941～1006</div>
+          <div class="heat-name">ジャグラー大型BOX</div>
+          <div class="heat-score">6</div>
+          <div class="heat-meta">直近30日 6回</div>
+        </article>
+      </div>
+    </section>
+    
+  
+    <section class="heat-panel" id="panel-pred">
+      <div class="section-title"><h3>④ 次回狙い目オーバーレイ</h3><span>次回候補シートの優先度を台番帯へ重ね表示</span></div>
+      <div class="heat-legend">
+        <span><i class="lg low"></i>低</span>
+        <span><i class="lg mid"></i>中</span>
+        <span><i class="lg high"></i>高</span>
+      </div>
+      <div class="heat-grid">
+        
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">451～486</div>
+          <div class="heat-name">東京喰種BOX</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">505～567</div>
+          <div class="heat-name">カバネリ/主力新台</div>
+          <div class="heat-score">76</div>
+          <div class="heat-meta">A-｜カバネリ（機械割補正後）</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">577～594</div>
+          <div class="heat-name">禁書目録2帯</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.389);border-color:rgba(96, 165, 250, 0.396)">
+          <div class="heat-range">595～605</div>
+          <div class="heat-name">モンキーV帯</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">TOP6外｜機械割は高いが日付根拠不足</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.445);border-color:rgba(96, 165, 250, 0.436)">
+          <div class="heat-range">631～648</div>
+          <div class="heat-name">SAO2 / VVV2</div>
+          <div class="heat-score">74</div>
+          <div class="heat-meta">B+｜ソードアート・オンラインII</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">655～702</div>
+          <div class="heat-name">大型AT連続島</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">703～745</div>
+          <div class="heat-name">北斗/周辺AT</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">746～766</div>
+          <div class="heat-name">マギレコ/周辺</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.389);border-color:rgba(96, 165, 250, 0.396)">
+          <div class="heat-range">778～792</div>
+          <div class="heat-name">SANKYO連続帯</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">TOP6外｜9/21はジャグラー/カバネリ優先</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.501);border-color:rgba(96, 165, 250, 0.477)">
+          <div class="heat-range">830～843</div>
+          <div class="heat-name">技術介入島</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補外｜技術介入系</div>
+        </article>
+        <article class="heat-cell hottest" style="background:rgba(94, 234, 212, 0.900);border-color:rgba(96, 165, 250, 0.770)">
+          <div class="heat-range">865～936</div>
+          <div class="heat-name">ジャグラー中段帯</div>
+          <div class="heat-score">247</div>
+          <div class="heat-meta">A+｜ゴージャグ / A｜ミスター / A-｜ファンキー・ガールズ・ウルミラ</div>
+        </article>
+        <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
+          <div class="heat-range">941～1006</div>
+          <div class="heat-name">ジャグラー大型BOX</div>
+          <div class="heat-score">75</div>
+          <div class="heat-meta">A-｜マイジャグ BOXローテ（補正後）</div>
+        </article>
+      </div>
+    </section>
+    
+  <div class="notice" style="margin-top:10px">
+    次回狙い目オーバーレイは、21日パターン・投入間隔・島ローテに<strong>機種別設定6機械割</strong>を加えた補正後スコアです。<br>
+    高機械割AT機は期待値を加点する一方、過去の単発大差枚は高設定証拠として割り引いています。
+  </div>
+</section>
+
+
+  <section class="section">
+    <details>
+      <summary>分析ルール・注意点</summary>
+      <div class="details-body">
+        <p>候補は「同一日付パターン（特に21日）」「特定日実績」「機種単位の投入間隔」「島図上の隣接ローテ」「来店演者傾向」「機種別機械割」を重ねて整理しています。高機械割AT機は単発差枚を過大評価せず、初当たり・CZ・塊・再現性を重視します。</p>
+        <p>来店演者とメーカーの相関は、合同来店・取材併催の影響を完全には分離できません。偏りは演者本人の指示や意向を意味しません。</p>
+        <p>9/19の3機種はユーザー確定情報として保持しつつ、9/21公開の関西すろいべ結果記事も追加参照。記事では平均G数5,728Gと全台系機種セクションの公開を確認しています。9/21当日結果はまだ公開待ちです。🤔等の私見表記は確度を一段下げて扱っています。</p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section">
+    <details>
+      <summary>主な参照ページ</summary>
+      <div class="details-body"><div class="source-links"><a href="https://kansai-sloeve.com/2026/09/21/9-19-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/19結果（9/21公開）<span>↗</span></a>
+<a href="https://hall-navi.com/hole_view?ec=event&hid=531006400000002111&koe=5526" target="_blank" rel="noopener">ホールナビ 9/21当日評価<span>↗</span></a>
+<a href="https://www.p-world.co.jp/osaka/grankicona-honten.htm" target="_blank" rel="noopener">P-WORLD 9/21更新<span>↗</span></a>
+<a href="https://ww.twstalker.com/g_kicona_honten" target="_blank" rel="noopener">店舗公式Xミラー 9/21告知<span>↗</span></a>
+<a href="https://slo-map.com/halls/7552" target="_blank" rel="noopener">スロマップAI 9/21イベント情報<span>↗</span></a>
+<a href="https://raiten-ex.com/user/%E3%82%A6%E3%82%B7%E3%82%AA%E6%9D%A5%E5%BA%97/" target="_blank" rel="noopener">来店分析EX ウシオ来店<span>↗</span></a>
+<a href="https://www.slo-map.com/media/other-coverage/ushio-visit" target="_blank" rel="noopener">スロマップAI ウシオ来店<span>↗</span></a>
+<a href="https://kansai-sloeve.com/2026/09/14/9-13-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/13結果・島図<span>↗</span></a>
+<a href="https://kansai-sloeve.com/2026/09/12/9-11-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/11結果<span>↗</span></a>
+<a href="https://kansai-sloeve.com/2026/04/04/4-3-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 4/3結果<span>↗</span></a>
+<a href="https://hallcalendar.jp/gran-kicona-osaka-honten" target="_blank" rel="noopener">9/21予定（ホルカレ）<span>↗</span></a>
+<a href="https://www.p-world.co.jp/machine/database/9848" target="_blank" rel="noopener">ゴーゴージャグラー3 機械割<span>↗</span></a>
+<a href="https://pachinavi.net/machines/mister-juggler/settei/" target="_blank" rel="noopener">ミスタージャグラー 機械割<span>↗</span></a>
+<a href="https://pachinavi.net/machines/my-juggler-v/settei/" target="_blank" rel="noopener">マイジャグラーV 機械割<span>↗</span></a>
+<a href="https://pachinavi.net/machines/smasloth-kabaneri-kaimon/" target="_blank" rel="noopener">カバネリ 海門決戦 機械割<span>↗</span></a>
+<a href="https://www.p-world.co.jp/machine/database/10483" target="_blank" rel="noopener">SAO2 機械割<span>↗</span></a>
+</div></div>
+    </details>
+  </section>
+
+  <section id="excel" class="section">
+    <div class="section-title"><h2>Excel版</h2><span>元データ・集計表</span></div>
+    <div class="next-card">
+      <div class="next-date"><strong>分析Excelをダウンロード</strong><span class="chip">XLSX</span></div>
+      <p style="margin:10px 0 12px;color:#c9d3e2;font-size:12px">曜日・休日別の回転数加重出玉率、機種別の土日差、9/22最終補正まで追加したExcelです。</p>
+      <a href="グランキコーナ大阪_9月22日_休日出玉率補正_最終予想.xlsx" download style="display:block;text-align:center;text-decoration:none;background:#1f6f5f;border:1px solid rgba(94,234,212,.45);padding:12px 14px;border-radius:13px;font-weight:900;color:#ecfdf5">Excelファイルをダウンロード</a>
+    </div>
+  </section>
+
+  <footer>Static mobile dashboard • generated from the current analysis workbook</footer>
+</main>
+
+<nav class="nav">
+  <a href="#next"><b>◉</b>次回</a>
+  <a href="#picks"><b>◎</b>狙い目</a>
+  <a href="#performers"><b>◆</b>演者</a>
+  <a href="#floor"><b>▦</b>島図</a>
+  <a href="#history"><b>≡</b>履歴</a>
+  <a href="#tapfloor"><b>☝</b>台番</a>
+  <a href="#next922"><b>→</b>明日</a>
+</nav>
+
+<script>
+(function(){
+  const input = document.getElementById('historySearch');
+  const clear = document.getElementById('historyClear');
+  const empty = document.getElementById('historyEmpty');
+  if(!input) return;
+  function run(){
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll('.month-group').forEach(group=>{
+      let monthShown = 0;
+      group.querySelectorAll('.history-item').forEach(item=>{
+        const ok = !q || (item.dataset.historySearch || '').includes(q);
+        item.style.display = ok ? '' : 'none';
+        if(ok){ shown++; monthShown++; }
+      });
+      group.style.display = monthShown ? '' : 'none';
+      if(q && monthShown) group.open = true;
+    });
+    empty.style.display = shown ? 'none' : '';
+  }
+  input.addEventListener('input', run);
+  clear.addEventListener('click', ()=>{ input.value=''; run(); input.focus(); });
+})();
+</script>
+
+
+
+
+</body>
+</html>
