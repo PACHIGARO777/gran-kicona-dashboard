@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b1020">
-<title>グランキコーナ大阪｜最新分析・島図ヒートマップ 2026/09/23</title>
+<title>グランキコーナ大阪本店｜統合スマホダッシュボード</title>
 <style>
 :root {
   --bg:#080b14; --panel:#111725; --panel2:#151d2e; --line:#253149;
@@ -90,7 +90,7 @@ summary{cursor:pointer;padding:13px 14px;font-weight:800;font-size:13px}
 .details-body p{margin:0 0 8px}
 .source-links{display:grid;gap:7px}
 .source-links a{display:flex;justify-content:space-between;text-decoration:none;background:#0d1422;border:1px solid #22304a;border-radius:12px;padding:10px 11px;font-size:11px;color:#c9d4e4}
-.nav{position:fixed;z-index:10;left:50%;bottom:max(8px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(730px,calc(100% - 20px));background:rgba(12,17,29,.88);backdrop-filter:blur(14px);border:1px solid #26344e;border-radius:18px;padding:7px;display:grid;grid-template-columns:repeat(7,1fr);box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.nav{position:fixed;z-index:10;left:50%;bottom:max(8px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(730px,calc(100% - 20px));background:rgba(12,17,29,.88);backdrop-filter:blur(14px);border:1px solid #26344e;border-radius:18px;padding:7px;display:grid;grid-template-columns:repeat(8,1fr);box-shadow:0 14px 40px rgba(0,0,0,.45)}
 .nav a{text-decoration:none;text-align:center;font-size:9px;color:#aeb9ca;padding:6px 2px;border-radius:11px}
 .nav a b{display:block;font-size:16px;line-height:1.1;color:#e7edf7}
 footer{color:#68758b;font-size:9px;text-align:center;margin-top:18px}
@@ -179,146 +179,60 @@ footer{color:#68758b;font-size:9px;text-align:center;margin-top:18px}
 </style>
 
 
-<style id="tap-fix-css">
-.tap-link{display:block;text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.tap-hint{font-size:10px;color:#99f6e4;margin-top:8px;font-weight:800}
-.css-modal{display:none;position:fixed;inset:0;z-index:9999;align-items:flex-end;padding:14px}
-.css-modal:target{display:flex}
-.css-modal-bg{position:absolute;inset:0;background:rgba(2,6,23,.82);backdrop-filter:blur(4px)}
-.css-modal-card{position:relative;z-index:2;width:min(720px,100%);max-height:82vh;overflow:auto;margin:0 auto;background:#111827;border:1px solid #334155;border-radius:22px 22px 16px 16px;padding:14px 16px 18px;box-shadow:0 24px 80px rgba(0,0,0,.6);animation:sheetUp .16s ease-out}
-.modal-grabber{width:38px;height:4px;border-radius:99px;background:#475569;margin:0 auto 12px}
-.css-modal-card h3{margin:0 0 9px;font-size:18px}
-.close-link{display:block;text-align:center;text-decoration:none}
-@keyframes sheetUp{from{transform:translateY(18px);opacity:.6}to{transform:translateY(0);opacity:1}}
-body:has(.css-modal:target){overflow:hidden}
+<style>
+.verify-grid{display:grid;gap:8px}
+.verify-card{background:#0d1422;border:1px solid #293853;border-radius:14px;padding:12px}
+.verify-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.verify-top strong{font-size:13px}.vbadge{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px}
+.vhigh{color:#bbf7d0;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.35)}
+.vmid{color:#fde68a;background:rgba(251,191,36,.10);border:1px solid rgba(251,191,36,.3)}
+.vlow{color:#fecdd3;background:rgba(251,113,133,.10);border:1px solid rgba(251,113,133,.3)}
+.verify-card p{font-size:11px;color:#cbd5e1;margin:7px 0 0}
+.verify-card small{display:block;color:#7f8ca3;margin-top:5px}
+.rule-table{width:100%;border-collapse:collapse;font-size:10px}.rule-table td{border-bottom:1px solid #243047;padding:8px 4px;vertical-align:top}
 </style>
-
 </head>
 <body>
 <main class="shell">
   <header class="hero">
     <div class="eyebrow">Gran Kicona Osaka</div>
-    <h1>グランキコーナ大阪</h1><p style="margin:6px 0 0;color:#cbd5e1;font-size:13px;font-weight:700">9/22 休日出玉率補正 最終予想</p><span class="version-chip">LATEST 2026-09-21 v4</span>
-    <p>更新 2026/9/21 夜｜9/21当日追加確認・9/19結果・機械割補正を反映</p>
+    <h1>統合分析ダッシュボード</h1><span class="version-chip">LATEST 2026/9/25・ブロック数値化</span>
+    <p>最新版 2026/9/25｜主要3/6台ブロックを個別台データで数値化・再評価</p>
     <div class="confirmed">
-      <b>9/19 結果記事公開済み</b>
-      <strong>平均G数 5,728G｜確定対象：北斗・マギレコ・VVV2</strong>
-    
-    <div class="confirmed" style="margin-top:10px;border-color:rgba(96,165,250,.45);background:linear-gradient(135deg,rgba(96,165,250,.12),rgba(94,234,212,.08))">
-      <b>9/21 確定実績（ユーザー確認）</b>
-      <strong>2台並びメイン｜マイジャグラー・アイムジャグラー中心</strong>
-      <p style="margin:7px 0 0;color:#cbd5e1;font-size:11px">21日のジャグラー系出現は5/21～9/21で5回連続。今後は「機種単位」より、マイ/アイムを軸に隣接2台の同時良挙動を優先して評価します。</p>
+      <b>直近 9/23 確認</b>
+      <strong>東京喰種 1/2（平均+4,810枚・17/18）／Lカバネリ 1/2（平均+3,220枚・14/18）</strong>
     </div>
-</div>
   </header>
 
   <section id="next" class="section">
-    <div class="section-title"><h2>9/21 当日</h2><span>結果公開待ち</span></div>
+    <div class="section-title"><h2>次回重点監視 9/27</h2><span>27日＋ファン感謝デー</span></div>
     <div class="next-card">
-      <div class="next-date"><strong>2026/9/21（月）｜実績確定</strong><span class="chip">TODAY</span></div>
+      <div class="next-date"><strong>2026/9/27（日）</strong><span class="chip">WATCH</span></div>
       <div class="event-grid">
-        <div class="mini"><span>来店</span><b>ウシオ＆森咲智美</b></div>
-        <div class="mini"><span>収録</span><b>おーるすたー感謝の旅</b></div>
-        <div class="mini"><span>ホールナビ</span><b>機種仕掛け ★4</b></div>
-        <div class="mini"><span>現状</span><b>実結果は公開待ち</b></div>
+        <div class="mini"><span>本命帯</span><b>595～642</b></div>
+        <div class="mini"><span>中心</span><b>602～607 / 613～618</b></div>
+        <div class="mini"><span>継続監視</span><b>喰種 451～468</b></div>
+        <div class="mini"><span>継続監視</span><b>カバネリ 523～558</b></div>
       </div>
-      <div class="notice" style="margin-top:10px"><strong>9/19結果記事が9/21に公開</strong>され、平均G数5,728Gを確認。9/21はホルカレ・公式X等でウシオ＆森咲智美の来店/収録を確認済み。<strong>夜時点で9/21の独立した結果記事は未確認</strong>のため、下のランキングは事前仮説として固定し、実結果公開後に答え合わせします。</div>
-      <div class="event-grid" style="margin-top:10px">
-        <div class="mini"><span>スロマップAI</span><b>番組収録 A</b></div>
-        <div class="mini"><span>スロマップAI</span><b>ウシオ来店 B</b></div>
-        <div class="mini"><span>スロマップAI</span><b>森咲智美 D</b></div>
-        <div class="mini"><span>P-WORLD</span><b>9/21更新済み</b></div>
-      </div>
-      <div class="notice" style="margin-top:10px">外部ランクは参考情報としてのみ使用し、<strong>5～8月の21日パターン・機械割補正・台番ローテ</strong>を主軸に評価しています。</div>
+      <div class="notice" style="margin-top:10px">予想対象は主力・準主力を中心とし、少数台・技術介入系は除外。SBJ・アレックス・シャーマンキングは予想から除外。差枚単体ではなく、AT機は初当り/CZ＋横並び、ジャグラーはREG・合算＋6台以上の連続性を優先して確認。</div>
     </div>
+  </section>
+
+  <section class="section">
+    <div class="notice"><strong style="color:#f8fafc">予想対象ルール</strong><br>
+    少数台・技術介入系は予想候補から除外します。スーパーブラックジャック、アレックス、シャーマンキングは明示的に除外。1～2台構成の機種も除外し、これらは過去履歴には残しますが「次回狙い目」「監視候補」「優先候補」には使用しません。</div>
   </section>
 
   <section id="picks" class="section">
-    <div class="section-title"><h2>9/21事前候補 TOP6</h2><span>実実績反映済み</span></div>
-    <div class="notice" style="margin-bottom:9px">総合スコアは<strong>投入パターン80%＋設定6機械割価値20%</strong>。9/21の実結果が未公開のため、現時点では<strong>事前仮説</strong>として表示。結果公開後に21日パターンとウシオ補正を再採点します。技術介入系は候補外。</div>
+    <div class="section-title"><h2>9/27 監視候補</h2><span>設定挙動＋物理帯</span></div>
     <div class="pick-list">
-    <article class="pick-card">
-      <div class="pick-head">
-        <span class="rank rank-A">A+</span>
-        <div class="pick-title">
-          <strong>ゴーゴージャグラー3</strong>
-          <span>880～891 / 911～922｜887 → 919 → 915 → 920</span>
-        </div>
-        <div class="days"><b>89</b><small>補正点</small></div>
-      </div>
-      <p>9/15に全27台高配分が判明したため『40日空き』評価は撤回。9/21事前予測では直近使用済みを見落としており、ゴージャグを上位に置きすぎた。</p>
-    </article>
-
-    <article class="pick-card">
-      <div class="pick-head">
-        <span class="rank rank-A">A</span>
-        <div class="pick-title">
-          <strong>ミスタージャグラー</strong>
-          <span>932～936｜932 → 934 → 935</span>
-        </div>
-        <div class="days"><b>82</b><small>補正点</small></div>
-      </div>
-      <p>7/21対象＋6/21シリーズ高配分。設定6 107.3%。小台数ブロックのREG・合算と島平均を重視。40日空き。</p>
-    </article>
-
-    <article class="pick-card">
-      <div class="pick-head">
-        <span class="rank rank-Am">A-</span>
-        <div class="pick-title">
-          <strong>ファンキー / ガールズ / ウルミラ</strong>
-          <span>865～879周辺｜当日配置確認</span>
-        </div>
-        <div class="days"><b>77</b><small>補正点</small></div>
-      </div>
-      <p>21日に複数回再登場。設定6平均は約108.2%で、AT機より差枚証拠を重く扱う。</p>
-    </article>
-
-    <article class="pick-card">
-      <div class="pick-head">
-        <span class="rank rank-Am">A-</span>
-        <div class="pick-title">
-          <strong>カバネリ 海門決戦</strong>
-          <span>523～526 / 505～522側を優先確認</span>
-        </div>
-        <div class="days"><b>76</b><small>補正点</small></div>
-      </div>
-      <p>設定6 114.9%で掴んだ時の期待値は大きい。7/21中通路側全など列/ハーフ反復は評価する一方、単発大差枚は証拠として割引。</p>
-    </article>
-
-    <article class="pick-card">
-      <div class="pick-head">
-        <span class="rank rank-Am">A-</span>
-        <div class="pick-title">
-          <strong>マイジャグラーV / BOXローテ</strong>
-          <span>941～1006大型BOX内のマイ配置</span>
-        </div>
-        <div class="days"><b>75</b><small>補正点</small></div>
-      </div>
-      <p>設定6 109.4%。ジャグラー内では高期待値。単品の差枚より、壁側・BOX・列の平均挙動を優先。</p>
-    </article>
-
-    <article class="pick-card">
-      <div class="pick-head">
-        <span class="rank rank-Bp">B+</span>
-        <div class="pick-title">
-          <strong>ソードアート・オンラインII</strong>
-          <span>631～642</span>
-        </div>
-        <div class="days"><b>74</b><small>補正点</small></div>
-      </div>
-      <p>設定6 114.9%の期待値を加点。9/1全台系と戻しローテは評価するが、631～648帯の直近使用を減点。</p>
-    </article></div>
-  </section>
-
-  <section id="payout" class="section">
-    <div class="section-title"><h2>機種別 機械割補正</h2><span>設定6 / 8000G理論差枚</span></div>
-    <div class="floor-list">
-      <div class="floor-card best"><div class="floor-band"><b>ゴージャグ3</b><span>106.5% / 約+1,560枚</span></div><div class="floor-body"><strong>差枚証拠：重い</strong><p>低機械割なので、島平均プラスや+3000枚級はAT機より高設定根拠として強く扱う。</p></div></div>
-      <div class="floor-card best"><div class="floor-band"><b>ミスタージャグラー</b><span>107.3% / 約+1,752枚</span></div><div class="floor-body"><strong>差枚証拠：重い</strong><p>REG・合算とセットで評価。小台数の高配分を見抜きやすい。</p></div></div>
-      <div class="floor-card"><div class="floor-band"><b>マイジャグラーV</b><span>109.4% / 約+2,256枚</span></div><div class="floor-body"><strong>期待値：ジャグラー内で高め</strong><p>単品よりBOX・列の平均挙動を重視。</p></div></div>
-      <div class="floor-card hot"><div class="floor-band"><b>カバネリ / SAO2</b><span>114.9% / 約+3,576枚</span></div><div class="floor-body"><strong>高設定期待値：大</strong><p>掴んだ時の期待値は高い。ただし単発の+3000～5000枚だけでは高設定証拠として弱めに扱う。</p></div></div>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-A">◎</span><div class="pick-title"><strong>モンキーターンV</strong><span>595～612｜中心 602～607</span></div><div class="days"><b>27</b><small>日実績</small></div></div><p>7/13の18台高配分、8/27のニブイチなど。隣の613～642と合わせた広域ローテを監視。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-A">◎</span><div class="pick-title"><strong>からくり2周辺</strong><span>613～631｜中心 613～618</span></div><div class="days"><b>帯</b><small>再利用</small></div></div><p>595～642は機種が変わっても繰り返し使われる物理帯。3～6台塊～半列を優先。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-Am">○</span><div class="pick-title"><strong>東京喰種</strong><span>451～468｜455～460 / 463～468</span></div><div class="days"><b>反復</b><small>高</small></div></div><p>7/27全台、8/27ニブイチ、9/19小並び、9/23ニブイチ。形を変えながら反復。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-Am">○</span><div class="pick-title"><strong>Lカバネリ</strong><span>523～558｜6台前後を重点</span></div><div class="days"><b>反復</b><small>高</small></div></div><p>27日を含め投入履歴が多い主力帯。直近9/23対象のため位置変更・部分投入を重視。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-Bp">△</span><div class="pick-title"><strong>戦国乙女5</strong><span>703～720周辺</span></div><div class="days"><b>8/27</b><small>全台</small></div></div><p>8/27全台系の再利用候補。703～726帯自体のローテ履歴も確認。</p></article>
+      <article class="pick-card"><div class="pick-head"><span class="rank rank-B">△</span><div class="pick-title"><strong>ジャグラー中段帯</strong><span>865～936中心</span></div><div class="days"><b>列</b><small>BOX</small></div></div><p>9/21は955～1008側を使用。次は865～936側の列・6台塊・BOX移動を監視。</p></article>
     </div>
-    <div class="notice" style="margin-top:9px">補正式：総合スコア＝投入パターン点×80%＋設定6機械割価値点×20%。「差枚証拠補正」は過去結果の読み方にだけ使い、狙い目期待値とは分離しています。</div>
   </section>
 
   <section id="idle" class="section">
@@ -336,13 +250,28 @@ body:has(.css-modal:target){overflow:hidden}
       <div class="idle-days">40<small>日</small></div>
     </div>
 <div class="idle-row">
+      <div><strong>アレックス ブライト</strong><span>両側の技術介入機が直近で使われた。</span></div>
+      <div class="idle-days">32<small>日</small></div>
+    </div>
+<div class="idle-row">
       <div><strong>シャーマンキング</strong><span>休ませ期間は十分だが現行台番精度が弱い。</span></div>
       <div class="idle-days">24<small>日</small></div>
     </div></div>
     <div class="notice" style="margin-top:9px">「空き日数」は単品良台ではなく、機種単位で強い配分が確認できた日から計算。直近の単品投入とは分けて見ます。</div>
   </section>
 
-  <section id="performers" class="section">
+  
+<section class="section" id="freedia">
+ <div class="section-title"><h2>FREEDIA履歴</h2><span>6/6 → 7/6 → 8/6</span></div>
+ <div class="history-list">
+  <article class="history-item"><div class="history-head"><div class="history-date"><strong>6/6</strong></div><span class="history-badge">初開催</span></div><div class="history-machines">マイジャグ：トイレ側BOX全／ネオアイム：トイレ側列全／旧アイム・ミスター：全？／ゴージャグ：高配分</div></article>
+  <article class="history-item"><div class="history-head"><div class="history-date"><strong>7/6</strong></div><span class="history-badge">FREEDIA</span></div><div class="history-machines">マイジャグ：トイレ側BOX全／マギレコ・無職：全</div></article>
+  <article class="history-item"><div class="history-head"><div class="history-date"><strong>8/6</strong></div><span class="history-badge">FREEDIA</span></div><div class="history-machines">マイジャグ～ネオアイム：壁側列／ガールズ？</div></article>
+ </div>
+ <div class="hypothesis"><b>現時点の読み方</b><p>3回すべてでマイジャグが対象候補に含まれ、6/6と8/6はネオアイム側まで広がる。FREEDIA日は「ジャグラー帯、とくにマイジャグ」を優先して照合する。ただし位置はBOX→壁側列と移動しているため固定台番法則にはしない。</p></div>
+</section>
+
+<section id="performers" class="section">
     <div class="section-title"><h2>来店演者 × メーカー</h2><span>店全体基準比</span></div>
     <div class="performer-list"><article class="performer-card">
       <div class="performer-top">
@@ -419,7 +348,7 @@ body:has(.css-modal:target){overflow:hidden}
       </div>
     </article>
 <article class="floor-card best">
-      <div class="floor-band"><b>830～843</b><span>技術介入・BT小島｜候補外</span></div>
+      <div class="floor-band"><b>830～843</b><span>技術介入・BT小島</span></div>
       <div class="floor-body">
         <strong>830～835→841～843</strong>
         <p>両側が直近で使われており、間の836～840を監視。</p>
@@ -443,6 +372,232 @@ body:has(.css-modal:target){overflow:hidden}
   </section>
 
 
+  
+<section class="section" id="verify">
+  <div class="section-title"><h2>履歴の外部照合</h2><span>ユーザー集計 × Hall-Navi等</span></div>
+  <div class="notice">信頼度は「その日が強かったか」ではなく、記載された<strong>機種・範囲・仕掛け形</strong>が外部履歴とどこまで一致するかで付与。🤔付きは外部確認できるまで推定扱いのまま残します。</div>
+  <div class="verify-grid" style="margin-top:9px">
+    <div class="verify-card"><div class="verify-top"><strong>7/27 カバネリ</strong><span class="vbadge vhigh">信頼度 高</span></div><p>ユーザー集計「カバネリ全」と、Hall-Naviの36台中27台プラス・平均9,072G・平均+2,481枚が整合。</p><small>個別台番も523・526・527・528・530…など掲載あり。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>6/21 ゴージャグ</strong><span class="vbadge vhigh">信頼度 高</span></div><p>ユーザー集計「ジャグラーシリーズ高配分」と、Hall-Naviのゴージャグ27台中22台プラス・平均+1,279枚が整合。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>9/1 SAO2</strong><span class="vbadge vhigh">信頼度 高</span></div><p>ユーザー集計「SAO2」とHall-Naviが一致。12台中7台プラス、平均9,250G・平均+4,960枚。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>9/13 カバネリ</strong><span class="vbadge vhigh">信頼度 高</span></div><p>ユーザー集計「カバネリ」とHall-Naviが一致。36台中30台プラス、平均9,360G・平均+2,805枚。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>6/23 マギレコ</strong><span class="vbadge vmid">補強情報</span></div><p>ユーザー集計は「各機種2台～の並びメイン」。Hall-Naviではマギレコ6台中5台プラス・平均+1,941枚を確認。日全体の並び数まではこのソース単独では確定しない。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>🤔付き履歴</strong><span class="vbadge vlow">推定維持</span></div><p>例：4/30ネオアイム、5/5旧アイム、5/10GODなど。外部ソースで機種・範囲まで確認できるまでは予想学習時の重みを下げる。</p></div>
+  </div>
+</section>
+<section class="section">
+ <div class="section-title"><h2>信頼度ルール</h2><span>予想学習への重み</span></div>
+ <div class="next-card"><table class="rule-table">
+ <tr><td><b>高</b></td><td>ユーザー履歴＋外部結果サイトで機種/範囲/数値が一致</td><td>強く使用</td></tr>
+ <tr><td><b>中</b></td><td>機種一致だが、全/ハーフ/列など仕掛け形の裏取りが一部のみ</td><td>通常使用</td></tr>
+ <tr><td><b>参考</b></td><td>ユーザー集計のみ、または🤔付きで外部確認未完了</td><td>弱く使用</td></tr>
+ </table></div>
+</section>
+
+
+<section class="section" id="crosscheck2">
+  <div class="section-title"><h2>外部照合・追加確認</h2><span>複数ソースで確度補正</span></div>
+  <div class="verify-grid">
+    <div class="verify-card">
+      <div class="verify-top"><strong>7/27 東京喰種・Lカバネリ</strong><span class="vbadge vhigh">複数一致</span></div>
+      <p>ユーザー集計の「両機種全」と、coba掲載値（喰種 平均+2,430枚 25/36、Lカバネリ 平均+2,480枚 27/36）が一致。KD側の結果投稿でも同日結果を確認。</p>
+      <small>予想学習：27日の主力多台数機種・全台系実績として強く使用。</small>
+    </div>
+    <div class="verify-card">
+      <div class="verify-top"><strong>8/27 乙女5・喰種・モンキーV</strong><span class="vbadge vhigh">複数一致</span></div>
+      <p>ユーザー集計「乙女5全、喰種・モンキーハーフ」と、cobaの「乙女5 平均+3,600枚(15/18)、喰種/モンキー ニブイチ」が一致。関西すろいべ/KDにも同日の結果投稿あり。</p>
+      <small>予想学習：27日は全台だけでなく多台数機種の1/2配分も重視。</small>
+    </div>
+    <div class="verify-card">
+      <div class="verify-top"><strong>9/23 東京喰種・Lカバネリ</strong><span class="vbadge vhigh">複数一致</span></div>
+      <p>ユーザー集計「ハーフ対象」と、cobaの喰種 平均+4,810枚(17/18)、Lカバネリ 平均+3,220枚(14/18)が一致。KD・関西すろいべ側でも両機種の高配分/1/2仕掛けを確認。</p>
+      <small>直近使用済みなので9/27は同一位置の単純据え置きより位置変更・形変更を優先して見る。</small>
+    </div>
+    <div class="verify-card">
+      <div class="verify-top"><strong>9/15 ガールズ・ゴージャグ</strong><span class="vbadge vhigh">外部数値一致</span></div>
+      <p>cobaでガールズ全台系 平均+2,380枚(4/5)、ゴージャグ（マイV側）BOX 平均+1,280枚(14/18)を確認。ユーザー集計の方向性と一致。</p>
+    </div>
+    <div class="verify-card">
+      <div class="verify-top"><strong>4～6月 来店/取材日</strong><span class="vbadge vmid">日付照合済</span></div>
+      <p>ホルカレの過去予定履歴で4/29、5/1、5/3、5/5、5/9、5/13、5/19、5/21、5/23、5/27、5/29、6/1、6/3、6/6、6/9、6/11、6/13、6/19などの来店・取材日を確認。</p>
+      <small>ただし予定履歴は対象機種を証明しないため、機種/全・列・ハーフの確定には使わず「開催日の裏取り」に限定。</small>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="27cross">
+  <div class="section-title"><h2>27日 横断検証</h2><span>4→8月を外部結果で再照合</span></div>
+  <div class="verify-grid">
+    <div class="verify-card"><div class="verify-top"><strong>4/27</strong><span class="vbadge vhigh">高</span></div>
+      <p>ユーザー集計の「かぐや・鉄拳・VVV2・からくり・モンハン・イーター」と外部結果が強く整合。関西すろいべでは鉄拳6、かぐや、モンハン、ゴッドイーター、VVV2の個別台データまで確認。</p>
+      <small>物理帯：568～594、631～638、757～786など複数島に展開。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>5/27</strong><span class="vbadge vmid">中～高</span></div>
+      <p>ユーザー集計の「炎炎2～からくり、ユニコーン～SBJ、沖ドキ～無職の列、マンキン高配分、ゴージャグ」と、外部結果の炎炎2・SBJ・マンキン・ゴージャグ等の高配分が整合。</p>
+      <small>ただし「列全」の境界そのものは結果記事だけでは完全確定しないため、仕掛け形は一段低い信頼度。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>6/27</strong><span class="vbadge vhigh">高</span></div>
+      <p>東京喰種は36台中27台プラス、平均8,988G・平均+3,700枚。外部結果では喰種・リオエース2・ゴージャグを全台系として掲載。ユーザー集計と一致。</p>
+      <small>予想除外指定の少数台機種は履歴だけ保持。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>7/27</strong><span class="vbadge vhigh">高</span></div>
+      <p>Lカバネリ平均+2,481枚、東京喰種平均+2,434枚で双方全台系掲載。ユーザー集計「カバネリ、喰種（全）」と一致。</p>
+      <small>451～486・523～558の大型BOXを同日に使った実績として重要。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>8/27</strong><span class="vbadge vhigh">高</span></div>
+      <p>乙女5は703～720の18台が全台系掲載、平均+3,599枚。喰種・モンキーVも超高配分。ユーザー集計の「乙女5全、喰種・モンキーハーフ」と方向性が一致。</p>
+      <small>703～720帯の再利用と、主力多台数機種の1/2配分を27日パターンとして保持。</small></div>
+  </div>
+  <div class="hypothesis"><b>27日データから残す特徴</b>
+    <p>固定機種より「大型主力への全/1/2＋別島の高配分」が継続。東京喰種は6/27→7/27→8/27で連続して強く、7/27はLカバネリも全台。9/27予想では直近9/23の喰種・カバネリ1/2を考慮し、単純な同位置反復より595～642など別の主力物理帯へのローテも同時に監視する。</p>
+  </div>
+</section>
+
+<section class="section" id="29cross">
+ <div class="section-title"><h2>9のつく日 補助検証</h2><span>27日以外のローテ確認</span></div>
+ <div class="verify-grid">
+  <div class="verify-card"><div class="verify-top"><strong>5/29</strong><span class="vbadge vhigh">外部確認</span></div><p>ミリオンゴッド667～669など強い機種データを外部結果で確認。ユーザー集計のGOD・ジャグラーBOX等を補強。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>6/29</strong><span class="vbadge vhigh">外部確認</span></div><p>VVV2 631番以降を全台系として外部結果で確認。ユーザー集計「VVV2・からくり・ヨルムン全」と方向性が一致。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>7/29</strong><span class="vbadge vhigh">外部確認</span></div><p>攻殻775～780、戦コレ739～744など全台系の個別データを確認。ユーザー集計の「10機種全」を補強。</p></div>
+ </div>
+</section>
+
+
+<section class="section" id="datepatterns">
+  <div class="section-title"><h2>日付別パターン検証</h2><span>1・3・6・9・11・13・19・21・23・27・29</span></div>
+  <div class="verify-grid">
+    <div class="verify-card"><div class="verify-top"><strong>11日｜並び型</strong><span class="vbadge vhigh">再現性 高</span></div>
+      <p>5/11→6/11→7/11→8/11→9/11で「並び」を繰り返す傾向。Hall-Naviでも8/11レビューが過去の7/11・6/11・5/11を同系列として参照。7/11はカバネリ36台中23台プラスで、個別台でも連続して好挙動が並ぶ。</p>
+      <small>学習：機種全より6台前後の連続ブロックを強く見る。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>6日｜FREEDIA</strong><span class="vbadge vhigh">再現性 高</span></div>
+      <p>6/6・7/6・8/6に続き9/6もFREEDIA。Hall-Naviでは9/6マイジャグ955～990が29/36プラス、平均+1,414枚。ジャグラー、とくにマイジャグ軸が継続。</p>
+      <small>位置は固定せずBOX/壁側列のローテとして扱う。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>13日｜主力多台数</strong><span class="vbadge vhigh">外部補強</span></div>
+      <p>9/13はカバネリ36台中30台プラス、平均9,360G・+2,805枚。ユーザー集計の7/13・8/13・9/13もカバネリ/喰種/モンキーなど主力多台数への配分が中心。</p>
+      <small>学習：主力BOXの全/半/列を優先。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>19日｜機種仕掛け型</strong><span class="vbadge vhigh">外部補強</span></div>
+      <p>Hall-Naviで9/19は57台・平均+4,662枚の機種仕掛けレビュー。ユーザー集計では4/19、5/19、6/19、7/19、8/19、9/19で複数機種へ展開。</p>
+      <small>特定1機種固定ではなく複数島ローテとして扱う。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>29日｜複数全台＋列</strong><span class="vbadge vhigh">再現性あり</span></div>
+      <p>5/29・6/29・7/29の外部結果を確認。6/29はGOD691～702が12台中8台プラス・平均+3,783枚。ユーザー集計の全台/列仕掛けと方向性が一致。</p>
+      <small>27日とは別に、月末9のつく日は複数機種へ広く配る傾向として保持。</small></div>
+    <div class="verify-card"><div class="verify-top"><strong>1・3・9・21・23日</strong><span class="vbadge vmid">個別評価</span></div>
+      <p>日付そのものより来店/取材と物理帯の影響が大きい。9/1 SAO2、9/3モンキーV、9/21ジャグラーBOX、9/23喰種/カバネリなど、各回の対象形を別々に学習する。</p>
+      <small>単純な「末尾日付＝同じ機種」という法則にはしない。</small></div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section" id="blockmetrics">
+ <div class="section-title"><h2>ブロック数値化</h2><span>4月以降の確認履歴を段階評価</span></div>
+ <div class="notice">「使用回数」は全営業日の完全データではなく、現在までにユーザー集計＋外部サイトで確認できた対象日ベース。未確認日を0回として扱わない。</div>
+ <div class="verify-grid" style="margin-top:9px">
+  <div class="verify-card"><div class="verify-top"><strong>602～607</strong><span class="vbadge vhigh">反復確認</span></div>
+   <p>6/13は602 +10,067枚、603 +2,716枚、604 +562枚、605 +679枚、607 +3,257枚。別日Hall-Naviでも603 +8,616枚、604 +9,524枚、605 +1,614枚、607 +4,660枚を確認。</p>
+   <small>解釈：過去の強い並びが複数回見えるため、9/27の入口監視には使える。ただし「未使用穴」ではない。</small></div>
+  <div class="verify-card"><div class="verify-top"><strong>613～618</strong><span class="vbadge vmid">比較ブロック</span></div>
+   <p>Hall-Navi掲載日の613～618は613～615・617がプラス、616・618がマイナス。602～607ほど一方向に揃っていない。</p>
+   <small>9/27：602～607と同時比較し、初当り/CZが横に揃う場合のみ昇格。</small></div>
+  <div class="verify-card"><div class="verify-top"><strong>703～714</strong><span class="vbadge vmid">物理帯再利用</span></div>
+   <p>6/21は703 +3,559枚、710 +7,573枚、711 +5,093枚。6/11は704 +1,826枚、708 +607枚、714 +3,449枚。機種が変わっても703～714周辺で強い台を複数回確認。</p>
+   <small>解釈：機種固定より「位置再利用」の補助根拠として有効。</small></div>
+ </div>
+ <div class="hypothesis"><b>9/27への補正</b><p>602～607は過去反復があるため朝の確認価値は高いが、空白期間だけを理由に最上位にはしない。613～618との横比較を最優先し、703～714は別島ローテの監視帯として残す。</p></div>
+</section>
+
+<section class="section" id="block36">
+ <div class="section-title"><h2>3台・6台ブロック分析</h2><span>外部個別台履歴で補正</span></div>
+ <div class="verify-grid">
+  <div class="verify-card"><div class="verify-top"><strong>595～612</strong><span class="vbadge vhigh">使用頻度 高</span></div>
+   <p>9/3に595～612のモンキーVが機種単位で強く、7/13にも同帯が強い。602～607は監視入口には使えるが「長期空白ブロック」ではない。</p><small>評価：空白狙いではなく、当日の3～6台連続挙動で判定。</small></div>
+  <div class="verify-card"><div class="verify-top"><strong>613～618</strong><span class="vbadge vmid">隣接比較</span></div>
+   <p>外部履歴では613～630側も複数日に単品・塊で使用。613～618だけを固定本命にせず、619～624・625～630まで横比較する。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>703～708 / 709～714</strong><span class="vbadge vmid">再利用帯</span></div>
+   <p>5/23には703～708が高稼働、6/21は703・710・711が強い。8/27は703～720の乙女5が強く、機種入替後も物理帯として再利用されている。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>451～468 / 523～558</strong><span class="vbadge vmid">直近使用注意</span></div>
+   <p>喰種・カバネリは27日実績が強いが9/23にも1/2対象。9/27は3台/6台で初当り・CZが横に揃う場合だけ優先度を上げる。</p></div>
+ </div>
+ <div class="hypothesis"><b>ブロック単位の見方</b><p>「最終使用日が古い＝本命」とはしない。①過去の3/6台連続使用、②直近の全/半使用、③隣接帯へのローテ、④当日の設定挙動を合わせて判断する。</p></div>
+</section>
+
+<section class="section" id="majorbands">
+ <div class="section-title"><h2>主要4帯 比較</h2><span>直近使用 × 27日履歴</span></div>
+ <div class="verify-grid">
+  <div class="verify-card"><div class="verify-top"><strong>451～486｜東京喰種</strong><span class="vbadge vmid">強いが直近使用</span></div><p>6/27→7/27→8/27と27日実績が濃い一方、9/23にも1/2対象。9/27は同じBOX全体の反復より、位置変更した3～6台塊を確認。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>523～567｜カバネリ帯</strong><span class="vbadge vmid">直近使用</span></div><p>7/27全台実績に加え9/23も1/2。27日との相性はあるが直近使用度が高い。初当り/CZが6台単位で揃う場合のみ優先度を上げる。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>595～642｜モンキー～隣接帯</strong><span class="vbadge vhigh">比較優先</span></div><p>モンキーVは8/29にも12/18プラス・平均+1,696枚で使用実績があり、完全な空白帯ではない。ただし9/23の喰種/カバネリ直後というローテ条件から、9/27は隣接側を含め比較優先。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>703～732｜乙女周辺</strong><span class="vbadge vmid">27日再利用候補</span></div><p>8/27に乙女5 703～720が強く使われた帯。27日での再利用実績として保持するが、595～642より優先度は一段下げる。</p></div>
+ </div>
+ <div class="hypothesis"><b>比較結果</b><p>「最近入っていない」だけでは選ばず、直近使用と27日ローテを同時評価。現状は595～642を最初に比較し、451～486・523～567は9/23直後のため当日挙動を見て昇格、703～732を次点監視とする。</p></div>
+</section>
+
+<section class="section" id="band595">
+ <div class="section-title"><h2>595～642 深掘り</h2><span>台番履歴 × 連続ブロック</span></div>
+ <div class="notice">外部個別台データを追加照合。595～612のモンキーVは7/13と9/3に機種単位で強く、単純な「最近使われていない帯」ではないため、9/27は固定本命ではなく当日の横並び確認を必須に修正。</div>
+ <div class="verify-grid" style="margin-top:9px">
+  <div class="verify-card"><div class="verify-top"><strong>595～612｜モンキーV</strong><span class="vbadge vhigh">履歴濃い</span></div>
+   <p>7/13は18台中12台プラス・平均+2,759枚。9/3も18台中13台プラス・平均+3,892枚。602・603など複数回強い台があるため「未使用穴帯」とは扱わない。</p>
+   <small>9/27：602～607を入口にするが、3～6台で初当り/CZが揃わなければ固執しない。</small></div>
+  <div class="verify-card"><div class="verify-top"><strong>613～630周辺</strong><span class="vbadge vmid">隣接ローテ監視</span></div>
+   <p>5/21の外部個別データでは625・626・617・628・619・624・621など595～630帯の後半にも強い台が点在。595～612だけでなく隣接側へ仕掛けが跨ぐ実績を確認。</p>
+   <small>9/27：613～618 → 619～624 → 625～630の順で塊を確認。</small></div>
+  <div class="verify-card"><div class="verify-top"><strong>修正ポイント</strong><span class="vbadge vmid">過信防止</span></div>
+   <p>595～642を「空白だから本命」とする根拠は弱まった。むしろ過去に何度も使われた主力帯。予想根拠は空白期間ではなく、27日の主力ローテ・隣接配置・当日の設定挙動へ変更。</p></div>
+ </div>
+ <div class="hypothesis"><b>9/27の使い方</b><p>朝の優先監視は維持するが、595～642を一点決め打ちしない。602～607と613～618を同時比較し、初当り/CZが横に揃う側を優先。喰種451～468、カバネリ523～558、乙女703～720も並行監視する。</p></div>
+</section>
+
+<section class="section" id="recalc927">
+ <div class="section-title"><h2>9/27 再計算</h2><span>外部照合後の台番監視</span></div>
+ <div class="notice">27日は「同じ機種を毎回」より、主力多台数機種へ全/1/2＋複数の並びを組み合わせる傾向を優先。9/23使用済みの喰種・カバネリは継続監視するが、別帯ローテの比重を上げる。</div>
+ <div class="verify-grid" style="margin-top:9px">
+  <div class="verify-card"><div class="verify-top"><strong>最優先帯 595～642</strong><span class="vbadge vhigh">重点</span></div><p>モンキーV 595～612 → 602～607を最初に確認。隣接するからくり2側 613～631 → 613～618も連続して確認。単台ではなく3～6台のまとまり、初当り/CZの同時上振れを重視。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>東京喰種 451～468</strong><span class="vbadge vmid">継続監視</span></div><p>6/27・7/27・8/27の27日実績は非常に強い。一方9/23にも1/2対象。9/27はBOX丸ごとの単純反復より、455～460 / 463～468など位置を変えた塊を確認。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>Lカバネリ 523～558</strong><span class="vbadge vmid">継続監視</span></div><p>7/27全台実績＋9/23 1/2直後。523～528など6台単位の初当り/CZを見て、横に揃わなければ早めに優先度を下げる。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>乙女5 703～720</strong><span class="vbadge vmid">穴帯</span></div><p>8/27は703～720が全台系。27日で一度明確に使われた物理帯として監視。ただし前回27日から近いため595～642より優先度は下。</p></div>
+  <div class="verify-card"><div class="verify-top"><strong>ジャグラー 865～936</strong><span class="vbadge vmid">位置替え候補</span></div><p>9/21・9/25に955～1008周辺/パチ側列を使用。9/27は同一場所の連投より別BOX・中段帯を先に確認。REG・合算と6台以上の連続性で判断。</p></div>
+ </div>
+ <div class="hypothesis"><b>当日確認順</b><p>①595～642 → ②451～468 → ③523～558 → ④703～720 → ⑤865～936。差枚が出た台を追うのではなく、午前中は初当り/CZ・REG・合算が横並びで揃う場所を優先する。</p></div>
+</section>
+
+<section class="section" id="modelrules">
+ <div class="section-title"><h2>現在の予想モデル</h2><span>履歴照合後</span></div>
+ <div class="next-card">
+  <table class="rule-table">
+   <tr><td><b>① 日付/取材</b></td><td>11日=並び、6日FREEDIA=ジャグラー等、再現した「仕掛け形」を使用</td></tr>
+   <tr><td><b>② 物理帯</b></td><td>451～486 / 523～567 / 595～642 / 703～732 / 865～936 / 955～1008などの再利用を評価</td></tr>
+   <tr><td><b>③ 直近使用</b></td><td>直前に全/半で使った機種は、同位置据え置きより位置変更・隣接ローテを優先</td></tr>
+   <tr><td><b>④ 設定挙動</b></td><td>AT機=初当り/CZと横並び、ジャグラー=REG/合算と連続性。差枚単独は補助</td></tr>
+   <tr><td><b>⑤ 信頼度</b></td><td>外部数値一致を強く、🤔のみは弱く学習</td></tr>
+   <tr><td><b>除外</b></td><td>1～2台構成・技術介入系・SBJ・アレックス・シャーマンキングは予想対象外</td></tr>
+  </table>
+ </div>
+</section>
+
+<section class="section" id="learning-policy">
+  <div class="section-title"><h2>予想への反映方法</h2><span>誤学習を抑える</span></div>
+  <div class="next-card">
+    <table class="rule-table">
+      <tr><td><b>×1.00</b></td><td>複数外部ソース＋数値/仕掛け形まで一致</td><td>最優先データ</td></tr>
+      <tr><td><b>×0.75</b></td><td>外部1ソースで機種・結果が一致</td><td>通常データ</td></tr>
+      <tr><td><b>×0.45</b></td><td>日付/来店は確認、仕掛け形は未確認</td><td>補助データ</td></tr>
+      <tr><td><b>×0.20</b></td><td>🤔付き・ユーザー考察のみ</td><td>参考値</td></tr>
+      <tr><td><b>予想除外</b></td><td>2台以下・技術介入系・SBJ・アレックス・シャーマンキング</td><td>履歴だけ保持</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+    <div class="section-title"><h2>9月後半 最新履歴</h2><span>coba / Hall-Navi統合</span></div>
+    <div class="history-list">
+      <article class="history-item confirmed-history"><div class="history-head"><div class="history-date"><strong>9/23</strong><span class="special-tag">3のつく日</span></div><span class="history-badge confirmed-badge">coba</span></div><div class="history-event">渚恋生来店</div><div class="history-machines">東京喰種 1/2：平均+4,810枚（17/18）／Lカバネリ 1/2：平均+3,220枚（14/18）</div></article>
+      <article class="history-item"><div class="history-head"><div class="history-date"><strong>9/21</strong></div><span class="history-badge">coba/KD</span></div><div class="history-event">ウシオ＆森咲智美来店</div><div class="history-machines">マイジャグ 955～990 BOX、ネオアイム 991～1008列。ジャグラーシリーズ中心の仕掛け。</div></article>
+      <article class="history-item"><div class="history-head"><div class="history-date"><strong>9/19</strong><span class="special-tag">9のつく日</span></div><span class="history-badge">確認済</span></div><div class="history-event">りちゃのすけ来店 / 関西KO</div><div class="history-machines">北斗・マギレコ・VVV2。喰種は455-456 / 460-461 / 467-468の小並び履歴も追加。</div></article>
+      <article class="history-item"><div class="history-head"><div class="history-date"><strong>9/15</strong><span class="special-tag">5のつく日</span></div><span class="history-badge">coba</span></div><div class="history-machines">ガールズ 全台系：平均+2,380枚（4/5）／ゴージャグ マイV側BOX：平均+1,280枚（14/18）</div></article>
+    </div>
+  </section>
+
   <section id="history" class="section">
     <div class="section-title"><h2>過去の対象一覧</h2><span>2026年4月～9月</span></div>
     <div class="history-tools">
@@ -450,13 +605,13 @@ body:has(.css-modal:target){overflow:hidden}
       <button id="historyClear" type="button">クリア</button>
     </div>
     <div class="history-summary">
-      <b>59日分</b>
+      <b>58日分</b>
       <span>確認済みの対象機種・来店/イベントを新しい順に掲載</span>
     </div>
     <div id="historyList" class="history-list">
       
     <details class="month-group" open>
-      <summary><span>2026年9月</span><small>8日分</small></summary>
+      <summary><span>2026年9月</span><small>7日分</small></summary>
       <div class="month-body">
         
         <article class="history-item confirmed-history" data-history-search="9/19（土） りちゃのすけ来店 / 関西ko取材 スマスロ北斗の拳、マギアレコード、ヴァルヴレイヴ2 9のつく日">
@@ -467,16 +622,6 @@ body:has(.css-modal:target){overflow:hidden}
           <div class="history-event">りちゃのすけ来店 / 関西KO取材</div>
           <div class="history-machines">スマスロ北斗の拳、マギアレコード、ヴァルヴレイヴ2</div>
         </article>
-
-        <article class="history-item confirmed-history" data-history-search="9/15（火） ゴーゴージャグラー3 全27台高配分 879～891 910～923 平均+1005枚 平均7643g 19/27プラス 出玉率104.38%">
-          <div class="history-head">
-            <div class="history-date"><strong>9/15（火）</strong><span class="special-tag">対象確定</span></div>
-            <span class="history-badge confirmed-badge">確定</span>
-          </div>
-          <div class="history-event">ゴーゴージャグラー3｜全27台高配分</div>
-          <div class="history-machines">879～891 / 910～923｜平均+1,005枚・平均7,643G・19/27プラス・加重出玉率104.38%</div>
-        </article>
-
         <article class="history-item" data-history-search="9/13（日） 二階堂亜樹来店 a-slot+ ディスクアップ ultraremix、スマスロ 甲鉄城のカバネリ 海門決戦 ">
           <div class="history-head">
             <div class="history-date"><strong>9/13（日）</strong></div>
@@ -972,506 +1117,19 @@ body:has(.css-modal:target){overflow:hidden}
 
 
 
-
-<section id="tapfloor" class="section">
-  <div class="section-title"><h2>台番帯をタップ</h2><span>詳細ポップアップ</span></div>
-  <div class="tap-grid">
-    <a class="tap-block tap-link" href="#modal-b451" aria-label="451～486 東京喰種BOX の詳細を開く">
-      <div class="r">451～486</div>
-      <div class="n">東京喰種BOX</div>
-      <div class="m">スパイキー系</div>
-      <div class="scorebar"><i style="width:57%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b505" aria-label="505～567 カバネリ/主力新台 の詳細を開く">
-      <div class="r">505～567</div>
-      <div class="n">カバネリ/主力新台</div>
-      <div class="m">Sammy系</div>
-      <div class="scorebar"><i style="width:64%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b577" aria-label="577～594 禁書目録2帯 の詳細を開く">
-      <div class="r">577～594</div>
-      <div class="n">禁書目録2帯</div>
-      <div class="m">藤商事系</div>
-      <div class="scorebar"><i style="width:11%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b595" aria-label="595～605 モンキーV帯 の詳細を開く">
-      <div class="r">595～605</div>
-      <div class="n">モンキーV帯</div>
-      <div class="m">山佐系</div>
-      <div class="scorebar"><i style="width:36%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b631" aria-label="631～648 SAO2 / VVV2 の詳細を開く">
-      <div class="r">631～648</div>
-      <div class="n">SAO2 / VVV2</div>
-      <div class="m">SANKYO系</div>
-      <div class="scorebar"><i style="width:43%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b655" aria-label="655～702 大型AT連続島 の詳細を開く">
-      <div class="r">655～702</div>
-      <div class="n">大型AT連続島</div>
-      <div class="m">混合</div>
-      <div class="scorebar"><i style="width:71%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b703" aria-label="703～745 北斗/周辺AT の詳細を開く">
-      <div class="r">703～745</div>
-      <div class="n">北斗/周辺AT</div>
-      <div class="m">Sammy系</div>
-      <div class="scorebar"><i style="width:50%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b746" aria-label="746～766 マギレコ/新鬼/モンハン の詳細を開く">
-      <div class="r">746～766</div>
-      <div class="n">マギレコ/新鬼/モンハン</div>
-      <div class="m">ユニバーサル系</div>
-      <div class="scorebar"><i style="width:71%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b778" aria-label="778～792 SANKYO連続帯 の詳細を開く">
-      <div class="r">778～792</div>
-      <div class="n">SANKYO連続帯</div>
-      <div class="m">SANKYO系</div>
-      <div class="scorebar"><i style="width:82%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b830" aria-label="830～843 技術介入島 の詳細を開く">
-      <div class="r">830～843</div>
-      <div class="n">技術介入島（候補外）</div>
-      <div class="m">ユニバーサル系</div>
-      <div class="scorebar"><i style="width:100%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b865" aria-label="865～936 ジャグラー中段帯 の詳細を開く">
-      <div class="r">865～936</div>
-      <div class="n">ジャグラー中段帯</div>
-      <div class="m">北電子系</div>
-      <div class="scorebar"><i style="width:93%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a>
-    <a class="tap-block tap-link" href="#modal-b941" aria-label="941～1006 ジャグラー大型BOX の詳細を開く">
-      <div class="r">941～1006</div>
-      <div class="n">ジャグラー大型BOX</div>
-      <div class="m">北電子系</div>
-      <div class="scorebar"><i style="width:71%"></i></div>
-      <div class="tap-hint">タップで詳細 ›</div>
-    </a></div>
+<section id="realmap" class="section">
+  <div class="section-title"><h2>現行フロアマップ</h2><span>P-WORLD スマートフロアマップ参照</span></div>
+  <div class="map-live">
+    <iframe src="https://www.p-world.co.jp/hall/floor_maps/59fe32fdf468"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-fallback">
+      埋め込み表示が端末側でブロックされる場合は
+      <a href="https://www.p-world.co.jp/hall/floor_maps/59fe32fdf468" target="_blank" rel="noopener">現行フロアマップを開く</a>。
+    </div>
+  </div>
   <div class="notice" style="margin-top:9px">
-    各ブロックをタップすると、累計投入・直近30日・最終確認日・次回候補スコアを表示します。
-    JavaScriptを使わない方式に変更済みです。
-  </div>
-</section>
-
-    <div id="modal-b451" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>451～486｜東京喰種BOX</h3>
-        <div class="chip">スパイキー系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>16回</b></div>
-          <div><span>直近30日</span><b>5回</b></div>
-          <div><span>最終確認</span><b>2026/09/11</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b505" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>505～567｜カバネリ/主力新台</h3>
-        <div class="chip">Sammy系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>18回</b></div>
-          <div><span>直近30日</span><b>4回</b></div>
-          <div><span>最終確認</span><b>2026/09/13</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b577" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>577～594｜禁書目録2帯</h3>
-        <div class="chip">藤商事系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>3回</b></div>
-          <div><span>直近30日</span><b>3回</b></div>
-          <div><span>最終確認</span><b>2026/09/11</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b595" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>595～605｜モンキーV帯</h3>
-        <div class="chip">山佐系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>10回</b></div>
-          <div><span>直近30日</span><b>4回</b></div>
-          <div><span>最終確認</span><b>2026/09/09</b></div>
-          <div><span>次回スコア</span><b>60</b></div>
-        </div>
-        <div class="notice">B｜モンキーターンV</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b631" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>631～648｜SAO2 / VVV2</h3>
-        <div class="chip">SANKYO系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>12回</b></div>
-          <div><span>直近30日</span><b>1回</b></div>
-          <div><span>最終確認</span><b>2026/09/01</b></div>
-          <div><span>次回スコア</span><b>74</b></div>
-        </div>
-        <div class="notice">B+｜ソードアート・オンラインII</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b655" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>655～702｜大型AT連続島</h3>
-        <div class="chip">混合</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>20回</b></div>
-          <div><span>直近30日</span><b>6回</b></div>
-          <div><span>最終確認</span><b>2026/09/11</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b703" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>703～745｜北斗/周辺AT</h3>
-        <div class="chip">Sammy系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>14回</b></div>
-          <div><span>直近30日</span><b>1回</b></div>
-          <div><span>最終確認</span><b>2026/08/29</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b746" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>746～766｜マギレコ/新鬼/モンハン</h3>
-        <div class="chip">ユニバーサル系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>20回</b></div>
-          <div><span>直近30日</span><b>4回</b></div>
-          <div><span>最終確認</span><b>2026/09/09</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b778" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>778～792｜SANKYO連続帯</h3>
-        <div class="chip">SANKYO系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>23回</b></div>
-          <div><span>直近30日</span><b>7回</b></div>
-          <div><span>最終確認</span><b>2026/09/11</b></div>
-          <div><span>次回スコア</span><b>60</b></div>
-        </div>
-        <div class="notice">B｜SANKYO系連続帯</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b830" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>830～843｜技術介入島</h3>
-        <div class="chip">ユニバーサル系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>28回</b></div>
-          <div><span>直近30日</span><b>9回</b></div>
-          <div><span>最終確認</span><b>2026/09/13</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">候補外｜技術介入系は打たない方針</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b865" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>865～936｜ジャグラー中段帯</h3>
-        <div class="chip">北電子系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>26回</b></div>
-          <div><span>直近30日</span><b>4回</b></div>
-          <div><span>最終確認</span><b>2026/09/09</b></div>
-          <div><span>次回スコア</span><b>188</b></div>
-        </div>
-        <div class="notice">A｜ゴーゴージャグラー3 / A-｜ミスタージャグラー</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-    <div id="modal-b941" class="css-modal" role="dialog" aria-modal="true">
-      <a class="css-modal-bg" href="#tapfloor" aria-label="閉じる"></a>
-      <div class="css-modal-card">
-        <div class="modal-grabber"></div>
-        <h3>941～1006｜ジャグラー大型BOX</h3>
-        <div class="chip">北電子系</div>
-        <div class="modal-stat">
-          <div><span>累計投入</span><b>20回</b></div>
-          <div><span>直近30日</span><b>6回</b></div>
-          <div><span>最終確認</span><b>2026/09/09</b></div>
-          <div><span>次回スコア</span><b>0</b></div>
-        </div>
-        <div class="notice">次回候補なし</div>
-        <a class="close-btn close-link" href="#tapfloor">閉じる</a>
-      </div>
-    </div>
-
-
-
-
-
-
-
-<section id="gogo915" class="section">
-  <div class="section-title"><h2>9/15 ゴーゴージャグラー3 確定実績</h2><span>スクショ反映</span></div>
-  <div class="next-card">
-    <div class="event-grid">
-      <div class="mini"><span>対象台数</span><b>27台</b></div>
-      <div class="mini"><span>全台差枚</span><b>+27,144枚</b></div>
-      <div class="mini"><span>平均差枚</span><b>+1,005枚</b></div>
-      <div class="mini"><span>平均回転</span><b>7,643G</b></div>
-      <div class="mini"><span>プラス台</span><b>19 / 27台</b></div>
-      <div class="mini"><span>加重出玉率</span><b>104.38%</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
-      BB合計815・RB合計780、合成約1/129.4。9/15はゴーゴージャグラー3の<strong>機種全体高配分日</strong>として確定扱いに修正します。
-      これにより以前の「長期間空いている」という評価は撤回。9/22はちょうど7日後の同じ火曜日なので監視はしますが、<strong>直近で大規模使用済み</strong>のため本命には上げません。
-    </p>
-  </div>
-</section>
-
-
-
-<section id="machine-number-patterns" class="section">
-  <div class="section-title"><h2>台番末尾・並び法則の統計検証</h2><span>219台</span></div>
-  <div class="next-card">
-    <div class="event-grid">
-      <div class="mini"><span>日付末尾一致</span><b>法則なし</b></div>
-      <div class="mini"><span>ゾロ目</span><b>法則なし</b></div>
-      <div class="mini"><span>6台連続</span><b>注目</b></div>
-      <div class="mini"><span>ジャグ長列</span><b>強い</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
-      対象グループ内のプラス台数を固定した置換検定で確認。
-      「日付の1桁＝台番末尾」は18/23プラスでもp≈0.55、
-      下2桁ゾロ目も18/25でp≈0.79。末尾やゾロ目単独の再現性は確認できません。
-    </p>
-  </div>
-  <div class="performer-list" style="margin-top:10px">
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>6台以上の連続ブロック</strong><span>全体44窓 / 期待33.6</span></div><span class="confidence">p≈0.050</span></div>
-      <p>2台・3台の短い並びより、6台以上の長い塊の方がランダム期待を上回りました。</p>
-    </article>
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>ジャグラー限定</strong><span>6台連続24窓 / 期待14.2</span></div><span class="confidence">p≈0.020</span></div>
-      <p>最大連続は20台（9/6マイ971～990）。ジャグラーは末尾よりBOX・長列の位置再利用を重く見ます。</p>
-    </article>
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>GoGo 910～919</strong><span>911/913/915/917/919</span></div><span class="confidence">15/15</span></div>
-      <p>6/21・7/21・9/15の3回で奇数側5台が15/15プラス、偶数側は10/15。後付け検定なので確定法則ではなく監視パターン扱いです。</p>
-    </article>
-  </div>
-  <div class="notice" style="margin-top:10px">
-    今後の優先順：同一ブロック再利用 ＞ 6台以上の長い塊 ＞ 前回対象の左右/反対側 ＞ 特殊位置 ＞ 末尾・ゾロ目。
-    「22日だから末尾2」のような単純末尾狙いは採用しません。
-  </div>
-</section>
-
-<section id="target-machine-data" class="section">
-  <div class="section-title"><h2>対象台データ</h2><span>台番単位まで拡充</span></div>
-  <div class="next-card">
-    <div class="event-grid">
-      <div class="mini"><span>収録台数</span><b>200台超</b></div>
-      <div class="mini"><span>収録項目</span><b>G数・差枚・BB/RB</b></div>
-      <div class="mini"><span>計算</span><b>推定出玉率</b></div>
-      <div class="mini"><span>出典</span><b>各行URL付き</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
-      公開記事・Hall-navi・ユーザー提供スクショから、対象になった台を台番単位で再収集。
-      Excelの「対象台データ」では日付、機種、台番、G数、差枚、BB/RB、推定出玉率、対象区分、出典URLまで確認できます。
-    </p>
-  </div>
-  <div class="history-list" style="margin-top:10px">
-    <details class="month-group" open><summary><span>9/19 対象3機種</span><small>30台</small></summary><div class="month-body">
-      <div class="history-item confirmed-history"><div class="history-event">スマスロ北斗の拳｜739～756</div><div class="history-machines">18台中17台プラス・平均+3,361枚級。753番+12,996枚、740番+7,044枚、756番+6,563枚。</div></div>
-      <div class="history-item confirmed-history"><div class="history-event">マギアレコード｜721～726</div><div class="history-machines">6台のG数・差枚を追加。724番+3,414枚、726番+3,230枚。</div></div>
-      <div class="history-item confirmed-history"><div class="history-event">ヴァルヴレイヴ2｜643～648</div><div class="history-machines">6台を追加。645番+3,485枚。</div></div>
-    </div></details>
-    <details class="month-group"><summary><span>9/13 カバネリ</span><small>36台</small></summary><div class="month-body">
-      <div class="history-item confirmed-history"><div class="history-event">カバネリ 海門決戦｜523～558</div><div class="history-machines">36台中30台プラス・平均+2,805枚。全36台の台番データを収録。</div></div>
-    </div></details>
-    <details class="month-group"><summary><span>9/6 マイジャグラーV</span><small>36台</small></summary><div class="month-body">
-      <div class="history-item confirmed-history"><div class="history-event">マイジャグラーV｜955～990</div><div class="history-machines">36台中29台プラス・平均+1,414枚。全36台を収録。</div></div>
-    </div></details>
-    <details class="month-group"><summary><span>9/1・9/3・9/9</span><small>36台+</small></summary><div class="month-body">
-      <div class="history-item"><div class="history-event">9/1 SAO2｜631～642</div><div class="history-machines">12台。631番+15,225枚、632番+16,939枚、633番+16,709枚。</div></div>
-      <div class="history-item"><div class="history-event">9/3 モンキーターンV｜595～612</div><div class="history-machines">18台。610番+17,414枚、603番+10,742枚。</div></div>
-      <div class="history-item"><div class="history-event">9/9 マイジャグラーV｜973～978</div><div class="history-machines">6台列。6/6プラスで全台7,400G超。</div></div>
-    </div></details>
-    <details class="month-group"><summary><span>ゴーゴージャグラー3 履歴</span><small>6/21・7/21・9/15</small></summary><div class="month-body">
-      <div class="history-item"><div class="history-event">6/21｜879～891 / 910～923</div><div class="history-machines">27台中22台プラス、平均+1,279枚。全27台を収録。</div></div>
-      <div class="history-item"><div class="history-event">7/21｜879～891 / 910～923</div><div class="history-machines">27台中18台プラス、平均+1,118枚。全27台を収録。</div></div>
-      <div class="history-item confirmed-history"><div class="history-event">9/15｜879～891 / 910～923</div><div class="history-machines">27台中19台プラス、平均+1,005枚、加重出玉率104.38%。</div></div>
-    </div></details>
-  </div>
-</section>
-
-<section id="payout-holiday" class="section">
-  <div class="section-title"><h2>土日祝 × 出玉率 実測</h2><span>8/10〜9/20</span></div>
-  <div class="next-card">
-    <div class="event-grid">
-      <div class="mini"><span>平日 加重出玉率</span><b>101.56%</b></div>
-      <div class="mini"><span>土日 加重出玉率</span><b>100.60%</b></div>
-      <div class="mini"><span>差</span><b>-0.96pt</b></div>
-      <div class="mini"><span>土日平均稼働</span><b>約5,910G / 台</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
-      対象は保存済み台別データの<strong>マイジャグラーV＋L東京喰種</strong>のみ。
-      土日は平日より稼働が高い一方、回転数加重の出玉率は約0.96pt低下。
-      ただし機種差が大きいため「休日＝一律弱い」ではなく機種別に補正します。
-    </p>
-  </div>
-  <div class="performer-list" style="margin-top:10px">
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>マイジャグラーV</strong><span>平日101.33% → 土日101.13%</span></div><span class="confidence">維持</span></div>
-      <p>土日は1台平均約6,704Gまで稼働が上がっても出玉率低下は約0.20pt。9/22の本命評価は下げません。</p>
-    </article>
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>L 東京喰種</strong><span>平日102.52% → 土日98.70%</span></div><span class="confidence">減点</span></div>
-      <p>土日9日分では累計差枚がマイナス。荒い機種なので断定はしませんが、休日の優先順位は大きく下げます。</p>
-    </article>
-  </div>
-  <div class="notice" style="margin-top:10px">
-    祝日単独データは期間内で8/11の1日だけ（103.74%）のため、祝日そのものをプラス/マイナスには決めません。
-    9/22は「連休で高稼働になりやすい環境」を警戒し、広範囲ATよりジャグラーの狭い並びを優先します。
-  </div>
-</section>
-
-<section id="calendar922" class="section">
-  <div class="section-title"><h2>9/22 暦・曜日補正</h2><span>再精査</span></div>
-  <div class="next-card">
-    <div class="next-date"><strong>火曜日・国民の休日</strong><span class="chip">SILVER WEEK</span></div>
-    <div class="event-grid">
-      <div class="mini"><span>暦</span><b>5連休の4日目</b></div>
-      <div class="mini"><span>22日過去</span><b>平日3回＋土曜1回</b></div>
-      <div class="mini"><span>直近22日</span><b>7月・8月ともマイ</b></div>
-      <div class="mini"><span>曜日の重み</span><b>補助 5～10%</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
-      9/22は通常の平日火曜ではありません。ただし過去の22日は金・月・水・土と曜日がバラけても対象が出ているため、
-      <strong>曜日より「22日ローテ」「同企画X style」「萬田千鶴の同店実績」「前日からの配置移動」</strong>を優先します。
-      祝日は稼働条件の補正として扱い、高設定の直接根拠にはしません。
-    </p>
-  </div>
-</section>
-
-<section id="visit922" class="section">
-  <div class="section-title"><h2>9/22 来店・収録 詳細</h2><span>調査更新</span></div>
-  <div class="next-card">
-    <div class="next-date"><strong>X style（クロススタイル）</strong><span class="chip">JANBARI.TV</span></div>
-    <div class="event-grid">
-      <div class="mini"><span>来店</span><b>愛波優子</b></div>
-      <div class="mini"><span>来店</span><b>萬田千鶴</b></div>
-      <div class="mini"><span>形式</span><b>W来店・番組収録</b></div>
-      <div class="mini"><span>入場</span><b>シャッフル整理券 9:20</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">
-      X styleはJANBARIの対決型実戦番組。番組名そのものが特定機種・高設定投入を保証するものではないため、
-      明日の予想は<strong>22日の店内ローテ＋9/21実績＋萬田千鶴の同店過去実績</strong>を主軸にしています。
-    </p>
-  </div>
-
-  <div class="performer-list" style="margin-top:10px">
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>萬田千鶴 × 同店実績</strong><span>再現性を最重要視</span></div><span class="confidence">強</span></div>
-      <p>6/3は攻殻が超高配分、ジャグラーもマイ20台・ゴー15台・ネオアイム20台など多数ピック。6/13はネオアイム・攻殻・マギレコ等が全台系、リオエース2も超高配分。</p>
-    </article>
-    <article class="performer-card">
-      <div class="performer-top"><div><strong>愛波優子 × 全国来店データ</strong><span>同店実績が少ないため補助</span></div><span class="confidence">参考</span></div>
-      <p>直近6か月の全国集計では、来店日にSAO2が1台平均+837枚で上位。ただし店舗横断データなので、明日の同店予測には補助材料としてのみ使用。</p>
-    </article>
-  </div>
-</section>
-
-
-<section id="xstyle-history" class="section">
-  <div class="section-title"><h2>同店 X style 過去実績</h2><span>4/21(火)</span></div>
-  <div class="performer-card">
-    <div class="performer-top"><div><strong>七瀬静香 × 萬田千鶴</strong><span>同じX style・同じ火曜日</span></div><span class="confidence">重要</span></div>
-    <p>4/21はホールナビ集計で101台ピック平均+2,109枚。モンスターハンターライズは9台中7台プラス、平均+3,692枚。今回は4/21の「1のつく日」が無い一方、9/22は国民の休日＋22日ローテなので、X style単独の再現と決めつけず補助根拠として使用。</p>
-  </div>
-</section>
-
-<section id="next922" class="section">
-  <div class="section-title"><h2>明日 9/22 予想</h2><span>X style｜愛波優子・萬田千鶴</span></div>
-  <div class="next-card">
-    <div class="next-date"><strong>2026/9/22（火）</strong><span class="chip">NEXT</span></div>
-    <p style="font-size:12px;color:#cbd5e1;margin:10px 0 12px">9/15ゴージャグ実績まで反映した最終順は、マイジャグBOX → アイム/ネオアイム → 攻殻 → モンハン。ゴージャグは9/15全27台高配分の7日後・同じ火曜なので監視しますが、直近使用済みのため本命にはしません。</p>
-    <div class="pick-list">
-      <article class="pick-card"><div class="pick-head"><span class="rank rank-A">A+</span><div class="pick-title"><strong>マイジャグラーV</strong><span>941～1006大型BOX内のマイ配置</span></div><div class="days"><b>1</b><small>最優先</small></div></div><p>7/22・8/22と直近2回の22日でマイ。前日の強い2台そのものより、隣接2台・BOX反対側・未使用列を優先。</p></article>
-      <article class="pick-card"><div class="pick-head"><span class="rank rank-A">A</span><div class="pick-title"><strong>アイムジャグラー系</strong><span>現行配置を当日確認</span></div><div class="days"><b>2</b><small>優先</small></div></div><p>9/21の中心機種。萬田千鶴来店の6/13ではネオアイムが全台系。2台並び継続ならREG・合算の同時良化を重視。</p></article>
-      <article class="pick-card"><div class="pick-head"><span class="rank rank-Am">A-</span><div class="pick-title"><strong>攻殻機動隊</strong><span>過去703～714周辺 / 現行位置確認</span></div><div class="days"><b>3</b><small>AT本命</small></div></div><p>6/22実績に加え、萬田千鶴来店6/13でも全台系。ジャグラーの朝挙動が弱い場合のAT本命候補。</p></article>
-      <article class="pick-card"><div class="pick-head"><span class="rank rank-Bp">B+</span><div class="pick-title"><strong>ゴーゴージャグラー3</strong><span>879～891 / 910～923</span></div><div class="days"><b>監視</b><small>7日後</small></div></div><p>9/15は27台合計+27,144枚、平均+1,005枚、加重出玉率104.38%。9/22は同じ火曜の7日後だが、直近大規模使用済みのため「同曜日再登場」の監視候補に留める。</p></article>
-      <article class="pick-card"><div class="pick-head"><span class="rank rank-Bp">B+</span><div class="pick-title"><strong>リオエース2</strong><span>現行配置確認</span></div><div class="days"><b>4</b><small>次点</small></div></div><p>5/22高配分候補、6/13萬田千鶴来店でも超高配分。小台数なら機種単位の平均挙動を確認。</p></article>
-    </div>
-    <div class="notice" style="margin-top:10px">9/22はJANBARI.TV『X style』収録、愛波優子・萬田千鶴。外部イベント評価は補助扱い。予想の主根拠は22日ローテ＋9/21実績＋過去の萬田千鶴来店実績です。愛波優子の全国来店統計ではSAO2が上位ですが、同店実績不足のためB+の補助候補扱いです。</div>
-  </div>
-</section>
-
-<section id="result921" class="section">
-  <div class="section-title"><h2>9/21 答え合わせ</h2><span>確定実績を反映</span></div>
-  <div class="next-card">
-    <div class="next-date"><strong>ジャグラー中心・2台並び</strong><span class="chip">RESULT</span></div>
-    <div class="event-grid">
-      <div class="mini"><span>中心機種</span><b>マイジャグラー</b></div>
-      <div class="mini"><span>中心機種</span><b>アイムジャグラー</b></div>
-      <div class="mini"><span>投入単位</span><b>2台並び</b></div>
-      <div class="mini"><span>21日再現</span><b>5回連続ジャグラー系</b></div>
-    </div>
-    <p style="font-size:12px;color:#cbd5e1;margin:12px 0 0">事前予測は「ジャグラーが強い」という大枠は一致。一方、ゴージャグ/ミスターを上位に置きすぎました。今後の21日は <strong>マイジャグ・アイム → 隣接2台 → その他ジャグラー → 高機械割AT</strong> の順で補正します。</p>
+    実店舗の現行配置は上のP-WORLDマップで確認し、その下の「島図ヒートマップ」と照合する構成です。
+    外部サイトの表示制限により、フロア画像そのものへ座標を固定して色を重ねる方式ではなく、現行図＋分析レイヤーを同一ページで確認する方式にしています。
   </div>
 </section>
 
@@ -1669,8 +1327,8 @@ body:has(.css-modal:target){overflow:hidden}
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
           <div class="heat-range">505～567</div>
           <div class="heat-name">カバネリ/主力新台</div>
-          <div class="heat-score">76</div>
-          <div class="heat-meta">A-｜カバネリ（機械割補正後）</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
         </article>
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
           <div class="heat-range">577～594</div>
@@ -1681,8 +1339,8 @@ body:has(.css-modal:target){overflow:hidden}
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.389);border-color:rgba(96, 165, 250, 0.396)">
           <div class="heat-range">595～605</div>
           <div class="heat-name">モンキーV帯</div>
-          <div class="heat-score">0</div>
-          <div class="heat-meta">TOP6外｜機械割は高いが日付根拠不足</div>
+          <div class="heat-score">60</div>
+          <div class="heat-meta">B｜モンキーターンV</div>
         </article>
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.445);border-color:rgba(96, 165, 250, 0.436)">
           <div class="heat-range">631～648</div>
@@ -1711,33 +1369,33 @@ body:has(.css-modal:target){overflow:hidden}
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.389);border-color:rgba(96, 165, 250, 0.396)">
           <div class="heat-range">778～792</div>
           <div class="heat-name">SANKYO連続帯</div>
-          <div class="heat-score">0</div>
-          <div class="heat-meta">TOP6外｜9/21はジャグラー/カバネリ優先</div>
+          <div class="heat-score">60</div>
+          <div class="heat-meta">B｜SANKYO系連続帯</div>
         </article>
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.501);border-color:rgba(96, 165, 250, 0.477)">
           <div class="heat-range">830～843</div>
           <div class="heat-name">技術介入島</div>
-          <div class="heat-score">0</div>
-          <div class="heat-meta">候補外｜技術介入系</div>
+          <div class="heat-score">88</div>
+          <div class="heat-meta">A-｜アレックス ブライト / 技術介入島</div>
         </article>
         <article class="heat-cell hottest" style="background:rgba(94, 234, 212, 0.900);border-color:rgba(96, 165, 250, 0.770)">
           <div class="heat-range">865～936</div>
           <div class="heat-name">ジャグラー中段帯</div>
-          <div class="heat-score">247</div>
-          <div class="heat-meta">A+｜ゴージャグ / A｜ミスター / A-｜ファンキー・ガールズ・ウルミラ</div>
+          <div class="heat-score">188</div>
+          <div class="heat-meta">A｜ゴーゴージャグラー3 / A-｜ミスタージャグラー</div>
         </article>
         <article class="heat-cell" style="background:rgba(94, 234, 212, 0.150);border-color:rgba(96, 165, 250, 0.220)">
           <div class="heat-range">941～1006</div>
           <div class="heat-name">ジャグラー大型BOX</div>
-          <div class="heat-score">75</div>
-          <div class="heat-meta">A-｜マイジャグ BOXローテ（補正後）</div>
+          <div class="heat-score">0</div>
+          <div class="heat-meta">候補なし</div>
         </article>
       </div>
     </section>
     
   <div class="notice" style="margin-top:10px">
-    次回狙い目オーバーレイは、21日パターン・投入間隔・島ローテに<strong>機種別設定6機械割</strong>を加えた補正後スコアです。<br>
-    高機械割AT機は期待値を加点する一方、過去の単発大差枚は高設定証拠として割り引いています。
+    次回狙い目オーバーレイは、A / A- / B+ / B などの優先度を点数化して台番帯に集約したものです。<br>
+    9/19に使用済みの北斗・マギレコ・VVV2は、次回候補の優先度を一段下げた前提で反映しています。
   </div>
 </section>
 
@@ -1746,9 +1404,9 @@ body:has(.css-modal:target){overflow:hidden}
     <details>
       <summary>分析ルール・注意点</summary>
       <div class="details-body">
-        <p>候補は「同一日付パターン（特に21日）」「特定日実績」「機種単位の投入間隔」「島図上の隣接ローテ」「来店演者傾向」「機種別機械割」を重ねて整理しています。高機械割AT機は単発差枚を過大評価せず、初当たり・CZ・塊・再現性を重視します。</p>
+        <p>候補は「特定日実績」「機種単位の投入間隔」「島図上の隣接ローテ」「来店演者のメーカー傾向」を重ねて整理しています。</p>
         <p>来店演者とメーカーの相関は、合同来店・取材併催の影響を完全には分離できません。偏りは演者本人の指示や意向を意味しません。</p>
-        <p>9/19の3機種はユーザー確定情報として保持しつつ、9/21公開の関西すろいべ結果記事も追加参照。記事では平均G数5,728Gと全台系機種セクションの公開を確認しています。9/21当日結果はまだ公開待ちです。🤔等の私見表記は確度を一段下げて扱っています。</p>
+        <p>9/19の3機種はユーザー提供の確定情報として反映し、公開記事で確認できる情報とは区別しています。</p>
       </div>
     </details>
   </section>
@@ -1756,46 +1414,51 @@ body:has(.css-modal:target){overflow:hidden}
   <section class="section">
     <details>
       <summary>主な参照ページ</summary>
-      <div class="details-body"><div class="source-links"><a href="https://kansai-sloeve.com/2026/09/21/9-19-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/19結果（9/21公開）<span>↗</span></a>
-<a href="https://hall-navi.com/hole_view?ec=event&hid=531006400000002111&koe=5526" target="_blank" rel="noopener">ホールナビ 9/21当日評価<span>↗</span></a>
-<a href="https://www.p-world.co.jp/osaka/grankicona-honten.htm" target="_blank" rel="noopener">P-WORLD 9/21更新<span>↗</span></a>
-<a href="https://ww.twstalker.com/g_kicona_honten" target="_blank" rel="noopener">店舗公式Xミラー 9/21告知<span>↗</span></a>
-<a href="https://slo-map.com/halls/7552" target="_blank" rel="noopener">スロマップAI 9/21イベント情報<span>↗</span></a>
-<a href="https://raiten-ex.com/user/%E3%82%A6%E3%82%B7%E3%82%AA%E6%9D%A5%E5%BA%97/" target="_blank" rel="noopener">来店分析EX ウシオ来店<span>↗</span></a>
-<a href="https://www.slo-map.com/media/other-coverage/ushio-visit" target="_blank" rel="noopener">スロマップAI ウシオ来店<span>↗</span></a>
-<a href="https://kansai-sloeve.com/2026/09/14/9-13-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/13結果・島図<span>↗</span></a>
+      <div class="details-body"><div class="source-links"><a href="https://kansai-sloeve.com/2026/09/14/9-13-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/13結果・島図<span>↗</span></a>
 <a href="https://kansai-sloeve.com/2026/09/12/9-11-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 9/11結果<span>↗</span></a>
 <a href="https://kansai-sloeve.com/2026/04/04/4-3-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">関西すろいべ 4/3結果<span>↗</span></a>
-<a href="https://hallcalendar.jp/gran-kicona-osaka-honten" target="_blank" rel="noopener">9/21予定（ホルカレ）<span>↗</span></a>
-<a href="https://www.p-world.co.jp/machine/database/9848" target="_blank" rel="noopener">ゴーゴージャグラー3 機械割<span>↗</span></a>
-<a href="https://pachinavi.net/machines/mister-juggler/settei/" target="_blank" rel="noopener">ミスタージャグラー 機械割<span>↗</span></a>
-<a href="https://pachinavi.net/machines/my-juggler-v/settei/" target="_blank" rel="noopener">マイジャグラーV 機械割<span>↗</span></a>
-<a href="https://pachinavi.net/machines/smasloth-kabaneri-kaimon/" target="_blank" rel="noopener">カバネリ 海門決戦 機械割<span>↗</span></a>
-<a href="https://www.p-world.co.jp/machine/database/10483" target="_blank" rel="noopener">SAO2 機械割<span>↗</span></a>
-</div></div>
+<a href="https://hallcalendar.jp/gran-kicona-osaka-honten" target="_blank" rel="noopener">9/21予定（ホルカレ）<span>↗</span></a></div></div>
     </details>
   </section>
 
-  <section id="excel" class="section">
-    <div class="section-title"><h2>Excel版</h2><span>元データ・集計表</span></div>
-    <div class="next-card">
-      <div class="next-date"><strong>分析Excelをダウンロード</strong><span class="chip">XLSX</span></div>
-      <p style="margin:10px 0 12px;color:#c9d3e2;font-size:12px">曜日・休日別の回転数加重出玉率、機種別の土日差、9/22最終補正まで追加したExcelです。</p>
-      <a href="グランキコーナ大阪_最新分析_島図ヒートマップ画像追加_2026-09-23.xlsx" download style="display:block;text-align:center;text-decoration:none;background:#1f6f5f;border:1px solid rgba(94,234,212,.45);padding:12px 14px;border-radius:13px;font-weight:900;color:#ecfdf5">Excelファイルをダウンロード</a>
+  
+<section id="latestdata" class="section">
+  <div class="section-title"><h2>最新統合データ</h2><span>Hall-Navi＋coba＋過去履歴</span></div>
+  <div class="confirmed">
+    <b>9/27 重点監視</b>
+    <strong>① モンキーV 595–612（中心602–607）　② からくり2 613–631（中心613–618）</strong>
+  </div>
+  <div class="pick-list" style="margin-top:10px">
+    <article class="pick-card"><div class="pick-head"><span class="rank rank-A">A</span><div class="pick-title"><strong>東京喰種 451–468</strong><span>455–460 / 463–468</span></div><div class="days"><b>高</b><small>反復</small></div></div><p>7/27全台、8/27ニブイチ、9/19小並び、9/23ニブイチ。投入形を変えながら反復。</p></article>
+    <article class="pick-card"><div class="pick-head"><span class="rank rank-A">A</span><div class="pick-title"><strong>Lカバネリ 523–558</strong><span>523–528など6台前後</span></div><div class="days"><b>高</b><small>反復</small></div></div><p>6～9月に大型配分を繰り返し。全台だけでなく局所6台塊も監視。</p></article>
+    <article class="pick-card"><div class="pick-head"><span class="rank rank-Am">穴</span><div class="pick-title"><strong>703–726帯</strong><span>乙女5・マギレコ等</span></div><div class="days"><b>帯</b><small>再利用</small></div></div><p>機種が変わっても同じ物理帯が繰り返し対象。703–708 / 715–726を監視。</p></article>
+    <article class="pick-card"><div class="pick-head"><span class="rank rank-Bp">J</span><div class="pick-title"><strong>ジャグラー</strong><span>列・BOXの位置移動重視</span></div><div class="days"><b>REG</b><small>優先</small></div></div><p>955–1008は9月に複数回使用。差枚よりREG・合算と6台以上の連続性で判断。</p></article>
+  </div>
+  <div class="heat-panel">
+    <div class="section-title"><h2 style="font-size:15px">coba直近結果</h2><span>画像付き投稿を含む確認分</span></div>
+    <div class="history-list">
+      <div class="history-item confirmed-history"><div class="history-head"><div class="history-date"><strong>9/23</strong></div><span class="history-badge confirmed-badge">coba</span></div><div class="history-machines">東京喰種 ニブイチ +4,810枚 17/18 ／ Lカバネリ ニブイチ +3,220枚 14/18</div></div>
+      <div class="history-item"><div class="history-head"><div class="history-date"><strong>9/21</strong></div><span class="history-badge">coba</span></div><div class="history-machines">マイジャグ955–990 BOX +1,450枚 29/36 ／ ネオアイム991–1008 +910枚 14/18</div></div>
+      <div class="history-item"><div class="history-head"><div class="history-date"><strong>8/27</strong></div><span class="history-badge">coba</span></div><div class="history-machines">乙女5 全台系 +3,600枚 15/18 ／ 東京喰種・モンキーV ニブイチ</div></div>
+      <div class="history-item"><div class="history-head"><div class="history-date"><strong>7/27</strong></div><span class="history-badge">coba</span></div><div class="history-machines">東京喰種 全台系 +2,430枚 25/36 ／ Lカバネリ 全台系 +2,480枚 27/36</div></div>
     </div>
-  </section>
+  </div>
+  <div class="notice" style="margin-top:10px">当日はAT機＝差枚より初当り/CZの横並び、ジャグラー＝REG・合算＋6台以上の連続性を優先。単発の大差枚だけでは設定判定しない。</div>
+  <div style="margin-top:10px"><a href="./グランキコーナ大阪_全履歴データ.xlsx" style="display:block;text-align:center;text-decoration:none;background:#2563eb;border-radius:13px;padding:12px;font-weight:900">最新の全履歴Excelを開く</a></div>
+</section>
 
-  <footer>Static mobile dashboard • generated from the current analysis workbook</footer>
+<div class="notice" style="margin-top:18px">更新基準：2026/9/25。Hall-Naviでは9/27のグランキコーナ大阪本店にスケジュール3件が掲載。coba検索で9/23の東京喰種・Lカバネリ結果を再確認。画像内で明確に取得できない個別台数値は推測していません。</div>
+<footer>Static mobile dashboard • generated from the current analysis workbook</footer>
 </main>
 
-<nav class="nav">
+<nav class="nav"><a href="#latestdata"><b>◎</b>最新</a>
   <a href="#next"><b>◉</b>次回</a>
   <a href="#picks"><b>◎</b>狙い目</a>
   <a href="#performers"><b>◆</b>演者</a>
   <a href="#floor"><b>▦</b>島図</a>
   <a href="#history"><b>≡</b>履歴</a>
-  <a href="#tapfloor"><b>☝</b>台番</a>
-  <a href="#next922"><b>→</b>明日</a>
+  <a href="#realmap"><b>▣</b>島図</a>
+  <a href="#heatmaps"><b>▥</b>熱図</a>
 </nav>
 
 <script>
@@ -1823,17 +1486,6 @@ body:has(.css-modal:target){overflow:hidden}
   clear.addEventListener('click', ()=>{ input.value=''; run(); input.focus(); });
 })();
 </script>
-
-
-
-
-
-<section id="island-heatmap-0923" style="max-width:1100px;margin:24px auto;padding:16px;background:#0b1220;border-radius:16px;color:#fff;">
-  <h2 style="margin:0 0 8px;">直近3カ月 島図ヒートマップ</h2>
-  <p style="margin:0 0 14px;color:#cbd5e1;">対象履歴の回数を島配置で可視化。差枚ではなく対象履歴の頻度です。9/22 禁書目録2（577～594）は直近対象として反映。</p>
-  <img src="島図ヒートマップ_2026-09-23.png" alt="グランキコーナ大阪本店 直近3カ月 島図ヒートマップ" style="width:100%;height:auto;border-radius:10px;display:block;">
-  <p style="margin:14px 0 0;"><a href="グランキコーナ大阪_最新分析_島図ヒートマップ画像追加_2026-09-23.xlsx" style="color:#7dd3fc;font-weight:700;">最新版Excelを開く</a></p>
-</section>
 
 </body>
 </html>
