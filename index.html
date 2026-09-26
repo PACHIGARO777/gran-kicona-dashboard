@@ -196,8 +196,8 @@ footer{color:#68758b;font-size:9px;text-align:center;margin-top:18px}
 <main class="shell">
   <header class="hero">
     <div class="eyebrow">Gran Kicona Osaka</div>
-    <h1>統合分析ダッシュボード</h1><span class="version-chip">LATEST 2026/9/25・ブロック数値化</span>
-    <p>最新版 2026/9/25｜最近入っていない機種を直近履歴で再計算</p>
+    <h1>統合分析ダッシュボード</h1><span class="version-chip">LATEST 2026/9/26・傾向再検証</span>
+    <p>最新版 2026/9/26｜機種・台番帯・曜日などを再集計</p>
     <div class="confirmed">
       <b>直近 9/23 確認</b>
       <strong>東京喰種 1/2（平均+4,810枚・17/18）／Lカバネリ 1/2（平均+3,220枚・14/18）</strong>
@@ -1424,6 +1424,23 @@ footer{color:#68758b;font-size:9px;text-align:center;margin-top:18px}
   </section>
 
   
+<section id="pattern-check" class="section">
+  <div class="section-title"><h2>履歴の傾向を再検証</h2><span>2026/4/9～9/19・数値台データ</span></div>
+  <div class="event-grid">
+    <div class="mini"><span>対象台データ</span><b>580件・34機種</b></div>
+    <div class="mini"><span>対象日</span><b>21日分</b></div>
+    <div class="mini"><span>7,000G以上</span><b>336件（57.9%）</b></div>
+    <div class="mini"><span>実績スコア75以上</span><b>203件（35.0%）</b></div>
+  </div>
+  <div class="verify-grid" style="margin-top:9px">
+    <div class="verify-card"><div class="verify-top"><strong>機種の再登場が候補傾向</strong><span class="vbadge vhigh">反復</span></div><p>投入履歴ではカバネリと東京喰種が各16日分に登場。主力機種の再利用は見られるが、公開ピックアップ台を集めたデータなので投入率そのものとは区別する。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>曜日・台番末尾に安定した規則なし</strong><span class="vbadge vmid">弱い</span></div><p>曜日あたりの対象日は2～5日。末尾別の差も機種構成や対象日の偏りを除けず、予測ルールとして採用できるほど一貫していない。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>台番帯は再利用の可能性</strong><span class="vbadge vmid">要蓄積</span></div><p>865～870のファンキー、879～919のゴージャグなど、複数日に近い範囲の再登場を確認。配置替えや機種変更を含むため、島図と照合する補助情報として扱う。</p></div>
+    <div class="verify-card"><div class="verify-top"><strong>メーカー・演者別は判定保留</strong><span class="vbadge vlow">項目不足</span></div><p>メーカー対応表と日付ごとの演者情報が全対象台に紐づいておらず、他項目と同じ条件で比較できない。データを補完してから再計算する。</p></div>
+  </div>
+  <div class="notice" style="margin-top:9px">対象台のプラス率は85.2%ですが、対象データ自体が公開ピックアップ台に偏っています。設定投入率やホール全体の勝率を示す数字ではありません。曜日集計などの詳細と限界はExcelの「傾向再検証」タブに記録。</div>
+</section>
+
 <section id="latestdata" class="section">
   <div class="section-title"><h2>最新統合データ</h2><span>Hall-Navi＋coba＋過去履歴</span></div>
   <div class="confirmed">
@@ -1449,16 +1466,17 @@ footer{color:#68758b;font-size:9px;text-align:center;margin-top:18px}
   <div style="margin-top:10px"><a href="./グランキコーナ大阪_全履歴データ.xlsx" style="display:block;text-align:center;text-decoration:none;background:#2563eb;border-radius:13px;padding:12px;font-weight:900">最新の全履歴Excelを開く</a></div>
 </section>
 
-<div class="notice" style="margin-top:18px">更新基準：2026/9/25。Hall-Naviでは9/27のグランキコーナ大阪本店にスケジュール3件が掲載。coba検索で9/23の東京喰種・Lカバネリ結果を再確認。画像内で明確に取得できない個別台数値は推測していません。</div>
+<div class="notice" style="margin-top:18px">更新基準：2026/9/26。過去対象台の傾向再集計を追加。Hall-Naviでは9/27のグランキコーナ大阪本店にスケジュール3件が掲載。coba検索で9/23の東京喰種・Lカバネリ結果を再確認。画像内で明確に取得できない個別台数値は推測していません。</div>
 <footer>Static mobile dashboard • generated from the current analysis workbook</footer>
 </main>
 
-<nav class="nav"><a href="#latestdata"><b>◎</b>最新</a>
+<nav class="nav" style="grid-template-columns:repeat(9,1fr)"><a href="#latestdata"><b>◎</b>最新</a>
   <a href="#next"><b>◉</b>次回</a>
   <a href="#picks"><b>◎</b>狙い目</a>
   <a href="#performers"><b>◆</b>演者</a>
   <a href="#floor"><b>▦</b>島図</a>
   <a href="#history"><b>≡</b>履歴</a>
+  <a href="#pattern-check"><b>∿</b>傾向</a>
   <a href="#realmap"><b>▣</b>島図</a>
   <a href="#heatmaps"><b>▥</b>熱図</a>
 </nav>
