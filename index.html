@@ -1,328 +1,39 @@
 <!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#10151d">
-  <meta name="description" content="グランキコーナ大阪本店の10/11特定日予想と過去実績・分析ダッシュボード">
-  <title>グランキコーナ大阪本店｜最新特定日予想・実績分析</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b1016;--surface:#121a24;--surface2:#182330;--line:#283647;--text:#f2f5f8;--muted:#9aa9b7;--mint:#7de0c0;--blue:#91c5f5;--amber:#f5ca72;--rose:#f28e92;--radius:18px}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--bg)}
-    body{margin:0;background:radial-gradient(ellipse at 50% -180px,#1d3541 0,transparent 560px),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;line-height:1.65}
-    a{color:inherit}
-    .page{max-width:900px;margin:auto;padding:26px 18px 110px}
-    .topline{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:12px}
-    .brand{font-weight:800;letter-spacing:.08em;color:#d8e7ed}
-    .status{border:1px solid #3b594f;background:#12251f;color:#bcebd8;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}
-    header{padding:28px 2px 12px}
-    h1{font-size:clamp(27px,6vw,42px);line-height:1.2;letter-spacing:-.04em;margin:0}
-    .subtitle{color:var(--muted);margin:10px 0 0;font-size:14px}
-    .hero{margin-top:20px;padding:21px;background:linear-gradient(145deg,#19312f,#172333 72%);border:1px solid #35524c;border-radius:24px;box-shadow:0 18px 60px #0005}
-    .hero-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-    .eyebrow{font-size:11px;letter-spacing:.13em;color:var(--mint);font-weight:850;text-transform:uppercase}
-    .hero h2{font-size:25px;line-height:1.3;margin:5px 0 4px}
-    .hero p{font-size:12px;color:#c0d0d6;margin:8px 0 0;max-width:680px}
-    .date-pill{flex:none;border:1px solid #658579;color:#d3f7e8;border-radius:12px;padding:8px 11px;font-size:13px;font-weight:800}
-    .lead-pick{margin-top:18px;padding:16px 17px;border:1px solid #47685f;border-radius:15px;background:#0e1d1b99}
-    .lead-pick .label{font-size:11px;color:#a7d9c7;font-weight:750}
-    .lead-pick strong{display:block;font-size:clamp(21px,5vw,30px);line-height:1.3;margin-top:3px}
-    .lead-pick p{margin:7px 0 0;color:#c2d5d0;font-size:12px}
-    .confidence{display:inline-flex;margin-top:9px;padding:3px 8px;border-radius:999px;background:#28473e;color:#c7efdf;font-size:10px;font-weight:800}
-    .section{margin-top:30px;scroll-margin-top:15px}
-    .section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 2px 12px}
-    .section-heading h2{font-size:19px;margin:0;letter-spacing:-.02em}
-    .section-heading span{font-size:11px;color:var(--muted);text-align:right}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:15px;min-width:0}
-    .card.primary{border-color:#3d6559;background:linear-gradient(155deg,#172620,#121a24 65%)}
-    .card.secondary{border-color:#38516a}
-    .card.low{border-color:#554b36}
-    .card-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
-    .rank{font-size:10px;font-weight:850;letter-spacing:.07em;color:var(--mint);text-transform:uppercase}
-    .confidence-tag{font-size:10px;color:#d3e1e8;border:1px solid #3a4b5b;border-radius:999px;padding:3px 8px;white-space:nowrap}
-    .card h3{font-size:16px;line-height:1.4;margin:9px 0 2px}
-    .machines{font-size:12px;color:var(--blue);font-weight:750}
-    .card p{font-size:12px;color:#c5ced7;margin:9px 0 0}
-    .reason{margin-top:11px;padding-top:9px;border-top:1px solid #2b3845;color:var(--muted);font-size:11px}
-    .callout{margin-top:10px;border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:#c2cdd7;background:#101720;font-size:11px}
-    .callout strong{color:var(--text)}
-    .bar{display:flex;gap:6px;align-items:center;margin-top:12px;flex-wrap:wrap}
-    .bar b{font-size:11px;color:#d8e3e8}
-    .tag{font-size:10px;padding:3px 8px;border-radius:999px;background:#1d2b37;color:#c4d3dc;border:1px solid #314456}
-    .tag.good{background:#142a24;border-color:#34594b;color:#bcebd4}
-    .tag.warn{background:#2a251a;border-color:#5d4d2b;color:#f3d595}
-    .result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .result-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px}
-    .result-card h3{font-size:14px;margin:0 0 8px}
-    .result-card p{font-size:11px;color:#c4ced7;margin:6px 0 0}
-    .result-card .big{font-size:20px;font-weight:850;color:var(--text);line-height:1.25}
-    .result-card .small{font-size:10px;color:var(--muted)}
-    .numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}
-    .number{background:#0d141b;border:1px solid #24313d;border-radius:11px;padding:9px 8px;text-align:center}
-    .number b{display:block;font-size:15px}
-    .number span{display:block;color:var(--muted);font-size:9px;margin-top:2px}
-    .rows{display:grid;gap:8px}
-    .row{display:grid;grid-template-columns:minmax(110px,.8fr) 1.5fr auto;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:10px 12px;font-size:11px}
-    .row strong{font-size:12px}
-    .row .detail{color:#c0ccd6}
-    .row .state{color:var(--mint);font-size:10px;white-space:nowrap}
-    .row.uncertain .state{color:var(--amber)}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-    .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px}
-    .stat b{display:block;font-size:18px;line-height:1.3}
-    .stat span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
-    .history{display:grid;grid-template-columns:120px 1fr;gap:10px;border-top:1px solid var(--line);padding:12px 2px;font-size:11px}
-    .history:first-child{border-top:0}
-    .history time{color:var(--muted);font-weight:750}
-    .history strong{color:#edf3f6}
-    .history p{margin:3px 0 0;color:#aebbc6}
-    .footnote{font-size:10px;color:#8493a1;margin:10px 2px 0}
-    .source-links{display:flex;flex-wrap:wrap;gap:8px}
-    .source-links a{display:inline-flex;text-decoration:none;background:#131c26;border:1px solid #2a3948;border-radius:11px;padding:9px 12px;color:#c9dae5;font-size:11px}
-    .source-links a:hover{border-color:var(--mint);color:white}
-    nav{position:fixed;z-index:5;left:50%;bottom:max(9px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(700px,calc(100% - 20px));display:flex;justify-content:space-around;gap:4px;padding:7px;background:#101820ed;border:1px solid #34414d;border-radius:16px;backdrop-filter:blur(12px);box-shadow:0 10px 40px #0008}
-    nav a{font-size:10px;color:#c4d0da;text-decoration:none;padding:7px 9px;border-radius:10px;white-space:nowrap}
-    nav a:hover{background:#20312f;color:#d4f8e9}
-    footer{text-align:center;color:#71808c;font-size:9px;margin-top:28px}
-    @media(max-width:620px){.page{padding:18px 13px 100px}.hero{padding:16px}.hero-head{display:block}.date-pill{display:inline-flex;margin-top:12px}.grid,.result-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:10px 8px}.stat b{font-size:15px}.row{grid-template-columns:1fr auto}.row .detail{grid-column:1/2}.row .state{grid-column:2;grid-row:1/3}.history{grid-template-columns:78px 1fr}nav{overflow-x:auto;justify-content:flex-start}nav a{padding-inline:8px}}
-    .onespark-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:15px;background:var(--surface)}
-    .onespark-table{border-collapse:collapse;width:100%;min-width:760px;font-size:11px;line-height:1.5}
-    .onespark-table th,.onespark-table td{padding:11px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-    .onespark-table th{color:var(--mint);font-weight:800;background:#16212c;white-space:nowrap}
-    .onespark-table tr:last-child td{border-bottom:0}
-    .onespark-table td:first-child{white-space:nowrap;color:#d7e3eb;font-weight:750}
-    .onespark-table a{color:var(--blue);text-decoration:none}
-    .onespark-table a:hover{text-decoration:underline}
-  </style>
-</head>
-<body>
-  <main class="page">
-    <div class="topline"><span class="brand">GRAN KICONA OSAKA HONTEN</span><span class="status">更新 2026.10.07</span></div>
-    <header>
-      <h1>最新の特定日予想・実績分析</h1>
-      <p class="subtitle">直近の対象日を先頭に表示。過去の予想・結果・OneSpark実績・投入傾向は下段に保存。</p>
-    </header>
-
-    <section id="latest-forecast" class="section">
-      <div class="section-heading"><h2>10/11「1のつく日」予想</h2><span>2026年10月11日（日）｜Aims Girl来店</span></div>
-      <div class="hero" aria-labelledby="latest-title">
-        <div class="hero-head">
-          <div><div class="eyebrow">Latest forecast · 2026.10.11</div><h2 id="latest-title">ハナビ軸に5機種・25台</h2><p>10/11はAims Girl来店予定。ハナビを軸に、過去の1のつく日・9/27・9/29・10/3の結果から5機種を選び、配置内の台番を各5台程度に限定しました。直近再投入の懸念がある機種は低確度です。設定投入の断定ではありません。</p></div>
-          <div class="date-pill">10/11（日）</div>
-        </div>
-        <div class="lead-pick"><span class="label">本命｜Aims Girl来店日の過去実績</span><strong>スマスロハナビ #831～835</strong><p>9/11の同来店日に全台系濃厚として掲載された5台。7/11にもハナビの連番投入実績があり、同じ島ブロックを優先監視します。</p><span class="confidence">予想確度：中以下｜計5機種・25台、追加候補は低確度</span></div>
-      </div>
-      <div class="grid" style="margin-top:10px">
-        <article class="card primary"><div class="card-top"><span class="rank">01 · 本命</span><span class="confidence-tag">低～中</span></div><h3>スマスロハナビ</h3><div class="machines">台番 #831～835｜5台</div><p>9/11のAims Girl来店日に全台系濃厚で掲載。7/11にも同じ機種ブロックが使われ、10/11の来店条件と重なります。</p><div class="reason">配置図上の連番候補。投入を示す確定情報ではないため、当日の挙動で判断。</div></article>
-        <article class="card secondary"><div class="card-top"><span class="rank">02 · 対抗監視</span><span class="confidence-tag">低</span></div><h3>Lパチスロ 甲鉄城のカバネリ</h3><div class="machines">台番 #543～547｜5台</div><p>7/11・9/11の「1のつく日」と9/29の#545～547掲載が根拠。記事掲載帯の両側を含む5台に絞った候補です。</p><div class="reason">#543・544は周辺台を含めた推定。9/29の短期再投入リスクを差し引きます。</div></article>
-        <article class="card low"><div class="card-top"><span class="rank" style="color:var(--amber)">03 · 抑え候補</span><span class="confidence-tag">低</span></div><h3>スマスロ とある魔術の禁書目録2</h3><div class="machines">台番 #581～585｜5台</div><p>9/29の強配分報告と10/3の#586～594掲載を確認。10/3の隣接帯から#581～585へ候補を限定しました。</p><div class="reason">直近実績からの再投入予想で確度は低め。設定投入の確定情報ではありません。</div></article>
-              <article class="card low"><div class="card-top"><span class="rank" style="color:var(--amber)">04 · 低確度</span><span class="confidence-tag">低</span></div><h3>スマスロ リコリス・リコイル</h3><div class="machines">台番 #560～562・#564～565｜計5台</div><p>9/29記事に#560～562と#564～566の並び掲載。二つの実績帯から計5台に絞りました。</p><div class="reason">9/27全台系、9/29並びの直近実績は加点しつつ、短期間の再投入懸念を大きく減点。</div></article>
-        <article class="card low"><div class="card-top"><span class="rank" style="color:var(--amber)">05 · 低確度</span><span class="confidence-tag">低</span></div><h3>戦国コレクション6</h3><div class="machines">台番 #734～738｜5台</div><p>9/27の全台系確認、9/29の#734～736並び、10/3の#733～738掲載が重なるエリアから5台を選びました。</p><div class="reason">直近3回の掲載が続いているため、履歴密度は高い一方、再投入の予測としては低確度。</div></article>
-      </div>
-      <div class="callout"><strong>イベント条件：</strong>10/11「1のつく日」予想。9/11同来店日のハナビ全台系濃厚掲載、7/11の並び実績、9/29・10/3結果を反映。予想は5機種・計25台に限定し、台番は現行島図上の配置範囲を参照。記事掲載や差枚だけで設定確定とは判定しません。 <a href="https://www.p-world.co.jp/osaka/grankicona-honten.htm" target="_blank" rel="noopener">P-WORLD現行機種・島図</a></div>
-    </section>
-
-    <section id="onespark" class="section">
-      <div class="section-heading"><h2>OneSpark｜5/1～10/1の本店実績</h2><span>5～9月の実績＋10/1結果記事</span></div>
-      <div class="onespark-table-wrap"><table class="onespark-table">
-        <thead><tr><th>日付</th><th>本店の全台系実績</th><th>規模・台番・数値</th><th>法人内の同機種一致</th><th>出典</th></tr></thead>
-        <tbody>
-          <tr><td>5/1</td><td>ゴーゴージャグラー3</td><td>27台／平均+858枚</td><td>指定記事群では他店の同機種一致を確認せず</td><td><a href="https://kansai-sloeve.com/2026/05/02/5-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">結果記事</a></td></tr>
-          <tr><td>6/1</td><td>ミリオンゴッド</td><td>30台／#667～696</td><td>西淀川・鶴見でも同日同機種</td><td><a href="https://kansai-sloeve.com/2026/06/02/6-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">結果記事</a></td></tr>
-          <tr><td>7/1</td><td>スマスロ北斗の拳</td><td>18台／#739～756／平均+3,149枚</td><td>指定記事群では他店の同機種一致を確認せず</td><td><a href="https://kansai-sloeve.com/2026/07/03/7-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">結果記事</a></td></tr>
-          <tr><td>8/1</td><td>ミリオンゴッド</td><td>30台／#667～696／平均+4,171枚・平均5,262G</td><td>松原でも同日同機種</td><td><a href="https://kansai-sloeve.com/2026/08/03/8-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">結果記事</a></td></tr>
-          <tr><td>9/1</td><td>ソードアート・オンラインII</td><td>12台／#631～642／平均+4,960枚・平均4,403G</td><td>西淀川・松原・鶴見でも同日同機種（本店を含め4店舗）</td><td><a href="https://kansai-sloeve.com/2026/09/04/9-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">結果記事</a></td></tr>
-<tr><td>10/1</td><td>北斗の拳</td><td>6台／#750～755／平均+4,700枚・平均6,161G</td><td>記事は全台ピックアップ。同一法人内の同機種一致は未確認</td><td><a href="https://kansai-sloeve.com/2026/10/03/10-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">結果記事</a></td></tr>
-        </tbody>
-      </table></div>
-      <p class="footnote">これは5～10月の毎月1日OneSpark実績です。月内の11日・21日など「1のつく日」は別条件のため、下の表に分けました。台番は当時の範囲です。</p>
-    </section>
-
-    <section id="one-days" class="section">
-      <div class="section-heading"><h2>1のつく日｜月内の追加実績</h2><span>OneSpark月初実績と区別</span></div>
-      <div class="onespark-table-wrap"><table class="onespark-table">
-        <thead><tr><th>日付</th><th>結果概要</th><th>掲載実績</th><th>予想への反映</th><th>出典</th></tr></thead>
-        <tbody>
-          <tr><td>9/11</td><td>平均4,363G／エイムズガール・来栖有紀来店</td><td>Lハナビ #831～835が全台系濃厚。平均差枚は掲載5台値から約+965枚。</td><td>ハナビの投入実績として加点。ただしOneSparkの法人横断データには数えない。</td><td><a href="https://kansai-sloeve.com/2026/09/12/9-11-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">結果記事</a></td></tr>
-          <tr><td>9/21</td><td>平均5,104G／ウシオ・森咲智美来店</td><td>マイジャグラーを中心に広く好調台掲載。GOD #669・674・676・691・696、SAO II #632・634・635・640なども掲載。</td><td>GODの1のつく日実績を補助材料にする。ただしGOD全台系ではなく、個別掲載台の実績。</td><td><a href="https://kansai-sloeve.com/2026/09/22/9-21-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">結果記事</a></td></tr>
-        </tbody>
-      </table></div>
-      <p class="footnote">「全台系濃厚」「超強かった機種」「単品ピックアップ」は記事の分類に従っています。記事掲載は設定確定を意味しません。</p>
-    </section>
-
-    <section id="results" class="section">
-      <div class="section-heading"><h2>直近の実績</h2><span>記事・ユーザー報告・画像の確認範囲</span></div>
-      <div class="result-grid">
-                <article class="result-card"><h3>10/3｜記事ピックアップ・平均5,576G</h3><div class="big">禁書目録2 #586～594｜9台</div><p>結果記事の「全台ピックアップ」に禁書目録2 #586～594、ワールドダイスター #771～774、戦国コレクション6 #733～738などを掲載。記事のピックアップ区分は設定確定・全台系確定と区別して記録。</p><div class="bar"><span class="tag good">禁書目録2 586～594</span><span class="tag good">ワールドダイスター 771～774</span><span class="tag good">戦コレ6 733～738</span></div><p class="small"><a href="https://kansai-sloeve.com/2026/10/05/10-3-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">10/3結果記事</a></p></article>
-        <article class="result-card"><h3>10/1｜OneSpark結果・平均3,845G</h3><div class="big">北斗 #750～755｜平均+4,700枚</div><p>差枚は+10,320／+5,866／+6,059／+4,305／+1,370／+280枚、平均6,161G。結果記事の「全台ピックアップ」として記録し、設定確定とは区別。</p><div class="bar"><span class="tag good">北斗 750～755</span><span class="tag warn">GOD本命予想は不的中</span><span class="tag good">北斗は候補内だが順位不足</span></div><p class="small">答え合わせ：予想1位GODは記事掲載なし。北斗は候補に含めたが2位。10/1予想は履歴として保持し、次回予想の検証材料に追加。</p><p class="small"><a href="https://kansai-sloeve.com/2026/10/03/10-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">10/1結果記事</a></p></article>
-        <article class="result-card"><h3>10/6｜公開予定情報</h3><div class="big">月一・天六の日・FREEDIA取材</div><p>10/5公開の予定記事にある来店・取材情報。結果・設定状況ではなく、事前イベント情報として記録。</p><p class="small"><a href="https://kansai-sloeve.com/2026/10/05/10%E6%9C%886%E6%97%A5-%E6%98%8E%E6%97%A5%E3%81%AE%E5%A4%A7%E9%98%AA%E3%81%99%E3%82%8D%E3%81%84%E3%81%B9-4/" target="_blank" rel="noopener">10/6予定記事</a>｜10/1予想・1のつく日予想は変更なし</p></article>
-<article class="result-card"><h3>9/29｜記事確認・9のつく日</h3><div class="big">平均5,024G｜全台系濃厚は喰霊零Re</div><p>記事掲載の台別差枚は#853 +2,374枚、#854 +1,190枚、#855 -671枚（表の3台平均+964枚）。同記事の3台並び一覧を反映しました。</p><div class="bar"><span class="tag good">リコリコ 509～511・514～516・520～522・560～562・564～566</span><span class="tag good">カバネリ 533～535・545～547・550～552・555～557</span><span class="tag good">SAO II 640～642</span><span class="tag good">やじきた 660～662</span><span class="tag good">戦コレ6 734～736</span><span class="tag good">炎炎2 775～783</span></div><p class="small">本文概要に記載の喰霊零Re平均差枚+5,576枚と、台別表3台の平均+964枚は一致しません。ここでは台別表を転記し、機種平均は要確認としました。ユーザー報告の並びと一致。カバネリは544～547のうち記事掲載は545～547です。</p></article>
-        <article class="result-card"><h3>9/29｜超強かった機種</h3><div class="big">乙女5・禁書2・リコリコも掲載</div><p>記事では邪神ちゃん、VVV2、戦コレ6、かぐや様、乙女5、Lハナビ、カバネリ、北斗転生2、禁書2、リコリコを高評価。ユーザー画像では乙女5 703～720が平均+1,943枚（12/18台プラス）、禁書2 577～588が平均+242枚。</p><p class="small">禁書2の画像集計は577～588の12台分のみで、島全体平均ではありません。</p></article>
-        <article class="result-card"><h3>9/29｜記事掲載外の候補</h3><p>カバネリ544～547の4台帯では、ユーザー報告で3台投入まで確認。ただし記事の並び一覧では545～547が掲載されているため、544を含む追加並びかどうかは保留。</p><div class="bar"><span class="tag warn">リコリコ 565～567は保留</span><span class="tag warn">リコリコ 514～516は保留</span></div></article>
-        <article class="result-card"><h3>9/27｜全台系 確認5機種</h3><div class="big">確認対象 54台</div><p>ユーザー確認：リコリコ、からくり2、戦コレ6、タクトオーパス、炎炎2。前4機種の平均差枚・台数・台番範囲は公開記事、全台系の確認はユーザー申告です。</p><div class="bar"><span class="tag good">リコリコ 27台｜+2,314枚｜505～522・559～567</span><span class="tag good">からくり2 9台｜+2,558枚｜568～576</span><span class="tag good">戦コレ6 6台｜+3,156枚｜733～738</span><span class="tag good">タクトオーパス 3台｜+1,458枚｜721～723</span><span class="tag good">炎炎2 9台｜設定5・6</span></div><p class="small">炎炎2は画像集計で平均7,145G・+606枚。その他4機種の個別台数値は記事未掲載。全台系確認は全台同一設定の断定とは区別。</p></article>
-      </div>
-    </section>
-
-        <section id="forecast-reconstruction" class="section">
-      <div class="section-heading"><h2>前日データによる予想再構成と答え合わせ</h2><span>再構成であり、当時の保存予想ではありません</span></div>
-      <div class="callout"><strong>検証ルール：</strong>各日の前日までに分かっていた過去結果だけから候補を再構成し、当日の実績と照合。後日の情報は候補選びに使っていません。「○/△」は結果記事やユーザー報告に候補機種が載った一致で、設定確定や設定的中を意味しません。候補根拠の記録がない日は判定対象外です。</div>
-      <div class="onespark-table-wrap" style="margin-top:10px"><table class="onespark-table">
-        <thead><tr><th>対象日</th><th>前日までに使える材料</th><th>再構成候補</th><th>結果との照合</th></tr></thead><tbody>
-          <tr><td>4/27 特定日</td><td>履歴開始前。4/26までの機種別実績なし</td><td>再構成不可</td><td>複数機種（かぐや様・鉄拳6・VVV2・からくり等）</td></tr>
-          <tr><td>5/1 OneSpark</td><td>4/27に複数主力機種の好配分</td><td>かぐや様／鉄拳6／VVV2</td><td>ゴージャグ3全台系｜×</td></tr>
-          <tr><td>5/27 毎月27日</td><td>5/1のゴージャグ3、4/27の多機種投入</td><td>ゴージャグ系／かぐや様／鉄拳6</td><td>炎炎2・SBJ・シャーマンキング・ゴージャグ等｜△ ゴージャグ一致</td></tr>
-          <tr><td>6/1 OneSpark</td><td>5/27の炎炎2・SBJ・シャーマンキング・ゴージャグ</td><td>ゴージャグ／炎炎2／SBJ</td><td>ミリオンゴッド全台系｜×</td></tr>
-          <tr><td>6/27 毎月27日</td><td>6/1 OneSparkのミリオンゴッド。直前の日別記録は不足</td><td>ミリオンゴッド（低確度）</td><td>東京喰種・リオエース2・ゴージャグ等｜×</td></tr>
-          <tr><td>7/1 OneSpark</td><td>6/27の東京喰種高稼働、リオエース2等</td><td>東京喰種／リオエース2</td><td>スマスロ北斗｜×</td></tr>
-          <tr><td>7/27 毎月27日</td><td>7/1の北斗、6/27の東京喰種</td><td>北斗／東京喰種</td><td>カバネリ・東京喰種全台系掲載｜○ 東京喰種</td></tr>
-          <tr><td>8/1 OneSpark</td><td>7/27のカバネリ・東京喰種</td><td>カバネリ／東京喰種</td><td>ミリオンゴッド全台系｜×</td></tr>
-          <tr><td>8/27 毎月27日</td><td>8/1のミリオンゴッド。日別履歴の不足あり</td><td>ミリオンゴッド（低確度）</td><td>戦国乙女5全台系、東京喰種・モンキーV高配分｜×</td></tr>
-          <tr><td>9/1 OneSpark</td><td>8/27の戦国乙女5・東京喰種・モンキーV</td><td>戦国乙女5／東京喰種</td><td>SAO II全台系（法人内4店）｜×</td></tr>
-          <tr><td>9/11 1のつく日</td><td>9/1のSAO II。過去の11日履歴は未集約</td><td>SAO II（低確度）</td><td>Lハナビ・ユニコーン覚醒・SBJ全台系｜×</td></tr>
-          <tr><td>9/21 1のつく日</td><td>9/11のLハナビ・ユニコーン覚醒・SBJ</td><td>Lハナビ／ユニコーン覚醒／SBJ</td><td>マイジャグBOX・ネオアイム列、ゴッドイーター等｜×</td></tr>
-          <tr><td>9/27 毎月27日</td><td>9/21のゴッドイーター・ToLOVEる・ワーダイ等</td><td>ゴッドイーター／ToLOVEる／ワーダイ／マイジャグ</td><td>リコリコ・からくり2・戦コレ6・タクトオーパス・炎炎2全台系｜×</td></tr>
-          <tr><td>9/29 9のつく日</td><td>9/27の5機種全台系、8/27・9/21の乙女5実績</td><td>短期再投入を避け、乙女5・禁書2を次点監視</td><td>3台並び多数、乙女5・禁書2強配分｜○ 機種一致</td></tr>
-          <tr><td>10/1 OneSpark</td><td>当時保存した6候補（GOD／北斗／ゴージャグ3／SAO II／からくり2／炎炎2）</td><td>再構成に置換せず、保存予想を使用</td><td>北斗が全台ピックアップ、GOD掲載なし｜△ 2位候補一致</td></tr>
-          <tr><td>10/6 特定日</td><td>当日予想を保存済み</td><td>マイジャグラーV本命・ジャグラー島監視</td><td>結果待ち</td></tr>
-        </tbody></table></div>
-      <div class="callout" style="margin-top:10px"><strong>暫定照合：</strong>4/27を除く再構成13日中、候補機種の一致は5/27・7/27・9/29の3日、候補外は10日。10/1は当時保存した予想として別扱い。記事掲載・ユーザー報告の網羅性に限界があるため、これは設定的中率ではありません。過去台番は配置変更があるので予想台番に転用していません。</div>
-    </section>
-
-
-    <section id="forecast-check" class="section">
-      <div class="section-heading"><h2>過去の予想と答え合わせ</h2><span>予測候補・台番・結果を記号で照合</span></div>
-      <div class="callout"><strong>採点基準：</strong>◎＝予想した3機種以上が結果掲載、◯＝2機種、△＝1機種、✕＝一致なし。記事の「全台ピックアップ」や差枚は設定確定を意味しません。保存予想がない過去日は前日までの情報だけで候補を再構成した参考値で、当時の予想として扱いません。記号はまず機種一致を表し、台番一致は下の台番予想で別に確認します。</div>
-      <div class="onespark-table-wrap" style="margin-top:10px"><table class="onespark-table">
-        <thead><tr><th>日付</th><th>予想記録／前日までの候補</th><th>結果</th><th>評価</th></tr></thead><tbody>
-          <tr><td>5/1 OneSpark</td><td>再構成：かぐや様／鉄拳6／VVV2</td><td>ゴーゴージャグラー3・27台、平均+858枚</td><td>✕｜0機種</td></tr>
-          <tr><td>5/27 毎月27日</td><td>再構成：ゴージャグ系／かぐや様／鉄拳6</td><td>炎炎2・SBJ・シャーマンキング・ゴージャグ等</td><td>△｜ゴージャグ系1機種</td></tr>
-          <tr><td>6/1 OneSpark</td><td>再構成：ゴージャグ／炎炎2／SBJ</td><td>ミリオンゴッド全台系。西淀川・鶴見でも同日同機種</td><td>✕｜0機種</td></tr>
-          <tr><td>6/27 毎月27日</td><td>再構成：ミリオンゴッド（低確度）</td><td>東京喰種・リオエース2・ゴージャグ等</td><td>✕｜0機種</td></tr>
-          <tr><td>7/1 OneSpark</td><td>再構成：東京喰種／リオエース2</td><td>スマスロ北斗の拳・18台、平均+3,149枚</td><td>✕｜0機種</td></tr>
-          <tr><td>7/27 毎月27日</td><td>再構成：北斗／東京喰種</td><td>カバネリ・東京喰種の全台系掲載</td><td>△｜東京喰種1機種</td></tr>
-          <tr><td>8/1 OneSpark</td><td>再構成：カバネリ／東京喰種</td><td>ミリオンゴッド全台系・30台</td><td>✕｜0機種</td></tr>
-          <tr><td>8/27 毎月27日</td><td>再構成：ミリオンゴッド（低確度）</td><td>戦国乙女5全台系、東京喰種・モンキーV高配分</td><td>✕｜0機種</td></tr>
-          <tr><td>9/1 OneSpark</td><td>再構成：戦国乙女5／東京喰種</td><td>SAO II全台系（法人内4店）</td><td>✕｜0機種</td></tr>
-          <tr><td>9/11 1のつく日</td><td>再構成：SAO II（低確度）</td><td>Lハナビ・ユニコーン覚醒・SBJ全台系</td><td>✕｜0機種</td></tr>
-          <tr><td>9/21 1のつく日</td><td>再構成：Lハナビ／ユニコーン覚醒／SBJ</td><td>マイジャグBOX・ネオアイム列、ゴッドイーター等</td><td>✕｜0機種</td></tr>
-          <tr><td>9/27 毎月27日</td><td>再構成：ゴッドイーター／ToLOVEる／ワーダイ／マイジャグ</td><td>リコリコ・からくり2・戦コレ6・タクトオーパス・炎炎2の全台系（ユーザー確認）</td><td>✕｜0機種</td></tr>
-          <tr><td>9/29 9のつく日</td><td>再構成：乙女5／禁書2を次点監視</td><td>3台並び多数。乙女5・禁書2が強配分</td><td>◯｜2機種</td></tr>
-          <tr><td>10/1 OneSpark</td><td><strong>保存予想：</strong>1位GOD、2位北斗、3位ゴージャグ3、4位SAO II、5位からくり2、6位炎炎2</td><td>北斗 #750～755が全台ピックアップ、平均+4,700枚。GOD掲載なし</td><td>△｜北斗1機種（6候補中2位）</td></tr>
-          <tr><td>10/6 月一・FREEDIA</td><td><strong>保存予想：</strong>マイジャグV本命、ジャグラー島の単品・並び。禁書2・戦コレ6は再投入抑制</td><td>結果は未反映</td><td>—｜答え合わせ待ち</td></tr>
-        </tbody></table></div>
-      <p class="footnote">再構成の評価は機種候補の一致数です。事前保存のない予想は参考検証で、的中率の集計から除外します。設定状況は記事分類・ユーザー報告の範囲で記録。</p>
-
-      <div class="section-heading" style="margin-top:18px"><h2>次回候補｜10/11「1のつく日」</h2><span>5機種・計25台／事前予測</span></div>
-      <div class="callout"><strong>予想：</strong>10/11はAims Girl来店予定。ハナビを軸に、過去の1のつく日・9/27・9/29・10/3の結果から5機種を選び、配置内の台番を各5台程度に限定しました。直近再投入の懸念がある機種は低確度です。設定投入の断定ではありません。</div>
-      <div class="onespark-table-wrap" style="margin-top:10px"><table class="onespark-table">
-        <thead><tr><th>順位</th><th>機種</th><th>予想台番</th><th>台数</th><th>根拠</th><th>結果</th></tr></thead><tbody>
-          <tr><td>1</td><td>スマスロハナビ</td><td>#831～835</td><td>5</td><td>9/11のAims Girl来店日に全台系濃厚、7/11にも同じ台番ブロックで投入実績</td><td>未判定</td></tr>
-          <tr><td>2</td><td>甲鉄城のカバネリ</td><td>#543～547</td><td>5</td><td>7/11・9/11の1のつく日と9/29の#545～547掲載。両側の周辺台を含む候補</td><td>未判定</td></tr>
-          <tr><td>3</td><td>スマスロ とある魔術の禁書目録2</td><td>#581～585</td><td>5</td><td>9/29の強配分報告、10/3の#586～594に隣接する台番帯。直近投入のため低確度</td><td>未判定</td></tr>
-          <tr><td>4</td><td>スマスロ リコリス・リコイル</td><td>#560～562・#564～565</td><td>5</td><td>9/29記事の二つの並び掲載から計5台に限定。9/27の全台系は短期再投入リスクとして減点</td><td>未判定</td></tr>
-          <tr><td>5</td><td>戦国コレクション6</td><td>#734～738</td><td>5</td><td>9/27全台系、9/29の#734～736並び、10/3の#733～738掲載。連続掲載のため確度は低め</td><td>未判定</td></tr>
-        </tbody></table></div>
-      <p class="footnote">10/11終了後、記事掲載の有無・台番範囲を追記して◎◯△✕で再採点します。実際の設定投入や勝率を保証する予想ではありません。</p>
-    </section>
-
-    <section id="forecast-archive" class="section">
-      <div class="section-heading"><h2>過去の予想｜10/1 OneSpark</h2><span>予想時点の順位と根拠をそのまま保存</span></div>
-      <div class="callout">10/1の事前予想は答え合わせ後も書き換えず、予想履歴として保存しています。結果は「直近実績」と「OneSpark実績」に分けて記録しました。</div>
-    <section class="hero" aria-labelledby="forecast-title">
-      <div class="hero-head">
-        <div><div class="eyebrow">Next forecast · OneSpark</div><h2 id="forecast-title">本命はミリオンゴッド、次点は北斗</h2><p>法人横断の反復を軸にし、9/29の直近投入機種は再投入の可能性を下げて評価。</p></div>
-        <div class="date-pill">10/1（木）</div>
-      </div>
-      <div class="lead-pick"><span class="label">第1候補｜法人横断の反復</span><strong>ミリオンゴッド｜過去実績 #667～696</strong><p>6/1・8/1に本店で全台系、両日とも法人内の他店舗にも同機種を確認。9/21には別の「1のつく日」でもGODの好調台が複数見られたため本命を維持します。ただし9/21は全台系ではなく、直近傾向として過大評価しません。</p><span class="confidence">予想確度：中</span></div>
-    </section>
-
-    <section id="picks" class="section">
-      <div class="section-heading"><h2>10/1 候補</h2><span>毎月1日OneSpark履歴と直近の1のつく日を反映｜上から優先順</span></div>
-      <div class="grid">
-        <article class="card primary"><div class="card-top"><span class="rank">01 · 本命</span><span class="confidence-tag">中～高</span></div><h3>ミリオンゴッド</h3><div class="machines">過去実績 #667～696（30台）</div><p>6/1・8/1に本店で全台系、両日とも法人内の他店舗でも同機種を確認。本店反復と法人横断がそろうため最上位。</p><div class="reason">台番は過去の実績範囲。10/1の現配置はフロアマップで要確認。</div></article>
-        <article class="card secondary"><div class="card-top"><span class="rank">02 · 対抗</span><span class="confidence-tag">低～中</span></div><h3>スマスロ北斗の拳</h3><div class="machines">7/1実績 #739～756（18台）</div><p>7/1の本店OneSparkで全台系、平均差枚+3,149枚。</p><div class="reason">9/29の北斗転生2、9/21の転生2は別機種として分け、通常の北斗は直近投入扱いにしない。</div></article>
-        <article class="card"><div class="card-top"><span class="rank" style="color:var(--blue)">03 · 本店実績</span><span class="confidence-tag">低</span></div><h3>ゴーゴージャグラー3</h3><div class="machines">5/1実績 27台</div><p>5/1の本店で全台系、平均差枚+858枚。9/11・9/21にもジャグラー各機種で広い好調台の掲載あり。</p><div class="reason">1日系の実績は多いが、9/29はジャグラーが少なかったとの報告もあるため優先度は抑える。</div></article>
-        <article class="card"><div class="card-top"><span class="rank" style="color:var(--blue)">04 · 法人横断</span><span class="confidence-tag">低～中</span></div><h3>ソードアート・オンラインII</h3><div class="machines">9/1実績 #631～642（12台）</div><p>9/1に本店を含む4店舗で同日全台系。平均差枚+4,960枚、平均4,403G。</p><div class="reason">法人横断の根拠は強い一方、9/21に一部好調台、9/29に#640～642の並び掲載があり、短期再投入は減点。</div></article>
-        <article class="card low"><div class="card-top"><span class="rank" style="color:var(--amber)">05 · 再投入監視</span><span class="confidence-tag">低</span></div><h3>からくりサーカス2</h3><div class="machines">9/27実績 #568～576</div><p>9台全台系、公開記事の平均差枚は+2,558枚。</p><div class="reason">4日前の投入、9/29にも#569～571の並び掲載があり短期再投入を抑制。法人横断の同機種一致は未確認。</div></article>
-        <article class="card low"><div class="card-top"><span class="rank" style="color:var(--amber)">06 · 再投入監視</span><span class="confidence-tag">低</span></div><h3>炎炎ノ消防隊2</h3><div class="machines">9/27実績 #775～783</div><p>全9台設定5・6とのユーザー確認。平均7,145G、平均差枚+606枚。</p><div class="reason">9/21に同シリーズの一部好調台、9/27に全台系。直近実績が続いているため10/1は再投入を低く見る。</div></article>
-      </div>
-      <div class="callout"><strong>予想の見方：</strong>OneSparkは同一法人内で同機種を全台系にする傾向として評価。毎月1日の5記事ではGODが2回、他機種は各1回。9/11・9/21の「1のつく日」は別枠で扱い、特に9/29の直近投入機種は短期再投入を減点しました。過去台番は当日の配置を保証しません。</div>
-    </section>
-    </section>
-
-    <section id="supplement" class="section">
-      <div class="section-heading"><h2>過去実績の補足検証</h2><span>添付ダッシュボードの履歴・傾向を統合｜予想順位は変更なし</span></div>
-      <div class="callout"><strong>読み方：</strong>ここでは過去の確認履歴から見える反復だけを補足します。10/1候補の順位・評価、および「1のつく日」の予想は変更していません。過去の台番は当時の配置です。</div>
-      <div class="onespark-table-wrap" style="margin-top:10px"><table class="onespark-table">
-        <thead><tr><th>日付</th><th>確認できた実績</th><th>補足として残す傾向</th></tr></thead>
-        <tbody>
-          <tr><td>4/27</td><td>かぐや様・鉄拳6・VVV2・からくり・モンハン・ゴッドイーターなど複数島で強配分</td><td>単一機種固定でなく、複数の主力機種と島へ展開。</td></tr>
-          <tr><td>5/27</td><td>炎炎2・SBJ・シャーマンキング・ゴージャグ等が外部結果とユーザー集計で整合</td><td>機種投入の裏付けはあるが、列・島境界は断定しない。</td></tr>
-          <tr><td>6/27</td><td>東京喰種は36台中27台プラス、平均8,988G・+3,700枚。リオエース2・ゴージャグも全台系掲載</td><td>主力機種の高配分と別島の全台系を併用。</td></tr>
-          <tr><td>7/27</td><td>カバネリ平均+2,481枚、東京喰種平均+2,434枚。両機種とも全台系掲載</td><td>大型主力BOX複数を同日に使う実績。</td></tr>
-          <tr><td>8/27</td><td>戦国乙女5 #703～720が全台系掲載、平均+3,599枚。東京喰種・モンキーVも高配分</td><td>主力の全台系と、別機種の高配分を組み合わせ。</td></tr>
-          <tr><td>9/27</td><td>リコリコ・からくり2・戦コレ6・タクトオーパス・炎炎2の全台系をユーザー確認</td><td>直近の配分結果として記録。台番・数値は上の実績欄を参照。</td></tr>
-        </tbody>
-      </table></div>
-      <div class="result-grid" style="margin-top:10px">
-        <article class="result-card"><h3>日付別の反復メモ</h3><p><b>11日：</b>5～9月に並び投入が繰り返し観測され、機種全より6台前後の連続ブロックを確認する見方が有効。</p><p><b>6日：</b>6～9月のFREEDIA履歴でマイジャグが毎回候補。対象位置は固定せず、BOX・列の移動を含めて記録。</p><p><b>13・19・29日：</b>主力多台数や複数島へ広がる回がある。29日は5～7月の外部結果を照合済み。日付だけで対象機種を決め打ちしない。</p></article>
-        <article class="result-card"><h3>データ量と限界</h3><div class="big">580台データ｜34機種｜21日分</div><p>2026/4/9～9/19の確認分。7,000G以上は336件（57.9%）、実績スコア75以上は203件（35.0%）。</p><p class="small">対象は公開ピックアップ台に偏るため、プラス率85.2%はホール全体の勝率や設定投入率を表しません。曜日・台番末尾に安定した規則は確認できず、メーカー・演者別は紐づけ不足で判定保留です。</p></article>
-      </div>
-    </section>
-
-    <section id="signals" class="section">
-      <div class="section-heading"><h2>予想に使った傾向</h2><span>根拠を混ぜずに表示</span></div>
-      <div class="rows">
-        <div class="row"><strong>OneSpark</strong><span class="detail">同一法人の複数店で同じ機種を全台系にする事例を優先</span><span class="state">予想の主軸</span></div>
-        <div class="row"><strong>ミリオンゴッド</strong><span class="detail">6/1・8/1のOneSparkで本店を含む複数店舗が同機種全台系。9/21にも個別好調台が5台掲載</span><span class="state">反復＋1日系</span></div>
-        <div class="row"><strong>SAO II</strong><span class="detail">9/1に本店・西淀川・松原で同機種の全台系</span><span class="state">法人例あり</span></div>
-        <div class="row"><strong>9/27全台系</strong><span class="detail">リコリコ・からくり2・戦コレ6・タクトオーパス・炎炎2の5機種、計54台を確認。4日後の再投入は減点</span><span class="state">短期再投入抑制</span></div>
-        <div class="row"><strong>3台並び</strong><span class="detail">9/29記事でリコリコ・カバネリ・SAO II・やじきた・戦コレ6など複数箇所を確認</span><span class="state">直近結果</span></div>
-        <div class="row uncertain"><strong>差枚・稼働</strong><span class="detail">差枚だけでは設定判断しない。台別回転数、当たり/CZ、隣台の同時挙動を優先</span><span class="state">判定基準</span></div>
-      </div>
-      <p class="footnote">予想と結果は別に記録します。未確定の台番や画像にない数値を確定データとして扱いません。</p>
-    </section>
-
-    <section id="history" class="section">
-      <div class="section-heading"><h2>確認済み履歴</h2><span>予想欄は最新日だけ表示</span></div>
-      <div class="card">
-        <div class="history"><time>9/29</time><div><strong>喰霊零Re全台系濃厚、3台並び複数・乙女/禁書2も強配分</strong><p>関西すろいべ結果記事とユーザー画像・報告を統合。並びはリコリコ、カバネリ、SAO II、やじきた、戦コレ6など。</p></div></div>
-        <div class="history"><time>9/21</time><div><strong>「1のつく日」・平均5,104G</strong><p>マイジャグラー等の好調台に加え、GODの個別台5台を掲載。全台系ではなく、OneSpark月初実績とは別に記録。</p></div></div>
-        <div class="history"><time>9/11</time><div><strong>「1のつく日」・Lハナビ全台系濃厚</strong><p>#831～835の5台。記事掲載値の平均差枚は約+965枚。OneSparkとは別記録。</p></div></div>
-        <div class="history"><time>9/27</time><div><strong>全台系5機種・計54台を確認</strong><p>リコリコ27台、からくり2 9台、戦コレ6 6台、タクトオーパス3台、炎炎2 9台。公開記事平均は順に+2,314枚、+2,558枚、+3,156枚、+1,458枚。炎炎2は全9台設定5・6、平均7,145G・+606枚。ジャグラー・カバネリ・東京喰種は一部対象との報告。</p></div></div>
-        <div class="history"><time>9/27</time><div><strong>炎炎ノ消防隊2 775～783</strong><p>9台全て設定5・6とのユーザー確認。平均7,145G、平均+606枚。</p></div></div>
-      </div>
-    </section>
-
-    <section id="quiet" class="section">
-      <div class="section-heading"><h2>直近の強配分が未確認の機種</h2><span>2026/10/6時点の記事確認範囲</span></div>
-      <div class="rows">
-        <div class="row"><strong>ミスタージャグラー</strong><span class="detail">10/3はジャグラー複数機種が単品掲載。全台系確認とは区別</span><span class="state">77日</span></div>
-        <div class="row"><strong>ミリオンゴッド</strong><span class="detail">OneSpark直近は8/1。10/1結果の全台ピックアップに掲載なし</span><span class="state">66日</span></div>
-        <div class="row"><strong>SAO II</strong><span class="detail">9/1は法人横断全台系、9/21と9/29は個別好調・並び掲載あり</span><span class="state">直近あり</span></div>
-      </div>
-      <p class="footnote">空き日数は確認できた機種単位の強配分からの経過日数です。未確認日は未投入とみなしていません。9/29の乙女・禁書2は強配分、SAO II・リコリコ・カバネリは並び掲載があるため、短期再投入候補から外しています。</p>
-    </section>
-
-    <section id="sources" class="section">
-      <div class="section-heading"><h2>データと参照先</h2><span>更新基準 2026/10/6</span></div>
-      <div class="source-links">
-        <a href="./グランキコーナ大阪_全履歴データ.xlsx">全履歴Excel</a>
-        <a href="https://kansai-sloeve.com/2026/09/28/9-27-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">9/27結果記事</a>
-        <a href="https://kansai-sloeve.com/2026/09/30/9-29-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">9/29結果記事</a>
-        <a href="https://kansai-sloeve.com/2026/09/12/9-11-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">9/11結果記事</a>
-        <a href="https://kansai-sloeve.com/2026/09/22/9-21-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91-2/" target="_blank" rel="noopener">9/21結果記事</a>
-        <a href="https://www.p-world.co.jp/hall/floor_maps/59fe32fdf468" target="_blank" rel="noopener">現行フロアマップ</a>
-      </div>
-      <p class="footnote">OneSparkの法人横断条件はユーザー提供。機種別結果と台番は公開記事、乙女・禁書2・炎炎2の画像数値と全台系確認はユーザー提供情報から転記。設定状況の確認、記事集計、画像数値を区別して記録しています。</p>
-    </section>
-
-    <footer>Grand Kicona Osaka Honten · Dashboard · Updated 2026.10.06</footer>
-  </main>
-  <nav aria-label="ページ内ナビゲーション">
-    <a href="#latest-forecast">最新予想</a><a href="#forecast-archive">10/1予想記録</a><a href="#onespark">毎月1日</a><a href="#one-days">1のつく日</a><a href="#results">直近実績</a><a href="#forecast-check">答え合わせ</a><a href="#supplement">過去検証</a><a href="#signals">傾向</a><a href="#history">履歴</a><a href="#sources">データ</a>
-  </nav>
-</body>
-</html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10151d"><title>グランキコーナ大阪本店｜最新予想と答え合わせ</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1016;--card:#151f2b;--line:#2b3a49;--text:#edf3f7;--muted:#a8b5c0;--mint:#8ce0c1;--blue:#9ccafa;--gold:#f3cc78}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -130px,#24413f,transparent 560px),var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,"Noto Sans JP",sans-serif}main{max-width:980px;margin:auto;padding:24px 16px 100px}.top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.tag{border:1px solid #446b5c;border-radius:99px;padding:3px 10px;color:var(--mint)}h1{font-size:clamp(27px,5vw,42px);line-height:1.2;margin:27px 0 8px}.sub{color:var(--muted);margin:0 0 24px}.hero{padding:20px;border:1px solid #45675c;border-radius:20px;background:linear-gradient(145deg,#182a26,#17212e 70%)}.hero h2{margin:0 0 7px;font-size:24px}.hero p,.card p{margin:8px 0 0;color:#c3cdd5;font-size:13px}.lead{margin-top:15px;padding:14px;border-radius:14px;background:#0c1918;border:1px solid #3d5d52}.lead strong{display:block;color:var(--mint);font-size:20px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px}.card h3{margin:0;font-size:16px}.nums{color:var(--blue);font-weight:750;font-size:14px}.small{font-size:11px;color:var(--muted)}section{margin-top:30px}h2.section{font-size:20px;margin:0 0 12px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:14px}.table{border-collapse:collapse;width:100%;min-width:680px;background:#121a24;font-size:12px}.table th,.table td{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}.table th{color:var(--mint);background:#1a2632;white-space:nowrap}.table tr:last-child td{border:0}.grade{font-size:16px;font-weight:900;color:var(--gold)}a{color:var(--blue)}.note{font-size:11px;color:var(--muted);margin:8px 2px}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{padding:8px 11px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:#151f2b;font-size:12px}nav{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;max-width:95vw;overflow:auto;padding:7px;border:1px solid #344353;border-radius:14px;background:#101820ee}nav a{white-space:nowrap;padding:5px 8px;font-size:11px;color:#c9d7e0;text-decoration:none}@media(max-width:650px){main{padding:18px 12px 100px}.grid{grid-template-columns:1fr}.hero{padding:16px}nav{justify-content:flex-start}}
+</style></head><body><main>
+<div class="top"><b>GRAN KICONA OSAKA HONTEN</b><span class="tag">更新 2026.10.10</span></div>
+<h1>最新の予想・実績答え合わせ</h1><p class="sub">公開記事・店舗データ・提供画像を区別して記録。予想台番は監視候補で、設定投入の断定ではありません。</p>
+<section id="forecast"><h2 class="section">10/11「1のつく日」予想｜5機種・25台</h2>
+<div class="hero"><h2>本命：スマスロハナビ #831～835</h2><p>10/11はAims Girl来店予定。9/11の同来店日にハナビ#831～835が全台系濃厚として掲載されたことを最重視。10/6のジャグラー大量投入、10/3の全台ピックアップ機種は短期再投入リスクとして減点。10/9は予定情報のみで結果記事が未確認のため根拠に含めていません。</p><div class="lead"><strong>中以下の確度｜追加候補は低確度</strong>一機種5台前後に限定。台番は現行フロア図に基づく監視範囲です。</div></div>
+<div class="grid">
+<article class="card"><h3>1｜スマスロハナビ <span class="small">本命</span></h3><div class="nums">#831～835｜5台</div><p>9/11 Aims Girl日に全台系濃厚、7/11にも同機種ブロック実績。連番候補。</p></article>
+<article class="card"><h3>2｜甲鉄城のカバネリ</h3><div class="nums">#543～547｜5台</div><p>7/11・9/11の「1のつく日」と9/29の#545～547掲載。両側の周辺台を含む推定。</p></article>
+<article class="card"><h3>3｜とある魔術の禁書目録2</h3><div class="nums">#581～585｜5台</div><p>9/29の強配分報告、10/3の#586～594に隣接。直近投入を考慮し低確度。</p></article>
+<article class="card"><h3>4｜リコリス・リコイル</h3><div class="nums">#560～562・#564～565｜5台</div><p>9/29記事に二つの並び掲載。9/27全台系から短期間のため再投入リスクを大きく減点。</p></article>
+<article class="card"><h3>5｜戦国コレクション6</h3><div class="nums">#734～738｜5台</div><p>9/27全台系、9/29の#734～736、10/3の#733～738掲載。連続掲載のため低確度。</p></article>
+</div><p class="note">OneSpark（毎月1日）は「1のつく日」と別条件。同一法人で同じ機種に全台形を仕掛けるというユーザー提供の傾向をOneSpark評価に反映。</p></section>
+<section id="latest"><h2 class="section">最新結果と答え合わせ</h2><div class="grid">
+<article class="card"><h3>10/6｜FREEDIA・天六の日</h3><p><b>平均4,764G。</b>マイジャグV全54台平均+1,557枚、ネオアイム+743枚、アイム+1,282枚。記事はマイジャグV・ネオアイムの列を強調し、SAO II・戦国乙女5・リコリコも高配分掲載。</p><p class="small">10/6予想はマイジャグV本命。機種一致1機種で <span class="grade">△</span>。</p><a href="https://kansai-sloeve.com/2026/10/07/10-6-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">10/6結果記事</a></article>
+<article class="card"><h3>10/9｜結果記事待ち</h3><p>来店・収録予定は確認。10/10時点で本店の結果記事は未確認のため、出玉内容・答え合わせは未判定として保留。</p><a href="https://hall-navi.com/hole_view?hid=531006400000002111&amp;ec=event" target="_blank" rel="noopener">Hall Navi予定履歴</a></article>
+</div></section>
+<section id="checks"><h2 class="section">過去予想の答え合わせ</h2><div class="tablewrap"><table class="table"><thead><tr><th>日付</th><th>事前予想</th><th>結果</th><th>評価</th></tr></thead><tbody>
+<tr><td>10/6</td><td>マイジャグV本命、ジャグラー島。禁書2・戦コレ6は抑制</td><td>マイジャグV含むジャグラー複数機種高配分。SAO II・乙女5・リコリコも掲載</td><td class="grade">△｜1機種一致</td></tr>
+<tr><td>10/1 OneSpark</td><td>GOD、北斗、ゴージャグ3、SAO II、からくり2、炎炎2</td><td>北斗全7台#750～756平均+4,278枚・6,285G。ゴージャグ3・SAO IIも掲載。GOD全台系なし</td><td class="grade">◎｜6候補中3機種一致</td></tr>
+<tr><td>9/29</td><td>乙女5・禁書2を次点監視</td><td>3台並び多数。乙女5・禁書2が強配分</td><td class="grade">◯｜2機種</td></tr>
+<tr><td>9/27</td><td>事前予想保存なし</td><td>リコリコ・からくり2・戦コレ6・タクトオーパス・炎炎2が全台系（ユーザー確認）</td><td>—｜事前評価なし</td></tr>
+<tr><td>9/11</td><td>事前予想保存なし</td><td>ハナビ#831～835全台系濃厚</td><td>—｜事前評価なし</td></tr>
+</tbody></table></div><p class="note">◎＝3機種以上、◯＝2機種、△＝1機種、✕＝0機種の一致。記事に掲載された機種一致の評価であり、設定や勝率の保証ではありません。事前予想の保存がない日は採点しません。</p></section>
+<section id="onespark"><h2 class="section">OneSpark｜過去実績</h2><div class="tablewrap"><table class="table"><thead><tr><th>日付</th><th>全台系・主要実績</th><th>傾向</th></tr></thead><tbody>
+<tr><td>5/1</td><td>ゴーゴージャグラー3 27台、平均+858枚</td><td>本店実績</td></tr><tr><td>6/1</td><td>ミリオンゴッド #667～696・30台</td><td>西淀川・鶴見でも同日同機種</td></tr><tr><td>7/1</td><td>スマスロ北斗の拳18台、#739～756、平均+3,149枚</td><td>本店実績</td></tr><tr><td>8/1</td><td>ミリオンゴッド30台、#667～696、平均+4,171枚</td><td>松原でも同日同機種</td></tr><tr><td>9/1</td><td>SAO II 12台、#631～642、平均+4,960枚</td><td>本店を含む4店舗で同日同機種</td></tr><tr><td>10/1</td><td>北斗の拳7台、#750～756、平均+4,278枚・6,285G</td><td>記事全台ピックアップ</td></tr>
+</tbody></table></div><p class="note">OneSparkは同一法人内の同機種全台系を重要な反復シグナルとして評価。結果記事の掲載分類と実際の設定は区別します。</p></section>
+<section id="sources"><h2 class="section">参照先</h2><div class="links">
+<a href="https://kansai-sloeve.com/2026/10/03/10-1-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">10/1結果記事</a>
+<a href="https://kansai-sloeve.com/2026/10/07/10-6-%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AD%E3%82%B3%E3%83%BC%E3%83%8A%E5%A4%A7%E9%98%AA%E6%9C%AC%E5%BA%97%E7%B5%90%E6%9E%9C%E3%81%BE%E3%81%A8%E3%82%81%E3%80%90%E5%A4%A7%E9%98%AA%E5%BA%9C%E3%80%91/" target="_blank" rel="noopener">10/6結果記事</a>
+<a href="https://www.p-world.co.jp/hall/floor_maps/59fe32fdf468" target="_blank" rel="noopener">フロアマップ</a>
+<a href="https://www.p-world.co.jp/osaka/grankicona-honten.htm" target="_blank" rel="noopener">P-WORLD</a>
+</div><p class="note">メーカー・演者・曜日・台番・差枚・回転数を今後も記録。公開ピックアップ情報は全台の無作為標本ではないため、掲載台のプラス率をホール全体の勝率として扱わない。</p></section>
+<footer class="note" style="text-align:center;margin-top:24px">Grand Kicona Osaka Honten · Updated 2026.10.10</footer>
+</main><nav><a href="#forecast">10/11予想</a><a href="#latest">最新結果</a><a href="#checks">答え合わせ</a><a href="#onespark">OneSpark</a><a href="#sources">参照先</a></nav></body></html>
